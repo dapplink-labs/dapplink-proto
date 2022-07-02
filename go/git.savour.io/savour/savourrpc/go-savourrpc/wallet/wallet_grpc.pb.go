@@ -23,6 +23,8 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type WalletServiceClient interface {
 	GetSupportCoins(ctx context.Context, in *SupportCoinsRequest, opts ...grpc.CallOption) (*SupportCoinsResponse, error)
+	GetNonce(ctx context.Context, in *NonceRequest, opts ...grpc.CallOption) (*NonceResponse, error)
+	GetGasPrice(ctx context.Context, in *GasPriceRequest, opts ...grpc.CallOption) (*GasPriceResponse, error)
 	SendTx(ctx context.Context, in *SendTxRequest, opts ...grpc.CallOption) (*SendTxResponse, error)
 }
 
@@ -43,6 +45,24 @@ func (c *walletServiceClient) GetSupportCoins(ctx context.Context, in *SupportCo
 	return out, nil
 }
 
+func (c *walletServiceClient) GetNonce(ctx context.Context, in *NonceRequest, opts ...grpc.CallOption) (*NonceResponse, error) {
+	out := new(NonceResponse)
+	err := c.cc.Invoke(ctx, "/savourrpc.wallet.WalletService/getNonce", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *walletServiceClient) GetGasPrice(ctx context.Context, in *GasPriceRequest, opts ...grpc.CallOption) (*GasPriceResponse, error) {
+	out := new(GasPriceResponse)
+	err := c.cc.Invoke(ctx, "/savourrpc.wallet.WalletService/getGasPrice", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *walletServiceClient) SendTx(ctx context.Context, in *SendTxRequest, opts ...grpc.CallOption) (*SendTxResponse, error) {
 	out := new(SendTxResponse)
 	err := c.cc.Invoke(ctx, "/savourrpc.wallet.WalletService/SendTx", in, out, opts...)
@@ -57,6 +77,8 @@ func (c *walletServiceClient) SendTx(ctx context.Context, in *SendTxRequest, opt
 // for forward compatibility
 type WalletServiceServer interface {
 	GetSupportCoins(context.Context, *SupportCoinsRequest) (*SupportCoinsResponse, error)
+	GetNonce(context.Context, *NonceRequest) (*NonceResponse, error)
+	GetGasPrice(context.Context, *GasPriceRequest) (*GasPriceResponse, error)
 	SendTx(context.Context, *SendTxRequest) (*SendTxResponse, error)
 	mustEmbedUnimplementedWalletServiceServer()
 }
@@ -67,6 +89,12 @@ type UnimplementedWalletServiceServer struct {
 
 func (UnimplementedWalletServiceServer) GetSupportCoins(context.Context, *SupportCoinsRequest) (*SupportCoinsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSupportCoins not implemented")
+}
+func (UnimplementedWalletServiceServer) GetNonce(context.Context, *NonceRequest) (*NonceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetNonce not implemented")
+}
+func (UnimplementedWalletServiceServer) GetGasPrice(context.Context, *GasPriceRequest) (*GasPriceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetGasPrice not implemented")
 }
 func (UnimplementedWalletServiceServer) SendTx(context.Context, *SendTxRequest) (*SendTxResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendTx not implemented")
@@ -102,6 +130,42 @@ func _WalletService_GetSupportCoins_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _WalletService_GetNonce_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(NonceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WalletServiceServer).GetNonce(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/savourrpc.wallet.WalletService/getNonce",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WalletServiceServer).GetNonce(ctx, req.(*NonceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _WalletService_GetGasPrice_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GasPriceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(WalletServiceServer).GetGasPrice(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/savourrpc.wallet.WalletService/getGasPrice",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(WalletServiceServer).GetGasPrice(ctx, req.(*GasPriceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _WalletService_SendTx_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SendTxRequest)
 	if err := dec(in); err != nil {
@@ -130,6 +194,14 @@ var WalletService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "getSupportCoins",
 			Handler:    _WalletService_GetSupportCoins_Handler,
+		},
+		{
+			MethodName: "getNonce",
+			Handler:    _WalletService_GetNonce_Handler,
+		},
+		{
+			MethodName: "getGasPrice",
+			Handler:    _WalletService_GetGasPrice_Handler,
 		},
 		{
 			MethodName: "SendTx",

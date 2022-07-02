@@ -22,6 +22,26 @@ message SupportCoinsResponse {
   repeated SupportCoins support_coins = 2;
 }
 
+message NonceRequest {
+   string consumer_token = 1;
+   string address = 2;
+}
+
+message NonceResponse {
+  Error error = 1;
+  string nonce = 2;
+}
+
+
+message GasPriceRequest {
+   string consumer_token = 1;
+}
+
+message GasPriceResponse {
+  Error error = 1;
+  string gas = 2;
+}
+
 message SendTxRequest{
   string consumer_token = 1;
   string coin_id = 2;
@@ -38,6 +58,8 @@ message SendTxResponse {
 
 service WalletService {
   rpc getSupportCoins(SupportCoinsRequest) returns (SupportCoinsResponse) {}
+  rpc getNonce(NonceRequest) returns (NonceResponse) {}
+  rpc getGasPrice(GasPriceRequest) returns (GasPriceResponse) {}
   rpc SendTx(SendTxRequest) returns (SendTxResponse) {}
 }
 
