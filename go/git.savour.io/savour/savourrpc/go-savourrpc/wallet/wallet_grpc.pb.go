@@ -26,7 +26,7 @@ type WalletServiceClient interface {
 	GetNonce(ctx context.Context, in *NonceRequest, opts ...grpc.CallOption) (*NonceResponse, error)
 	GetGasPrice(ctx context.Context, in *GasPriceRequest, opts ...grpc.CallOption) (*GasPriceResponse, error)
 	SendTx(ctx context.Context, in *SendTxRequest, opts ...grpc.CallOption) (*SendTxResponse, error)
-	GetBalance(ctx context.Context, in *BalanceRequest, opts ...grpc.CallOption) (*SendTxResponse, error)
+	GetBalance(ctx context.Context, in *BalanceRequest, opts ...grpc.CallOption) (*BalanceResponse, error)
 	GetTxByAddress(ctx context.Context, in *TxAddressRequest, opts ...grpc.CallOption) (*TxAddressResponse, error)
 	GetTxByHash(ctx context.Context, in *TxHashRequest, opts ...grpc.CallOption) (*TxHashResponse, error)
 	GetAccount(ctx context.Context, in *AccountRequest, opts ...grpc.CallOption) (*AccountResponse, error)
@@ -78,8 +78,8 @@ func (c *walletServiceClient) SendTx(ctx context.Context, in *SendTxRequest, opt
 	return out, nil
 }
 
-func (c *walletServiceClient) GetBalance(ctx context.Context, in *BalanceRequest, opts ...grpc.CallOption) (*SendTxResponse, error) {
-	out := new(SendTxResponse)
+func (c *walletServiceClient) GetBalance(ctx context.Context, in *BalanceRequest, opts ...grpc.CallOption) (*BalanceResponse, error) {
+	out := new(BalanceResponse)
 	err := c.cc.Invoke(ctx, "/savourrpc.wallet.WalletService/getBalance", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -140,7 +140,7 @@ type WalletServiceServer interface {
 	GetNonce(context.Context, *NonceRequest) (*NonceResponse, error)
 	GetGasPrice(context.Context, *GasPriceRequest) (*GasPriceResponse, error)
 	SendTx(context.Context, *SendTxRequest) (*SendTxResponse, error)
-	GetBalance(context.Context, *BalanceRequest) (*SendTxResponse, error)
+	GetBalance(context.Context, *BalanceRequest) (*BalanceResponse, error)
 	GetTxByAddress(context.Context, *TxAddressRequest) (*TxAddressResponse, error)
 	GetTxByHash(context.Context, *TxHashRequest) (*TxHashResponse, error)
 	GetAccount(context.Context, *AccountRequest) (*AccountResponse, error)
@@ -165,7 +165,7 @@ func (UnimplementedWalletServiceServer) GetGasPrice(context.Context, *GasPriceRe
 func (UnimplementedWalletServiceServer) SendTx(context.Context, *SendTxRequest) (*SendTxResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendTx not implemented")
 }
-func (UnimplementedWalletServiceServer) GetBalance(context.Context, *BalanceRequest) (*SendTxResponse, error) {
+func (UnimplementedWalletServiceServer) GetBalance(context.Context, *BalanceRequest) (*BalanceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetBalance not implemented")
 }
 func (UnimplementedWalletServiceServer) GetTxByAddress(context.Context, *TxAddressRequest) (*TxAddressResponse, error) {

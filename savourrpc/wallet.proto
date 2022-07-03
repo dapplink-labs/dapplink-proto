@@ -150,7 +150,7 @@ service WalletService {
   rpc getNonce(NonceRequest) returns (NonceResponse) {}
   rpc getGasPrice(GasPriceRequest) returns (GasPriceResponse) {}
   rpc SendTx(SendTxRequest) returns (SendTxResponse) {}
-  rpc getBalance(BalanceRequest) returns (SendTxResponse) {}
+  rpc getBalance(BalanceRequest) returns (BalanceResponse) {}
   rpc getTxByAddress(TxAddressRequest) returns (TxAddressResponse) {}
   rpc getTxByHash(TxHashRequest) returns (TxHashResponse) {}
   rpc getAccount(AccountRequest) returns (AccountResponse) {}
