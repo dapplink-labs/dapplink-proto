@@ -32,7 +32,6 @@ message NonceResponse {
   string nonce = 2;
 }
 
-
 message GasPriceRequest {
    string consumer_token = 1;
 }
@@ -55,11 +54,107 @@ message SendTxResponse {
   string tx_hash = 2;
 }
 
+message BalanceRequest{
+  string consumer_token = 1;
+  string coin_id = 2;
+  string chain_id = 3;
+  string network = 4;
+  string address = 5;
+  string contract_address = 6;
+}
+
+message BalanceResponse {
+  Error error = 1;
+  string balance = 2;
+}
+
+message TxMessage {
+   string hash = 1;
+   string from = 2;
+   string to = 3;
+   string fee = 4;
+   bool status = 5;
+   string value = 6;
+   int32 type = 7;
+   string height = 8;
+}
+
+message TxAddressRequest{
+  string consumer_token = 1;
+  string coin_id = 2;
+  string chain_id = 3;
+  string network = 4;
+  string address = 5;
+  string contract_address = 6;
+}
+
+message TxAddressResponse {
+  Error error = 1;
+  repeated TxMessage tx = 2;
+}
+
+message TxHashRequest{
+  string consumer_token = 1;
+  string coin_id = 2;
+  string chain_id = 3;
+  string network = 4;
+  string hast = 5;
+}
+
+message TxHashResponse {
+  Error error = 1;
+  TxMessage tx = 2;
+}
+
+message AccountRequest{
+  string consumer_token = 1;
+  string coin_id = 2;
+  string chain_id = 3;
+  string network = 4;
+  string address = 5;
+}
+
+message AccountResponse {
+  Error error = 1;
+  string account_number = 2;
+  string sequence = 3;
+}
+
+message UtxoRequest{
+  string consumer_token = 1;
+  string coin_id = 2;
+  string chain_id = 3;
+  string network = 4;
+  string address = 5;
+}
+
+message UtxoResponse {
+  Error error = 1;
+}
+
+message MinRentRequest{
+  string consumer_token = 1;
+  string coin_id = 2;
+  string chain_id = 3;
+  string network = 4;
+  string address = 5;
+}
+
+message MinRentResponse {
+  Error error = 1;
+  string value = 2;
+}
 
 service WalletService {
   rpc getSupportCoins(SupportCoinsRequest) returns (SupportCoinsResponse) {}
   rpc getNonce(NonceRequest) returns (NonceResponse) {}
   rpc getGasPrice(GasPriceRequest) returns (GasPriceResponse) {}
   rpc SendTx(SendTxRequest) returns (SendTxResponse) {}
+  rpc getBalance(BalanceRequest) returns (SendTxResponse) {}
+  rpc getTxByAddress(TxAddressRequest) returns (TxAddressResponse) {}
+  rpc getTxByHash(TxHashRequest) returns (TxHashResponse) {}
+  rpc getAccount(AccountRequest) returns (AccountResponse) {}
+  rpc getUtxo(UtxoRequest) returns (UtxoResponse) {}
+  rpc getMinRent(MinRentRequest) returns (MinRentResponse) {}
 }
 
