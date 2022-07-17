@@ -78,6 +78,7 @@ message TxMessage {
    string value = 6;
    int32 type = 7;
    string height = 8;
+   string contract_address = 9;
 }
 
 message TxAddressRequest{
@@ -99,7 +100,7 @@ message TxHashRequest{
   string chain = 2;
   string coin = 3;
   string network = 4;
-  string hast = 5;
+  string hash = 5;
 }
 
 message TxHashResponse {
