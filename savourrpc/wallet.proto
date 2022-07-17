@@ -5,26 +5,24 @@ option go_package = "git.savour.io/savour/savourrpc/go-savourrpc/wallet";
 option java_package = "com.savourrpc.wallet";
 package savourrpc.wallet;
 
-message SupportCoins {
-  string chain_id = 1;
-  string chain_name = 2;
-  string coin_id = 3;
-  string coin_name = 4;
-  string network = 5;
-}
 
 message SupportCoinsRequest{
   string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
 }
 
 message SupportCoinsResponse {
   Error error = 1;
-  repeated SupportCoins support_coins = 2;
+  bool support = 2;
 }
 
 message NonceRequest {
    string consumer_token = 1;
-   string address = 2;
+   string chain = 2;
+   string coin = 3;
+   string address = 4;
+   string network = 5;
 }
 
 message NonceResponse {
@@ -34,6 +32,9 @@ message NonceResponse {
 
 message GasPriceRequest {
    string consumer_token = 1;
+   string chain = 2;
+   string coin = 3;
+   string network = 4;
 }
 
 message GasPriceResponse {
@@ -43,8 +44,8 @@ message GasPriceResponse {
 
 message SendTxRequest{
   string consumer_token = 1;
-  string coin_id = 2;
-  string chain_id = 3;
+  string chain = 2;
+  string coin = 3;
   string network = 4;
   string raw_tx = 5;
 }
@@ -56,8 +57,8 @@ message SendTxResponse {
 
 message BalanceRequest{
   string consumer_token = 1;
-  string coin_id = 2;
-  string chain_id = 3;
+  string chain = 2;
+  string coin = 3;
   string network = 4;
   string address = 5;
   string contract_address = 6;
@@ -81,8 +82,8 @@ message TxMessage {
 
 message TxAddressRequest{
   string consumer_token = 1;
-  string coin_id = 2;
-  string chain_id = 3;
+  string chain = 2;
+  string coin = 3;
   string network = 4;
   string address = 5;
   string contract_address = 6;
@@ -95,8 +96,8 @@ message TxAddressResponse {
 
 message TxHashRequest{
   string consumer_token = 1;
-  string coin_id = 2;
-  string chain_id = 3;
+  string chain = 2;
+  string coin = 3;
   string network = 4;
   string hast = 5;
 }
@@ -108,8 +109,8 @@ message TxHashResponse {
 
 message AccountRequest{
   string consumer_token = 1;
-  string coin_id = 2;
-  string chain_id = 3;
+  string chain = 2;
+  string coin = 3;
   string network = 4;
   string address = 5;
 }
@@ -118,24 +119,42 @@ message AccountResponse {
   Error error = 1;
   string account_number = 2;
   string sequence = 3;
+  string network = 4;
+}
+
+message Vin{
+    string hash=1;
+    uint32 index=2;
+    int64  amount=3;
+    string address=4;
+}
+
+message Vout{
+    string address=1;
+    int64 amount=2;
+    uint32 index=3;
 }
 
 message UtxoRequest{
   string consumer_token = 1;
-  string coin_id = 2;
-  string chain_id = 3;
+  string chain = 2;
+  string coin = 3;
   string network = 4;
   string address = 5;
 }
 
 message UtxoResponse {
   Error error = 1;
+  string chain=2;
+  repeated Vin vins=3;
+  repeated Vout vouts=4;
+  string fee=5;
 }
 
 message MinRentRequest{
   string consumer_token = 1;
-  string coin_id = 2;
-  string chain_id = 3;
+  string chain = 2;
+  string coin = 3;
   string network = 4;
   string address = 5;
 }
