@@ -69,16 +69,25 @@ message BalanceResponse {
   string balance = 2;
 }
 
+message Address {
+    string address = 1;
+}
+
+message Value {
+    string value = 1;
+}
+
 message TxMessage {
    string hash = 1;
-   string from = 2;
-   string to = 3;
-   string fee = 4;
-   bool status = 5;
-   string value = 6;
-   int32 type = 7;
-   string height = 8;
-   string contract_address = 9;
+   uint32 index = 2;
+   repeated Address from = 3;
+   repeated Address to = 4;
+   repeated Value value = 7;
+   string fee = 5;
+   bool status = 6;
+   int32 type = 8;
+   string height = 9;
+   string contract_address = 10;
 }
 
 message TxAddressRequest{
@@ -88,6 +97,8 @@ message TxAddressRequest{
   string network = 4;
   string address = 5;
   string contract_address = 6;
+  uint32 page = 7;
+  uint32 pagesize = 8;
 }
 
 message TxAddressResponse {
