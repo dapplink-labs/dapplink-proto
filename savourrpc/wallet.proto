@@ -13,8 +13,9 @@ message SupportCoinsRequest{
 }
 
 message SupportCoinsResponse {
-  Error error = 1;
-  bool support = 2;
+  ReturnCode code=1;
+  string msg=2;
+  bool support = 3;
 }
 
 message NonceRequest {
@@ -26,8 +27,9 @@ message NonceRequest {
 }
 
 message NonceResponse {
-  Error error = 1;
-  string nonce = 2;
+  ReturnCode code=1;
+  string msg=2;
+  string nonce = 3;
 }
 
 message GasPriceRequest {
@@ -38,8 +40,9 @@ message GasPriceRequest {
 }
 
 message GasPriceResponse {
-  Error error = 1;
-  string gas = 2;
+  ReturnCode code=1;
+  string msg=2;
+  string gas = 3;
 }
 
 message SendTxRequest{
@@ -51,8 +54,9 @@ message SendTxRequest{
 }
 
 message SendTxResponse {
-  Error error = 1;
-  string tx_hash = 2;
+  ReturnCode code=1;
+  string msg=2;
+  string tx_hash = 3;
 }
 
 message BalanceRequest{
@@ -65,8 +69,9 @@ message BalanceRequest{
 }
 
 message BalanceResponse {
-  Error error = 1;
-  string balance = 2;
+  ReturnCode code=1;
+  string msg=2;
+  string balance = 3;
 }
 
 message Address {
@@ -102,8 +107,9 @@ message TxAddressRequest{
 }
 
 message TxAddressResponse {
-  Error error = 1;
-  repeated TxMessage tx = 2;
+  ReturnCode code=1;
+  string msg=2;
+  repeated TxMessage tx = 3;
 }
 
 message TxHashRequest{
@@ -115,8 +121,9 @@ message TxHashRequest{
 }
 
 message TxHashResponse {
-  Error error = 1;
-  TxMessage tx = 2;
+  ReturnCode code=1;
+  string msg=2;
+  TxMessage tx = 3;
 }
 
 message AccountRequest{
@@ -128,10 +135,11 @@ message AccountRequest{
 }
 
 message AccountResponse {
-  Error error = 1;
-  string account_number = 2;
-  string sequence = 3;
-  string network = 4;
+  ReturnCode code=1;
+  string msg=2;
+  string account_number = 3;
+  string sequence = 4;
+  string network = 5;
 }
 
 message Vin{
@@ -156,11 +164,12 @@ message UtxoRequest{
 }
 
 message UtxoResponse {
-  Error error = 1;
-  string chain=2;
-  repeated Vin vins=3;
-  repeated Vout vouts=4;
-  string fee=5;
+  ReturnCode code=1;
+  string msg=2;
+  string chain=3;
+  repeated Vin vins=4;
+  repeated Vout vouts=5;
+  string fee=6;
 }
 
 message MinRentRequest{
@@ -172,8 +181,9 @@ message MinRentRequest{
 }
 
 message MinRentResponse {
-  Error error = 1;
-  string value = 2;
+  ReturnCode code=1;
+  string msg=2;
+  string value = 3;
 }
 
 service WalletService {

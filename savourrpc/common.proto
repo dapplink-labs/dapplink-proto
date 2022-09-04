@@ -10,12 +10,3 @@ enum ReturnCode{
     ERROR = 1;
 }
 
-// 错误Type
-message Error {
-  ReturnCode code = 1;
-  string brief = 2;
-  string detail = 3;
-  bool can_retry = 4;
-}
-
-message Empty {}
