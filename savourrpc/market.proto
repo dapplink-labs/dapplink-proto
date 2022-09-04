@@ -15,8 +15,9 @@ message SymbolRequest {
 }
 
 message SymbolResponse {
-  Error error = 1;
-  repeated Symbol symbols = 2;
+  ReturnCode code=1;
+  string msg=2;
+  repeated Symbol symbols = 3;
 }
 
 message SymbolPrice {
@@ -31,12 +32,13 @@ message SymbolPrice {
 
 message SymbolPriceRequest {
    string consumer_token = 1;
-    string symbol_id = 2;
+   string symbol_id = 2;
 }
 
 message SymbolPriceResponse {
-  Error error = 1;
-  repeated SymbolPrice symbol_prices = 2;
+  ReturnCode code=1;
+  string msg=2;
+  repeated SymbolPrice symbol_prices = 3;
 }
 
 message StableCoin {
@@ -49,8 +51,9 @@ message StableCoinRequest {
 }
 
 message StableCoinResponse {
-  Error error = 1;
-  repeated StableCoin stable_coins = 2;
+  ReturnCode code=1;
+  string msg=2;
+  repeated StableCoin stable_coins = 3;
 }
 
 message StableCoinPrice {
@@ -66,8 +69,9 @@ message StableCoinPriceRequest {
 }
 
 message StableCoinPriceResponse {
-  Error error = 1;
-  repeated StableCoinPrice coin_prices = 2;
+  ReturnCode code=1;
+  string msg=2;
+  repeated StableCoinPrice coin_prices = 3;
 }
 
 service PriceService {

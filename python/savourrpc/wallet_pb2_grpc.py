@@ -19,10 +19,50 @@ class WalletServiceStub(object):
                 request_serializer=savourrpc_dot_wallet__pb2.SupportCoinsRequest.SerializeToString,
                 response_deserializer=savourrpc_dot_wallet__pb2.SupportCoinsResponse.FromString,
                 )
+        self.getNonce = channel.unary_unary(
+                '/savourrpc.wallet.WalletService/getNonce',
+                request_serializer=savourrpc_dot_wallet__pb2.NonceRequest.SerializeToString,
+                response_deserializer=savourrpc_dot_wallet__pb2.NonceResponse.FromString,
+                )
+        self.getGasPrice = channel.unary_unary(
+                '/savourrpc.wallet.WalletService/getGasPrice',
+                request_serializer=savourrpc_dot_wallet__pb2.GasPriceRequest.SerializeToString,
+                response_deserializer=savourrpc_dot_wallet__pb2.GasPriceResponse.FromString,
+                )
         self.SendTx = channel.unary_unary(
                 '/savourrpc.wallet.WalletService/SendTx',
                 request_serializer=savourrpc_dot_wallet__pb2.SendTxRequest.SerializeToString,
                 response_deserializer=savourrpc_dot_wallet__pb2.SendTxResponse.FromString,
+                )
+        self.getBalance = channel.unary_unary(
+                '/savourrpc.wallet.WalletService/getBalance',
+                request_serializer=savourrpc_dot_wallet__pb2.BalanceRequest.SerializeToString,
+                response_deserializer=savourrpc_dot_wallet__pb2.BalanceResponse.FromString,
+                )
+        self.getTxByAddress = channel.unary_unary(
+                '/savourrpc.wallet.WalletService/getTxByAddress',
+                request_serializer=savourrpc_dot_wallet__pb2.TxAddressRequest.SerializeToString,
+                response_deserializer=savourrpc_dot_wallet__pb2.TxAddressResponse.FromString,
+                )
+        self.getTxByHash = channel.unary_unary(
+                '/savourrpc.wallet.WalletService/getTxByHash',
+                request_serializer=savourrpc_dot_wallet__pb2.TxHashRequest.SerializeToString,
+                response_deserializer=savourrpc_dot_wallet__pb2.TxHashResponse.FromString,
+                )
+        self.getAccount = channel.unary_unary(
+                '/savourrpc.wallet.WalletService/getAccount',
+                request_serializer=savourrpc_dot_wallet__pb2.AccountRequest.SerializeToString,
+                response_deserializer=savourrpc_dot_wallet__pb2.AccountResponse.FromString,
+                )
+        self.getUtxo = channel.unary_unary(
+                '/savourrpc.wallet.WalletService/getUtxo',
+                request_serializer=savourrpc_dot_wallet__pb2.UtxoRequest.SerializeToString,
+                response_deserializer=savourrpc_dot_wallet__pb2.UtxoResponse.FromString,
+                )
+        self.getMinRent = channel.unary_unary(
+                '/savourrpc.wallet.WalletService/getMinRent',
+                request_serializer=savourrpc_dot_wallet__pb2.MinRentRequest.SerializeToString,
+                response_deserializer=savourrpc_dot_wallet__pb2.MinRentResponse.FromString,
                 )
 
 
@@ -35,7 +75,55 @@ class WalletServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def getNonce(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def getGasPrice(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def SendTx(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def getBalance(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def getTxByAddress(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def getTxByHash(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def getAccount(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def getUtxo(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def getMinRent(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -49,10 +137,50 @@ def add_WalletServiceServicer_to_server(servicer, server):
                     request_deserializer=savourrpc_dot_wallet__pb2.SupportCoinsRequest.FromString,
                     response_serializer=savourrpc_dot_wallet__pb2.SupportCoinsResponse.SerializeToString,
             ),
+            'getNonce': grpc.unary_unary_rpc_method_handler(
+                    servicer.getNonce,
+                    request_deserializer=savourrpc_dot_wallet__pb2.NonceRequest.FromString,
+                    response_serializer=savourrpc_dot_wallet__pb2.NonceResponse.SerializeToString,
+            ),
+            'getGasPrice': grpc.unary_unary_rpc_method_handler(
+                    servicer.getGasPrice,
+                    request_deserializer=savourrpc_dot_wallet__pb2.GasPriceRequest.FromString,
+                    response_serializer=savourrpc_dot_wallet__pb2.GasPriceResponse.SerializeToString,
+            ),
             'SendTx': grpc.unary_unary_rpc_method_handler(
                     servicer.SendTx,
                     request_deserializer=savourrpc_dot_wallet__pb2.SendTxRequest.FromString,
                     response_serializer=savourrpc_dot_wallet__pb2.SendTxResponse.SerializeToString,
+            ),
+            'getBalance': grpc.unary_unary_rpc_method_handler(
+                    servicer.getBalance,
+                    request_deserializer=savourrpc_dot_wallet__pb2.BalanceRequest.FromString,
+                    response_serializer=savourrpc_dot_wallet__pb2.BalanceResponse.SerializeToString,
+            ),
+            'getTxByAddress': grpc.unary_unary_rpc_method_handler(
+                    servicer.getTxByAddress,
+                    request_deserializer=savourrpc_dot_wallet__pb2.TxAddressRequest.FromString,
+                    response_serializer=savourrpc_dot_wallet__pb2.TxAddressResponse.SerializeToString,
+            ),
+            'getTxByHash': grpc.unary_unary_rpc_method_handler(
+                    servicer.getTxByHash,
+                    request_deserializer=savourrpc_dot_wallet__pb2.TxHashRequest.FromString,
+                    response_serializer=savourrpc_dot_wallet__pb2.TxHashResponse.SerializeToString,
+            ),
+            'getAccount': grpc.unary_unary_rpc_method_handler(
+                    servicer.getAccount,
+                    request_deserializer=savourrpc_dot_wallet__pb2.AccountRequest.FromString,
+                    response_serializer=savourrpc_dot_wallet__pb2.AccountResponse.SerializeToString,
+            ),
+            'getUtxo': grpc.unary_unary_rpc_method_handler(
+                    servicer.getUtxo,
+                    request_deserializer=savourrpc_dot_wallet__pb2.UtxoRequest.FromString,
+                    response_serializer=savourrpc_dot_wallet__pb2.UtxoResponse.SerializeToString,
+            ),
+            'getMinRent': grpc.unary_unary_rpc_method_handler(
+                    servicer.getMinRent,
+                    request_deserializer=savourrpc_dot_wallet__pb2.MinRentRequest.FromString,
+                    response_serializer=savourrpc_dot_wallet__pb2.MinRentResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -82,6 +210,40 @@ class WalletService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def getNonce(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getNonce',
+            savourrpc_dot_wallet__pb2.NonceRequest.SerializeToString,
+            savourrpc_dot_wallet__pb2.NonceResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def getGasPrice(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getGasPrice',
+            savourrpc_dot_wallet__pb2.GasPriceRequest.SerializeToString,
+            savourrpc_dot_wallet__pb2.GasPriceResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def SendTx(request,
             target,
             options=(),
@@ -95,5 +257,107 @@ class WalletService(object):
         return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/SendTx',
             savourrpc_dot_wallet__pb2.SendTxRequest.SerializeToString,
             savourrpc_dot_wallet__pb2.SendTxResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def getBalance(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getBalance',
+            savourrpc_dot_wallet__pb2.BalanceRequest.SerializeToString,
+            savourrpc_dot_wallet__pb2.BalanceResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def getTxByAddress(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getTxByAddress',
+            savourrpc_dot_wallet__pb2.TxAddressRequest.SerializeToString,
+            savourrpc_dot_wallet__pb2.TxAddressResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def getTxByHash(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getTxByHash',
+            savourrpc_dot_wallet__pb2.TxHashRequest.SerializeToString,
+            savourrpc_dot_wallet__pb2.TxHashResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def getAccount(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getAccount',
+            savourrpc_dot_wallet__pb2.AccountRequest.SerializeToString,
+            savourrpc_dot_wallet__pb2.AccountResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def getUtxo(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getUtxo',
+            savourrpc_dot_wallet__pb2.UtxoRequest.SerializeToString,
+            savourrpc_dot_wallet__pb2.UtxoResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def getMinRent(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getMinRent',
+            savourrpc_dot_wallet__pb2.MinRentRequest.SerializeToString,
+            savourrpc_dot_wallet__pb2.MinRentResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
