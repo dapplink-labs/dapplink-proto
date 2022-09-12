@@ -14,6 +14,16 @@ class PriceServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.getExchanges = channel.unary_unary(
+                '/savourrpc.market.PriceService/getExchanges',
+                request_serializer=savourrpc_dot_market__pb2.ExchangeRequest.SerializeToString,
+                response_deserializer=savourrpc_dot_market__pb2.ExchangeResponse.FromString,
+                )
+        self.getAssets = channel.unary_unary(
+                '/savourrpc.market.PriceService/getAssets',
+                request_serializer=savourrpc_dot_market__pb2.AssetRequest.SerializeToString,
+                response_deserializer=savourrpc_dot_market__pb2.AssetResponse.FromString,
+                )
         self.getSymbols = channel.unary_unary(
                 '/savourrpc.market.PriceService/getSymbols',
                 request_serializer=savourrpc_dot_market__pb2.SymbolRequest.SerializeToString,
@@ -38,6 +48,18 @@ class PriceServiceStub(object):
 
 class PriceServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
+
+    def getExchanges(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def getAssets(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def getSymbols(self, request, context):
         """Missing associated documentation comment in .proto file."""
@@ -66,6 +88,16 @@ class PriceServiceServicer(object):
 
 def add_PriceServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'getExchanges': grpc.unary_unary_rpc_method_handler(
+                    servicer.getExchanges,
+                    request_deserializer=savourrpc_dot_market__pb2.ExchangeRequest.FromString,
+                    response_serializer=savourrpc_dot_market__pb2.ExchangeResponse.SerializeToString,
+            ),
+            'getAssets': grpc.unary_unary_rpc_method_handler(
+                    servicer.getAssets,
+                    request_deserializer=savourrpc_dot_market__pb2.AssetRequest.FromString,
+                    response_serializer=savourrpc_dot_market__pb2.AssetResponse.SerializeToString,
+            ),
             'getSymbols': grpc.unary_unary_rpc_method_handler(
                     servicer.getSymbols,
                     request_deserializer=savourrpc_dot_market__pb2.SymbolRequest.FromString,
@@ -95,6 +127,40 @@ def add_PriceServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class PriceService(object):
     """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def getExchanges(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/savourrpc.market.PriceService/getExchanges',
+            savourrpc_dot_market__pb2.ExchangeRequest.SerializeToString,
+            savourrpc_dot_market__pb2.ExchangeResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def getAssets(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/savourrpc.market.PriceService/getAssets',
+            savourrpc_dot_market__pb2.AssetRequest.SerializeToString,
+            savourrpc_dot_market__pb2.AssetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def getSymbols(request,

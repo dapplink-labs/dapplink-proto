@@ -5,13 +5,75 @@ option go_package = "git.savour.io/savour/savourrpc/go-savourrpc/market";
 option java_package = "com.savourrpc.market";
 package savourrpc.market;
 
+message Exchange {
+    string id = 1;
+    string name = 2;
+    string type = 3;
+}
+
+message Asset {
+    string id = 1;
+    string name = 2;
+}
+
 message Symbol {
-   string symbol_id = 1;
-   string symbol_name = 2;
+   string id = 1;
+   string name = 2;
+   string base = 3;
+   string quote = 4;
+}
+
+message SymbolPrice {
+   string id = 1;
+   string name = 2;
+   string base = 3;
+   string quote = 4;
+   string buy_price = 5;
+   string sell_price = 6;
+   string avg_price = 7;
+   string usd_price = 8;
+   string cny_price = 9;
+   string margin = 10;
+}
+
+message StableCoin {
+   string id = 1;
+   string name = 2;
+}
+
+message StableCoinPrice {
+   string id = 1;
+   string name = 2;
+   string usd_price = 3;
+   string cny_price = 4;
+   string margin = 5;
+}
+
+message ExchangeRequest {
+    string consumer_token = 1;
+}
+
+message ExchangeResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  repeated Exchange exchanges = 3;
+}
+
+message AssetRequest {
+   string consumer_token = 1;
+   string exchange_id = 2;
+   bool is_base = 3;
+}
+
+message AssetResponse {
+   ReturnCode code=1;
+   string msg=2;
+   repeated Asset assets = 3;
 }
 
 message SymbolRequest {
    string consumer_token = 1;
+   string exchange_id = 2;
 }
 
 message SymbolResponse {
@@ -20,30 +82,16 @@ message SymbolResponse {
   repeated Symbol symbols = 3;
 }
 
-message SymbolPrice {
-   string symbol_name = 1;
-   string buy_price = 2;
-   string sell_price = 3;
-   string avg_price = 4;
-   string usd_price = 5;
-   string cny_price = 6;
-   string margin = 7;
-}
-
 message SymbolPriceRequest {
    string consumer_token = 1;
-   string symbol_id = 2;
+   string exchange_id = 2;
+   string symbol_id = 3;
 }
 
 message SymbolPriceResponse {
-  ReturnCode code=1;
-  string msg=2;
+  ReturnCode code = 1;
+  string msg = 2;
   repeated SymbolPrice symbol_prices = 3;
-}
-
-message StableCoin {
-   string coin_id = 1;
-   string coin_name = 2;
 }
 
 message StableCoinRequest {
@@ -54,13 +102,6 @@ message StableCoinResponse {
   ReturnCode code=1;
   string msg=2;
   repeated StableCoin stable_coins = 3;
-}
-
-message StableCoinPrice {
-   string id = 1;
-   string name = 2;
-   string usd_price = 3;
-   string cny_price = 4;
 }
 
 message StableCoinPriceRequest {
@@ -75,6 +116,8 @@ message StableCoinPriceResponse {
 }
 
 service PriceService {
+  rpc getExchanges(ExchangeRequest) returns (ExchangeResponse) {}
+  rpc getAssets(AssetRequest) returns (AssetResponse) {}
   rpc getSymbols(SymbolRequest) returns (SymbolResponse) {}
   rpc getSymbolPrices(SymbolPriceRequest) returns (SymbolPriceResponse) {}
   rpc getStableCoins(StableCoinRequest) returns (StableCoinResponse) {}
