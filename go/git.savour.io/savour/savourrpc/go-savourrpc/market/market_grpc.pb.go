@@ -22,6 +22,8 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type PriceServiceClient interface {
+	GetExchanges(ctx context.Context, in *ExchangeRequest, opts ...grpc.CallOption) (*ExchangeResponse, error)
+	GetAssets(ctx context.Context, in *AssetRequest, opts ...grpc.CallOption) (*AssetResponse, error)
 	GetSymbols(ctx context.Context, in *SymbolRequest, opts ...grpc.CallOption) (*SymbolResponse, error)
 	GetSymbolPrices(ctx context.Context, in *SymbolPriceRequest, opts ...grpc.CallOption) (*SymbolPriceResponse, error)
 	GetStableCoins(ctx context.Context, in *StableCoinRequest, opts ...grpc.CallOption) (*StableCoinResponse, error)
@@ -34,6 +36,24 @@ type priceServiceClient struct {
 
 func NewPriceServiceClient(cc grpc.ClientConnInterface) PriceServiceClient {
 	return &priceServiceClient{cc}
+}
+
+func (c *priceServiceClient) GetExchanges(ctx context.Context, in *ExchangeRequest, opts ...grpc.CallOption) (*ExchangeResponse, error) {
+	out := new(ExchangeResponse)
+	err := c.cc.Invoke(ctx, "/savourrpc.market.PriceService/getExchanges", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *priceServiceClient) GetAssets(ctx context.Context, in *AssetRequest, opts ...grpc.CallOption) (*AssetResponse, error) {
+	out := new(AssetResponse)
+	err := c.cc.Invoke(ctx, "/savourrpc.market.PriceService/getAssets", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *priceServiceClient) GetSymbols(ctx context.Context, in *SymbolRequest, opts ...grpc.CallOption) (*SymbolResponse, error) {
@@ -76,6 +96,8 @@ func (c *priceServiceClient) GetStableCoinPrice(ctx context.Context, in *StableC
 // All implementations must embed UnimplementedPriceServiceServer
 // for forward compatibility
 type PriceServiceServer interface {
+	GetExchanges(context.Context, *ExchangeRequest) (*ExchangeResponse, error)
+	GetAssets(context.Context, *AssetRequest) (*AssetResponse, error)
 	GetSymbols(context.Context, *SymbolRequest) (*SymbolResponse, error)
 	GetSymbolPrices(context.Context, *SymbolPriceRequest) (*SymbolPriceResponse, error)
 	GetStableCoins(context.Context, *StableCoinRequest) (*StableCoinResponse, error)
@@ -87,6 +109,12 @@ type PriceServiceServer interface {
 type UnimplementedPriceServiceServer struct {
 }
 
+func (UnimplementedPriceServiceServer) GetExchanges(context.Context, *ExchangeRequest) (*ExchangeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetExchanges not implemented")
+}
+func (UnimplementedPriceServiceServer) GetAssets(context.Context, *AssetRequest) (*AssetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetAssets not implemented")
+}
 func (UnimplementedPriceServiceServer) GetSymbols(context.Context, *SymbolRequest) (*SymbolResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSymbols not implemented")
 }
@@ -110,6 +138,42 @@ type UnsafePriceServiceServer interface {
 
 func RegisterPriceServiceServer(s grpc.ServiceRegistrar, srv PriceServiceServer) {
 	s.RegisterService(&PriceService_ServiceDesc, srv)
+}
+
+func _PriceService_GetExchanges_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ExchangeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PriceServiceServer).GetExchanges(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/savourrpc.market.PriceService/getExchanges",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PriceServiceServer).GetExchanges(ctx, req.(*ExchangeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _PriceService_GetAssets_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(AssetRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PriceServiceServer).GetAssets(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/savourrpc.market.PriceService/getAssets",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PriceServiceServer).GetAssets(ctx, req.(*AssetRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _PriceService_GetSymbols_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -191,6 +255,14 @@ var PriceService_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "savourrpc.market.PriceService",
 	HandlerType: (*PriceServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "getExchanges",
+			Handler:    _PriceService_GetExchanges_Handler,
+		},
+		{
+			MethodName: "getAssets",
+			Handler:    _PriceService_GetAssets_Handler,
+		},
 		{
 			MethodName: "getSymbols",
 			Handler:    _PriceService_GetSymbols_Handler,

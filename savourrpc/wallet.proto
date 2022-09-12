@@ -5,6 +5,48 @@ option go_package = "git.savour.io/savour/savourrpc/go-savourrpc/wallet";
 option java_package = "com.savourrpc.wallet";
 package savourrpc.wallet;
 
+enum TxStatus{
+    NotFound = 0;
+    Pending = 1;
+    Failed = 2;
+    Success = 3;
+    ContractExecuteFailed = 4;
+    Other = 5;
+}
+
+message Address {
+    string address = 1;
+}
+
+message Value {
+    string value = 1;
+}
+
+message TxMessage {
+   string hash = 1;
+   uint32 index = 2;
+   repeated Address from = 3;
+   repeated Address to = 4;
+   repeated Value value = 7;
+   string fee = 5;
+   TxStatus status = 6;
+   int32 type = 8;
+   string height = 9;
+   string contract_address = 10;
+}
+
+message Vin{
+    string hash=1;
+    uint32 index=2;
+    int64  amount=3;
+    string address=4;
+}
+
+message Vout{
+    string address=1;
+    int64 amount=2;
+    uint32 index=3;
+}
 
 message SupportCoinsRequest{
   string consumer_token = 1;
@@ -13,9 +55,38 @@ message SupportCoinsRequest{
 }
 
 message SupportCoinsResponse {
-  ReturnCode code=1;
-  string msg=2;
-  bool support = 3;
+   ReturnCode code=1;
+   string msg=2;
+   bool support = 3;
+}
+
+message ConvertAddressRequest{
+    string consumer_token = 1;
+    string chain=2;
+    string network = 3;
+    bytes public_key=4;
+}
+
+message ConvertAddressResponse{
+    ReturnCode code=1;
+    string msg=2;
+    string address=3;
+}
+
+message ValidAddressRequest{
+    string consumer_token = 1;
+    string chain=2;
+    string network = 3;
+    string symbol=4;
+    string address=5;
+}
+
+message ValidAddressResponse{
+    ReturnCode code=1;
+    string msg=2;
+    bool valid=3;
+    bool can_withdrawal=4;
+    string canonical_address=5;
 }
 
 message NonceRequest {
@@ -45,20 +116,6 @@ message GasPriceResponse {
   string gas = 3;
 }
 
-message SendTxRequest{
-  string consumer_token = 1;
-  string chain = 2;
-  string coin = 3;
-  string network = 4;
-  string raw_tx = 5;
-}
-
-message SendTxResponse {
-  ReturnCode code=1;
-  string msg=2;
-  string tx_hash = 3;
-}
-
 message BalanceRequest{
   string consumer_token = 1;
   string chain = 2;
@@ -74,25 +131,48 @@ message BalanceResponse {
   string balance = 3;
 }
 
-message Address {
-    string address = 1;
+message AccountRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string coin = 3;
+  string network = 4;
+  string address = 5;
 }
 
-message Value {
-    string value = 1;
+message AccountResponse {
+  ReturnCode code=1;
+  string msg=2;
+  string account_number = 3;
+  string sequence = 4;
+  string network = 5;
 }
 
-message TxMessage {
-   string hash = 1;
-   uint32 index = 2;
-   repeated Address from = 3;
-   repeated Address to = 4;
-   repeated Value value = 7;
-   string fee = 5;
-   bool status = 6;
-   int32 type = 8;
-   string height = 9;
-   string contract_address = 10;
+message MinRentRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string coin = 3;
+  string network = 4;
+  string address = 5;
+}
+
+message MinRentResponse {
+  ReturnCode code=1;
+  string msg=2;
+  string value = 3;
+}
+
+message SendTxRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string coin = 3;
+  string network = 4;
+  string raw_tx = 5;
+}
+
+message SendTxResponse {
+  ReturnCode code=1;
+  string msg=2;
+  string tx_hash = 3;
 }
 
 message TxAddressRequest{
@@ -126,76 +206,202 @@ message TxHashResponse {
   TxMessage tx = 3;
 }
 
-message AccountRequest{
-  string consumer_token = 1;
-  string chain = 2;
-  string coin = 3;
-  string network = 4;
-  string address = 5;
-}
-
-message AccountResponse {
-  ReturnCode code=1;
-  string msg=2;
-  string account_number = 3;
-  string sequence = 4;
-  string network = 5;
-}
-
-message Vin{
-    string hash=1;
-    uint32 index=2;
-    int64  amount=3;
-    string address=4;
-}
-
-message Vout{
-    string address=1;
-    int64 amount=2;
-    uint32 index=3;
-}
-
 message UtxoRequest{
-  string consumer_token = 1;
-  string chain = 2;
-  string coin = 3;
-  string network = 4;
-  string address = 5;
+    string consumer_token = 1;
+    string chain = 2;
+    string symbol = 3;
+    string network = 4;
+    Vin vin=5;
 }
 
-message UtxoResponse {
-  ReturnCode code=1;
-  string msg=2;
-  string chain=3;
-  repeated Vin vins=4;
-  repeated Vout vouts=5;
-  string fee=6;
+message UtxoResponse{
+    ReturnCode code=1;
+    string msg=2;
+    bool unspent=3;
 }
 
-message MinRentRequest{
-  string consumer_token = 1;
-  string chain = 2;
-  string coin = 3;
-  string network = 4;
-  string address = 5;
+message UtxoInsFromDataRequest{
+    string consumer_token = 1;
+    string chain=2;
+    string symbol=3;
+    string network = 4;
+    bytes data=5;
 }
 
-message MinRentResponse {
-  ReturnCode code=1;
-  string msg=2;
-  string value = 3;
+message UtxoInsResponse{
+    ReturnCode code=1;
+    string msg=2;
+    repeated Vin vins=3;
+}
+
+message TxFromDataRequest{
+    string consumer_token = 1;
+    string chain =2;
+    string symbol=3;
+    string network = 4;
+    bytes raw_data=5;
+    int64 height=6;
+    repeated Vin vins=7;
+}
+
+message AccountTxResponse{
+    ReturnCode code=1;
+    string msg=2;
+    string tx_hash=3;
+    TxStatus status=4;
+    string from=5;
+    string to=6;
+    string amount=7;
+    string memo=8;
+    uint64 nonce=9;
+    string gas_limit=10;
+    string gas_price=11;
+    string cost_fee=12;
+    uint64 block_height=13;
+    uint64 block_time=14;
+    bytes sign_hash=15;
+    string contract_address=16;
+}
+
+message UtxoTxResponse{
+    ReturnCode code=1;
+    string msg=2;
+    string tx_hash=3;
+    TxStatus status=4;
+    repeated Vin  vins=5;
+    repeated Vout vouts=6;
+    repeated bytes sign_hashes=7;
+    string cost_fee=8;
+    uint64 block_height=9;
+    uint64 block_time=10;
+}
+
+message TxFromSignedDataRequest{
+    string consumer_token = 1;
+    string chain =2;
+    string symbol=3;
+    string network = 4;
+    bytes signed_tx_data=5;
+    int64 height=6;
+    repeated Vin vins=7;
+}
+
+message CreateAccountSignedTxRequest{
+    string consumer_token = 1;
+    string chain =2;
+    string symbol=3;
+    string network = 4;
+    bytes tx_data=5;
+    bytes signature=6;
+    bytes public_key=7;
+}
+
+message CreateSignedTxResponse{
+    ReturnCode code=1;
+    string msg=2;
+    bytes signed_tx_data=3;
+    bytes hash=4;
+}
+
+message CreateAccountTxRequest{
+    string consumer_token = 1;
+    string chain =2;
+    string symbol=3;
+    string network = 4;
+    string from=5;
+    string to=6;
+    string amount=7;
+    string memo=8;
+    string gas_limit=9;
+    string gas_price=10;
+    uint64 nonce=11;
+    string contract_address=12;
+}
+
+message CreateAccountTxResponse{
+    ReturnCode code=1;
+    string msg=2;
+    bytes tx_data=3;
+    bytes sign_hash=4;
+}
+
+message CreateUtxoSignedTxRequest{
+    string consumer_token = 1;
+    string chain =2;
+    string symbol=3;
+    string network = 4;
+    bytes tx_data=5;
+    repeated bytes signatures=6;
+    repeated bytes public_keys=7;
+}
+
+message CreateUtxoTxRequest{
+    string consumer_token = 1;
+    string chain =2;
+    string symbol=3;
+    string network = 4;
+    repeated Vin vins=5;
+    repeated Vout vouts=6;
+    string fee=7;
+}
+
+message CreateUtxoTxResponse{
+    ReturnCode code=1;
+    string msg=2;
+    bytes tx_data=3;
+    repeated bytes sign_hashes=4;
+}
+
+message VerifySignedTxRequest{
+    string consumer_token = 1;
+    string chain =2;
+    string symbol=3;
+    string network = 4;
+    repeated string addresses=5[deprecated=true];
+    bytes signed_tx_data=6;
+    string sender = 7;        // eth
+    int64 height = 8;         // optional, default to latest
+    repeated Vin vins=9;      // btc
+}
+
+message VerifySignedTxResponse{
+    ReturnCode code=1;
+    string msg=2;
+    bool verified=3;
 }
 
 service WalletService {
   rpc getSupportCoins(SupportCoinsRequest) returns (SupportCoinsResponse) {}
+
+  rpc convertAddress(ConvertAddressRequest) returns(ConvertAddressResponse){}
+  rpc validAddress(ValidAddressRequest) returns(ValidAddressResponse){}
+
   rpc getNonce(NonceRequest) returns (NonceResponse) {}
   rpc getGasPrice(GasPriceRequest) returns (GasPriceResponse) {}
-  rpc SendTx(SendTxRequest) returns (SendTxResponse) {}
   rpc getBalance(BalanceRequest) returns (BalanceResponse) {}
+  rpc getAccount(AccountRequest) returns (AccountResponse) {}
+  rpc getMinRent(MinRentRequest) returns (MinRentResponse) {}
+
+  rpc SendTx(SendTxRequest) returns (SendTxResponse) {}
+
   rpc getTxByAddress(TxAddressRequest) returns (TxAddressResponse) {}
   rpc getTxByHash(TxHashRequest) returns (TxHashResponse) {}
-  rpc getAccount(AccountRequest) returns (AccountResponse) {}
+
   rpc getUtxo(UtxoRequest) returns (UtxoResponse) {}
-  rpc getMinRent(MinRentRequest) returns (MinRentResponse) {}
+  rpc getUtxoInsFromData(UtxoInsFromDataRequest) returns(UtxoInsResponse);
+
+  rpc getAccountTxFromData(TxFromDataRequest) returns(AccountTxResponse);
+  rpc getUtxoTxFromData(TxFromDataRequest) returns(UtxoTxResponse);
+
+  rpc getAccountTxFromSignedData(TxFromSignedDataRequest) returns(AccountTxResponse);
+  rpc GetUtxoTxFromSignedData(TxFromSignedDataRequest) returns(UtxoTxResponse);
+
+  rpc createAccountSignedTx(CreateAccountSignedTxRequest) returns(CreateSignedTxResponse);
+  rpc createAccountTx(CreateAccountTxRequest) returns(CreateAccountTxResponse);
+  rpc createUtxoSignedTx(CreateUtxoSignedTxRequest) returns(CreateSignedTxResponse);
+  rpc createUtxoTx(CreateUtxoTxRequest) returns(CreateUtxoTxResponse);
+
+  rpc verifyAccountSignedTx(VerifySignedTxRequest) returns(VerifySignedTxResponse);
+  rpc verifyUtxoSignedTx(VerifySignedTxRequest) returns(VerifySignedTxResponse);
 }
 
