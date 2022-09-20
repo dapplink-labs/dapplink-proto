@@ -5,8 +5,6 @@ parent:
 
 <div align="center">
   <h1> Savour RPC Repo </h1>
-  <h4> version: V1.0.0 </h4>
-  <h4> Time: 2022/6/26 </h4>
 </div>
 
 <div align="center">
