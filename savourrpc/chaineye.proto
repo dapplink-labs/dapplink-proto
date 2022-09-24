@@ -1,0 +1,120 @@
+syntax = "proto3";
+
+import "savourrpc/common.proto";
+option go_package = "git.savour.io/savour/savourrpc/go-savourrpc/chaineye";
+option java_package = "com.savourrpc.chaineye";
+package savourrpc.chaineye;
+
+message ArticleList {
+    string id = 1;
+    string title = 2;
+    int32 type = 3;
+    string author = 4;
+    int32 views = 5;
+    string add_time = 6;
+    string upd_time = 7;
+    string cover = 8;
+    int32 like = 9;
+}
+
+message CommentList {
+    string id = 1;
+    string detail = 2;
+    string author = 3;
+    string add_time = 4;
+    int32 views = 5;
+    int32 like = 6;
+    int32 reply = 7;
+}
+
+message LikeList {
+    string id = 1;
+    string name = 2;
+    string asset = 3;
+    string amount = 4;
+}
+
+message ArticleListReq {
+  string consumer_token = 1;
+  int32 type = 2;
+  uint32 page = 3;
+  uint32 pagesize = 4;
+}
+
+message ArticleListRep {
+  ReturnCode code=1;
+  string msg=2;
+  repeated ArticleList articles = 3;
+}
+
+message ArticleDetailReq {
+  string consumer_token = 1;
+  int32 type = 2;
+  string id = 3;
+}
+
+message ArticleDetailRep {
+  ReturnCode code = 1;
+  string msg = 2;
+  string title = 3;
+  string detail = 4;
+  string author_id = 5;
+  string author = 6;
+  int32 views = 7;
+  string add_time = 8;
+  string upd_time = 9;
+  int32 like = 10;
+  repeated CommentList comments = 11;
+  repeated LikeList likes = 12;
+}
+
+message CommentListReq {
+  string consumer_token = 1;
+  string article_id = 2;
+  uint32 page = 3;
+  uint32 pagesize = 4;
+}
+
+message CommentListRep {
+  ReturnCode code=1;
+  string msg=2;
+  repeated CommentList comments = 3;
+}
+
+message AddressReq {
+  string consumer_token = 1;
+  string author_id = 2;
+}
+
+message AddressRep {
+  ReturnCode code = 1;
+  string msg = 2;
+  string address = 3;
+}
+
+message LikeReq {
+  string consumer_token = 1;
+  string tx_hash = 2;
+  string like_from = 3;
+  string like_to = 4;
+  string amount = 5;
+  string asset_name = 6;
+  string token_address = 7;
+}
+
+message LikeRep {
+  ReturnCode code = 1;
+  string msg = 2;
+}
+
+service ChaineyeService {
+  rpc getArticleList(ArticleListReq) returns (ArticleListRep) {}
+  rpc getArticleDetail(ArticleDetailReq) returns (ArticleDetailRep) {}
+  rpc getCommentList(CommentListReq) returns (CommentListRep) {}
+  rpc getLikeAddress(AddressReq) returns (AddressRep) {}
+  rpc likeArticle(LikeReq) returns (LikeRep) {}
+}
+
+
+
+
