@@ -34,6 +34,11 @@ message LikeList {
     string amount = 4;
 }
 
+message AssetAddress {
+    string asset = 1;
+    string address = 2;
+}
+
 message ArticleListReq {
   string consumer_token = 1;
   int32 type = 2;
@@ -89,7 +94,7 @@ message AddressReq {
 message AddressRep {
   ReturnCode code = 1;
   string msg = 2;
-  string address = 3;
+  repeated AssetAddress asset_address = 3;
 }
 
 message LikeReq {
