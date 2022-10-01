@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\024com.savourrpc.marketZ2git.savour.io/savour/savourrpc/go-savourrpc/market',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x16savourrpc/market.proto\x12\x10savourrpc.market\x1a\x16savourrpc/common.proto\"2\n\x08\x45xchange\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\"!\n\x05\x41sset\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"?\n\x06Symbol\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04\x62\x61se\x18\x03 \x01(\t\x12\r\n\x05quote\x18\x04 \x01(\t\"\xb4\x01\n\x0bSymbolPrice\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04\x62\x61se\x18\x03 \x01(\t\x12\r\n\x05quote\x18\x04 \x01(\t\x12\x11\n\tbuy_price\x18\x05 \x01(\t\x12\x12\n\nsell_price\x18\x06 \x01(\t\x12\x11\n\tavg_price\x18\x07 \x01(\t\x12\x11\n\tusd_price\x18\x08 \x01(\t\x12\x11\n\tcny_price\x18\t \x01(\t\x12\x0e\n\x06margin\x18\n \x01(\t\"&\n\nStableCoin\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"a\n\x0fStableCoinPrice\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\tusd_price\x18\x03 \x01(\t\x12\x11\n\tcny_price\x18\x04 \x01(\t\x12\x0e\n\x06margin\x18\x05 \x01(\t\")\n\x0f\x45xchangeRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\"s\n\x10\x45xchangeResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12-\n\texchanges\x18\x03 \x03(\x0b\x32\x1a.savourrpc.market.Exchange\"L\n\x0c\x41ssetRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x13\n\x0b\x65xchange_id\x18\x02 \x01(\t\x12\x0f\n\x07is_base\x18\x03 \x01(\x08\"j\n\rAssetResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\'\n\x06\x61ssets\x18\x03 \x03(\x0b\x32\x17.savourrpc.market.Asset\"<\n\rSymbolRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x13\n\x0b\x65xchange_id\x18\x02 \x01(\t\"m\n\x0eSymbolResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12)\n\x07symbols\x18\x03 \x03(\x0b\x32\x18.savourrpc.market.Symbol\"T\n\x12SymbolPriceRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x13\n\x0b\x65xchange_id\x18\x02 \x01(\t\x12\x11\n\tsymbol_id\x18\x03 \x01(\t\"}\n\x13SymbolPriceResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x34\n\rsymbol_prices\x18\x03 \x03(\x0b\x32\x1d.savourrpc.market.SymbolPrice\"+\n\x11StableCoinRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\"z\n\x12StableCoinResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x32\n\x0cstable_coins\x18\x03 \x03(\x0b\x32\x1c.savourrpc.market.StableCoin\"A\n\x16StableCoinPriceRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x0f\n\x07\x63oin_id\x18\x02 \x01(\t\"\x83\x01\n\x17StableCoinPriceResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x36\n\x0b\x63oin_prices\x18\x03 \x03(\x0b\x32!.savourrpc.market.StableCoinPrice2\xb8\x04\n\x0cPriceService\x12W\n\x0cgetExchanges\x12!.savourrpc.market.ExchangeRequest\x1a\".savourrpc.market.ExchangeResponse\"\x00\x12N\n\tgetAssets\x12\x1e.savourrpc.market.AssetRequest\x1a\x1f.savourrpc.market.AssetResponse\"\x00\x12Q\n\ngetSymbols\x12\x1f.savourrpc.market.SymbolRequest\x1a .savourrpc.market.SymbolResponse\"\x00\x12`\n\x0fgetSymbolPrices\x12$.savourrpc.market.SymbolPriceRequest\x1a%.savourrpc.market.SymbolPriceResponse\"\x00\x12]\n\x0egetStableCoins\x12#.savourrpc.market.StableCoinRequest\x1a$.savourrpc.market.StableCoinResponse\"\x00\x12k\n\x12getStableCoinPrice\x12(.savourrpc.market.StableCoinPriceRequest\x1a).savourrpc.market.StableCoinPriceResponse\"\x00\x42J\n\x14\x63om.savourrpc.marketZ2git.savour.io/savour/savourrpc/go-savourrpc/marketb\x06proto3'
+  serialized_pb=b'\n\x16savourrpc/market.proto\x12\x10savourrpc.market\x1a\x16savourrpc/common.proto\"2\n\x08\x45xchange\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\"!\n\x05\x41sset\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"?\n\x06Symbol\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04\x62\x61se\x18\x03 \x01(\t\x12\r\n\x05quote\x18\x04 \x01(\t\"\xd6\x01\n\x0bSymbolPrice\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04\x62\x61se\x18\x03 \x01(\t\x12\r\n\x05quote\x18\x04 \x01(\t\x12\x10\n\x08\x65xchange\x18\x05 \x01(\t\x12\x0e\n\x06symbol\x18\x06 \x01(\t\x12\x11\n\tbuy_price\x18\x07 \x01(\t\x12\x12\n\nsell_price\x18\x08 \x01(\t\x12\x11\n\tavg_price\x18\t \x01(\t\x12\x11\n\tusd_price\x18\n \x01(\t\x12\x11\n\tcny_price\x18\x0b \x01(\t\x12\x0e\n\x06margin\x18\x0c \x01(\t\"&\n\nStableCoin\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"a\n\x0fStableCoinPrice\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\tusd_price\x18\x03 \x01(\t\x12\x11\n\tcny_price\x18\x04 \x01(\t\x12\x0e\n\x06margin\x18\x05 \x01(\t\")\n\x0f\x45xchangeRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\"s\n\x10\x45xchangeResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12-\n\texchanges\x18\x03 \x03(\x0b\x32\x1a.savourrpc.market.Exchange\"L\n\x0c\x41ssetRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x13\n\x0b\x65xchange_id\x18\x02 \x01(\t\x12\x0f\n\x07is_base\x18\x03 \x01(\x08\"j\n\rAssetResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\'\n\x06\x61ssets\x18\x03 \x03(\x0b\x32\x17.savourrpc.market.Asset\"<\n\rSymbolRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x13\n\x0b\x65xchange_id\x18\x02 \x01(\t\"m\n\x0eSymbolResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12)\n\x07symbols\x18\x03 \x03(\x0b\x32\x18.savourrpc.market.Symbol\"T\n\x12SymbolPriceRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x13\n\x0b\x65xchange_id\x18\x02 \x01(\t\x12\x11\n\tsymbol_id\x18\x03 \x01(\t\"}\n\x13SymbolPriceResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x34\n\rsymbol_prices\x18\x03 \x03(\x0b\x32\x1d.savourrpc.market.SymbolPrice\"+\n\x11StableCoinRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\"z\n\x12StableCoinResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x32\n\x0cstable_coins\x18\x03 \x03(\x0b\x32\x1c.savourrpc.market.StableCoin\"A\n\x16StableCoinPriceRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x0f\n\x07\x63oin_id\x18\x02 \x01(\t\"\x83\x01\n\x17StableCoinPriceResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x36\n\x0b\x63oin_prices\x18\x03 \x03(\x0b\x32!.savourrpc.market.StableCoinPrice2\xb8\x04\n\x0cPriceService\x12W\n\x0cgetExchanges\x12!.savourrpc.market.ExchangeRequest\x1a\".savourrpc.market.ExchangeResponse\"\x00\x12N\n\tgetAssets\x12\x1e.savourrpc.market.AssetRequest\x1a\x1f.savourrpc.market.AssetResponse\"\x00\x12Q\n\ngetSymbols\x12\x1f.savourrpc.market.SymbolRequest\x1a .savourrpc.market.SymbolResponse\"\x00\x12`\n\x0fgetSymbolPrices\x12$.savourrpc.market.SymbolPriceRequest\x1a%.savourrpc.market.SymbolPriceResponse\"\x00\x12]\n\x0egetStableCoins\x12#.savourrpc.market.StableCoinRequest\x1a$.savourrpc.market.StableCoinResponse\"\x00\x12k\n\x12getStableCoinPrice\x12(.savourrpc.market.StableCoinPriceRequest\x1a).savourrpc.market.StableCoinPriceResponse\"\x00\x42J\n\x14\x63om.savourrpc.marketZ2git.savour.io/savour/savourrpc/go-savourrpc/marketb\x06proto3'
   ,
   dependencies=[savourrpc_dot_common__pb2.DESCRIPTOR,])
 
@@ -202,43 +202,57 @@ _SYMBOLPRICE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='buy_price', full_name='savourrpc.market.SymbolPrice.buy_price', index=4,
+      name='exchange', full_name='savourrpc.market.SymbolPrice.exchange', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sell_price', full_name='savourrpc.market.SymbolPrice.sell_price', index=5,
+      name='symbol', full_name='savourrpc.market.SymbolPrice.symbol', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='avg_price', full_name='savourrpc.market.SymbolPrice.avg_price', index=6,
+      name='buy_price', full_name='savourrpc.market.SymbolPrice.buy_price', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='usd_price', full_name='savourrpc.market.SymbolPrice.usd_price', index=7,
+      name='sell_price', full_name='savourrpc.market.SymbolPrice.sell_price', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cny_price', full_name='savourrpc.market.SymbolPrice.cny_price', index=8,
+      name='avg_price', full_name='savourrpc.market.SymbolPrice.avg_price', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='margin', full_name='savourrpc.market.SymbolPrice.margin', index=9,
+      name='usd_price', full_name='savourrpc.market.SymbolPrice.usd_price', index=9,
       number=10, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cny_price', full_name='savourrpc.market.SymbolPrice.cny_price', index=10,
+      number=11, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='margin', full_name='savourrpc.market.SymbolPrice.margin', index=11,
+      number=12, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -256,7 +270,7 @@ _SYMBOLPRICE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=221,
-  serialized_end=401,
+  serialized_end=435,
 )
 
 
@@ -294,8 +308,8 @@ _STABLECOIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=403,
-  serialized_end=441,
+  serialized_start=437,
+  serialized_end=475,
 )
 
 
@@ -354,8 +368,8 @@ _STABLECOINPRICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=443,
-  serialized_end=540,
+  serialized_start=477,
+  serialized_end=574,
 )
 
 
@@ -386,8 +400,8 @@ _EXCHANGEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=542,
-  serialized_end=583,
+  serialized_start=576,
+  serialized_end=617,
 )
 
 
@@ -432,8 +446,8 @@ _EXCHANGERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=585,
-  serialized_end=700,
+  serialized_start=619,
+  serialized_end=734,
 )
 
 
@@ -478,8 +492,8 @@ _ASSETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=702,
-  serialized_end=778,
+  serialized_start=736,
+  serialized_end=812,
 )
 
 
@@ -524,8 +538,8 @@ _ASSETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=780,
-  serialized_end=886,
+  serialized_start=814,
+  serialized_end=920,
 )
 
 
@@ -563,8 +577,8 @@ _SYMBOLREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=888,
-  serialized_end=948,
+  serialized_start=922,
+  serialized_end=982,
 )
 
 
@@ -609,8 +623,8 @@ _SYMBOLRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=950,
-  serialized_end=1059,
+  serialized_start=984,
+  serialized_end=1093,
 )
 
 
@@ -655,8 +669,8 @@ _SYMBOLPRICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1061,
-  serialized_end=1145,
+  serialized_start=1095,
+  serialized_end=1179,
 )
 
 
@@ -701,8 +715,8 @@ _SYMBOLPRICERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1147,
-  serialized_end=1272,
+  serialized_start=1181,
+  serialized_end=1306,
 )
 
 
@@ -733,8 +747,8 @@ _STABLECOINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1274,
-  serialized_end=1317,
+  serialized_start=1308,
+  serialized_end=1351,
 )
 
 
@@ -779,8 +793,8 @@ _STABLECOINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1319,
-  serialized_end=1441,
+  serialized_start=1353,
+  serialized_end=1475,
 )
 
 
@@ -818,8 +832,8 @@ _STABLECOINPRICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1443,
-  serialized_end=1508,
+  serialized_start=1477,
+  serialized_end=1542,
 )
 
 
@@ -864,8 +878,8 @@ _STABLECOINPRICERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1511,
-  serialized_end=1642,
+  serialized_start=1545,
+  serialized_end=1676,
 )
 
 _EXCHANGERESPONSE.fields_by_name['code'].enum_type = savourrpc_dot_common__pb2._RETURNCODE
@@ -1036,8 +1050,8 @@ _PRICESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1645,
-  serialized_end=2213,
+  serialized_start=1679,
+  serialized_end=2247,
   methods=[
   _descriptor.MethodDescriptor(
     name='getExchanges',

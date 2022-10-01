@@ -28,12 +28,14 @@ message SymbolPrice {
    string name = 2;
    string base = 3;
    string quote = 4;
-   string buy_price = 5;
-   string sell_price = 6;
-   string avg_price = 7;
-   string usd_price = 8;
-   string cny_price = 9;
-   string margin = 10;
+   string exchange = 5;
+   string symbol = 6;
+   string buy_price = 7;
+   string sell_price = 8;
+   string avg_price = 9;
+   string usd_price = 10;
+   string cny_price = 11;
+   string margin = 12;
 }
 
 message StableCoin {
