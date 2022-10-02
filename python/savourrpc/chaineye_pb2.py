@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\026com.savourrpc.chaineyeZ4git.savour.io/savour/savourrpc/go-savourrpc/chaineye',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x18savourrpc/chaineye.proto\x12\x12savourrpc.chaineye\x1a\x16savourrpc/common.proto\"\x96\x01\n\x0b\x41rticleList\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\x05\x12\x0e\n\x06\x61uthor\x18\x04 \x01(\t\x12\r\n\x05views\x18\x05 \x01(\x05\x12\x10\n\x08\x61\x64\x64_time\x18\x06 \x01(\t\x12\x10\n\x08upd_time\x18\x07 \x01(\t\x12\r\n\x05\x63over\x18\x08 \x01(\t\x12\x0c\n\x04like\x18\t \x01(\x05\"w\n\x0b\x43ommentList\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x64\x65tail\x18\x02 \x01(\t\x12\x0e\n\x06\x61uthor\x18\x03 \x01(\t\x12\x10\n\x08\x61\x64\x64_time\x18\x04 \x01(\t\x12\r\n\x05views\x18\x05 \x01(\x05\x12\x0c\n\x04like\x18\x06 \x01(\x05\x12\r\n\x05reply\x18\x07 \x01(\x05\"C\n\x08LikeList\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x61sset\x18\x03 \x01(\t\x12\x0e\n\x06\x61mount\x18\x04 \x01(\t\".\n\x0c\x41ssetAddress\x12\r\n\x05\x61sset\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\"V\n\x0e\x41rticleListReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\x05\x12\x0c\n\x04page\x18\x03 \x01(\r\x12\x10\n\x08pagesize\x18\x04 \x01(\r\"u\n\x0e\x41rticleListRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x31\n\x08\x61rticles\x18\x03 \x03(\x0b\x32\x1f.savourrpc.chaineye.ArticleList\"D\n\x10\x41rticleDetailReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\x05\x12\n\n\x02id\x18\x03 \x01(\t\"\xa7\x02\n\x10\x41rticleDetailRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12\x0e\n\x06\x64\x65tail\x18\x04 \x01(\t\x12\x11\n\tauthor_id\x18\x05 \x01(\t\x12\x0e\n\x06\x61uthor\x18\x06 \x01(\t\x12\r\n\x05views\x18\x07 \x01(\x05\x12\x10\n\x08\x61\x64\x64_time\x18\x08 \x01(\t\x12\x10\n\x08upd_time\x18\t \x01(\t\x12\x0c\n\x04like\x18\n \x01(\x05\x12\x31\n\x08\x63omments\x18\x0b \x03(\x0b\x32\x1f.savourrpc.chaineye.CommentList\x12+\n\x05likes\x18\x0c \x03(\x0b\x32\x1c.savourrpc.chaineye.LikeList\"\\\n\x0e\x43ommentListReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x12\n\narticle_id\x18\x02 \x01(\t\x12\x0c\n\x04page\x18\x03 \x01(\r\x12\x10\n\x08pagesize\x18\x04 \x01(\r\"u\n\x0e\x43ommentListRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x31\n\x08\x63omments\x18\x03 \x03(\x0b\x32\x1f.savourrpc.chaineye.CommentList\"7\n\nAddressReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x11\n\tauthor_id\x18\x02 \x01(\t\"w\n\nAddressRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x37\n\rasset_address\x18\x03 \x03(\x0b\x32 .savourrpc.chaineye.AssetAddress\"\x91\x01\n\x07LikeReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x0f\n\x07tx_hash\x18\x02 \x01(\t\x12\x11\n\tlike_from\x18\x03 \x01(\t\x12\x0f\n\x07like_to\x18\x04 \x01(\t\x12\x0e\n\x06\x61mount\x18\x05 \x01(\t\x12\x12\n\nasset_name\x18\x06 \x01(\t\x12\x15\n\rtoken_address\x18\x07 \x01(\t\";\n\x07LikeRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t2\xca\x03\n\x0f\x43haineyeService\x12Z\n\x0egetArticleList\x12\".savourrpc.chaineye.ArticleListReq\x1a\".savourrpc.chaineye.ArticleListRep\"\x00\x12`\n\x10getArticleDetail\x12$.savourrpc.chaineye.ArticleDetailReq\x1a$.savourrpc.chaineye.ArticleDetailRep\"\x00\x12Z\n\x0egetCommentList\x12\".savourrpc.chaineye.CommentListReq\x1a\".savourrpc.chaineye.CommentListRep\"\x00\x12R\n\x0egetLikeAddress\x12\x1e.savourrpc.chaineye.AddressReq\x1a\x1e.savourrpc.chaineye.AddressRep\"\x00\x12I\n\x0blikeArticle\x12\x1b.savourrpc.chaineye.LikeReq\x1a\x1b.savourrpc.chaineye.LikeRep\"\x00\x42N\n\x16\x63om.savourrpc.chaineyeZ4git.savour.io/savour/savourrpc/go-savourrpc/chaineyeb\x06proto3'
+  serialized_pb=b'\n\x18savourrpc/chaineye.proto\x12\x12savourrpc.chaineye\x1a\x16savourrpc/common.proto\"\x96\x01\n\x0b\x41rticleList\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\x05\x12\x0e\n\x06\x61uthor\x18\x04 \x01(\t\x12\r\n\x05views\x18\x05 \x01(\x05\x12\x10\n\x08\x61\x64\x64_time\x18\x06 \x01(\t\x12\x10\n\x08upd_time\x18\x07 \x01(\t\x12\r\n\x05\x63over\x18\x08 \x01(\t\x12\x0c\n\x04like\x18\t \x01(\x05\"w\n\x0b\x43ommentList\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x64\x65tail\x18\x02 \x01(\t\x12\x0e\n\x06\x61uthor\x18\x03 \x01(\t\x12\x10\n\x08\x61\x64\x64_time\x18\x04 \x01(\t\x12\r\n\x05views\x18\x05 \x01(\x05\x12\x0c\n\x04like\x18\x06 \x01(\x05\x12\r\n\x05reply\x18\x07 \x01(\x05\"C\n\x08LikeList\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x61sset\x18\x03 \x01(\t\x12\x0e\n\x06\x61mount\x18\x04 \x01(\t\"#\n\x07\x43\x61tList\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\".\n\x0c\x41ssetAddress\x12\r\n\x05\x61sset\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\"5\n\rArticleCatReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\x05\"p\n\rArticleCatRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12-\n\x08\x63\x61t_list\x18\x03 \x03(\x0b\x32\x1b.savourrpc.chaineye.CatList\"f\n\x0e\x41rticleListReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\x05\x12\x0e\n\x06\x63\x61t_id\x18\x03 \x01(\t\x12\x0c\n\x04page\x18\x04 \x01(\r\x12\x10\n\x08pagesize\x18\x05 \x01(\r\"u\n\x0e\x41rticleListRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x31\n\x08\x61rticles\x18\x03 \x03(\x0b\x32\x1f.savourrpc.chaineye.ArticleList\"D\n\x10\x41rticleDetailReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\x05\x12\n\n\x02id\x18\x03 \x01(\t\"\xa7\x02\n\x10\x41rticleDetailRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12\x0e\n\x06\x64\x65tail\x18\x04 \x01(\t\x12\x11\n\tauthor_id\x18\x05 \x01(\t\x12\x0e\n\x06\x61uthor\x18\x06 \x01(\t\x12\r\n\x05views\x18\x07 \x01(\x05\x12\x10\n\x08\x61\x64\x64_time\x18\x08 \x01(\t\x12\x10\n\x08upd_time\x18\t \x01(\t\x12\x0c\n\x04like\x18\n \x01(\x05\x12\x31\n\x08\x63omments\x18\x0b \x03(\x0b\x32\x1f.savourrpc.chaineye.CommentList\x12+\n\x05likes\x18\x0c \x03(\x0b\x32\x1c.savourrpc.chaineye.LikeList\"\\\n\x0e\x43ommentListReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x12\n\narticle_id\x18\x02 \x01(\t\x12\x0c\n\x04page\x18\x03 \x01(\r\x12\x10\n\x08pagesize\x18\x04 \x01(\r\"u\n\x0e\x43ommentListRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x31\n\x08\x63omments\x18\x03 \x03(\x0b\x32\x1f.savourrpc.chaineye.CommentList\"7\n\nAddressReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x11\n\tauthor_id\x18\x02 \x01(\t\"w\n\nAddressRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x37\n\rasset_address\x18\x03 \x03(\x0b\x32 .savourrpc.chaineye.AssetAddress\"\xa4\x01\n\x07LikeReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x0f\n\x07tx_hash\x18\x02 \x01(\t\x12\x11\n\tlike_from\x18\x03 \x01(\t\x12\x0f\n\x07like_to\x18\x04 \x01(\t\x12\x0e\n\x06\x61mount\x18\x05 \x01(\t\x12\x12\n\nasset_name\x18\x06 \x01(\t\x12\x15\n\rtoken_address\x18\x07 \x01(\t\x12\x11\n\tauthor_id\x18\x08 \x01(\t\";\n\x07LikeRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t2\xa3\x04\n\x0f\x43haineyeService\x12W\n\rgetArticleCat\x12!.savourrpc.chaineye.ArticleCatReq\x1a!.savourrpc.chaineye.ArticleCatRep\"\x00\x12Z\n\x0egetArticleList\x12\".savourrpc.chaineye.ArticleListReq\x1a\".savourrpc.chaineye.ArticleListRep\"\x00\x12`\n\x10getArticleDetail\x12$.savourrpc.chaineye.ArticleDetailReq\x1a$.savourrpc.chaineye.ArticleDetailRep\"\x00\x12Z\n\x0egetCommentList\x12\".savourrpc.chaineye.CommentListReq\x1a\".savourrpc.chaineye.CommentListRep\"\x00\x12R\n\x0egetLikeAddress\x12\x1e.savourrpc.chaineye.AddressReq\x1a\x1e.savourrpc.chaineye.AddressRep\"\x00\x12I\n\x0blikeArticle\x12\x1b.savourrpc.chaineye.LikeReq\x1a\x1b.savourrpc.chaineye.LikeRep\"\x00\x42N\n\x16\x63om.savourrpc.chaineyeZ4git.savour.io/savour/savourrpc/go-savourrpc/chaineyeb\x06proto3'
   ,
   dependencies=[savourrpc_dot_common__pb2.DESCRIPTOR,])
 
@@ -242,6 +242,45 @@ _LIKELIST = _descriptor.Descriptor(
 )
 
 
+_CATLIST = _descriptor.Descriptor(
+  name='CatList',
+  full_name='savourrpc.chaineye.CatList',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='savourrpc.chaineye.CatList.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='savourrpc.chaineye.CatList.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=415,
+  serialized_end=450,
+)
+
+
 _ASSETADDRESS = _descriptor.Descriptor(
   name='AssetAddress',
   full_name='savourrpc.chaineye.AssetAddress',
@@ -276,8 +315,93 @@ _ASSETADDRESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=415,
-  serialized_end=461,
+  serialized_start=452,
+  serialized_end=498,
+)
+
+
+_ARTICLECATREQ = _descriptor.Descriptor(
+  name='ArticleCatReq',
+  full_name='savourrpc.chaineye.ArticleCatReq',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='consumer_token', full_name='savourrpc.chaineye.ArticleCatReq.consumer_token', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='savourrpc.chaineye.ArticleCatReq.type', index=1,
+      number=2, type=5, cpp_type=1, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=500,
+  serialized_end=553,
+)
+
+
+_ARTICLECATREP = _descriptor.Descriptor(
+  name='ArticleCatRep',
+  full_name='savourrpc.chaineye.ArticleCatRep',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='code', full_name='savourrpc.chaineye.ArticleCatRep.code', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='msg', full_name='savourrpc.chaineye.ArticleCatRep.msg', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cat_list', full_name='savourrpc.chaineye.ArticleCatRep.cat_list', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=555,
+  serialized_end=667,
 )
 
 
@@ -304,15 +428,22 @@ _ARTICLELISTREQ = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='page', full_name='savourrpc.chaineye.ArticleListReq.page', index=2,
-      number=3, type=13, cpp_type=3, label=1,
+      name='cat_id', full_name='savourrpc.chaineye.ArticleListReq.cat_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page', full_name='savourrpc.chaineye.ArticleListReq.page', index=3,
+      number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='pagesize', full_name='savourrpc.chaineye.ArticleListReq.pagesize', index=3,
-      number=4, type=13, cpp_type=3, label=1,
+      name='pagesize', full_name='savourrpc.chaineye.ArticleListReq.pagesize', index=4,
+      number=5, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -329,8 +460,8 @@ _ARTICLELISTREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=463,
-  serialized_end=549,
+  serialized_start=669,
+  serialized_end=771,
 )
 
 
@@ -375,8 +506,8 @@ _ARTICLELISTREP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=551,
-  serialized_end=668,
+  serialized_start=773,
+  serialized_end=890,
 )
 
 
@@ -421,8 +552,8 @@ _ARTICLEDETAILREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=670,
-  serialized_end=738,
+  serialized_start=892,
+  serialized_end=960,
 )
 
 
@@ -530,8 +661,8 @@ _ARTICLEDETAILREP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=741,
-  serialized_end=1036,
+  serialized_start=963,
+  serialized_end=1258,
 )
 
 
@@ -583,8 +714,8 @@ _COMMENTLISTREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1038,
-  serialized_end=1130,
+  serialized_start=1260,
+  serialized_end=1352,
 )
 
 
@@ -629,8 +760,8 @@ _COMMENTLISTREP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1132,
-  serialized_end=1249,
+  serialized_start=1354,
+  serialized_end=1471,
 )
 
 
@@ -668,8 +799,8 @@ _ADDRESSREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1251,
-  serialized_end=1306,
+  serialized_start=1473,
+  serialized_end=1528,
 )
 
 
@@ -714,8 +845,8 @@ _ADDRESSREP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1308,
-  serialized_end=1427,
+  serialized_start=1530,
+  serialized_end=1649,
 )
 
 
@@ -776,6 +907,13 @@ _LIKEREQ = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='author_id', full_name='savourrpc.chaineye.LikeReq.author_id', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -788,8 +926,8 @@ _LIKEREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1430,
-  serialized_end=1575,
+  serialized_start=1652,
+  serialized_end=1816,
 )
 
 
@@ -827,10 +965,12 @@ _LIKEREP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1577,
-  serialized_end=1636,
+  serialized_start=1818,
+  serialized_end=1877,
 )
 
+_ARTICLECATREP.fields_by_name['code'].enum_type = savourrpc_dot_common__pb2._RETURNCODE
+_ARTICLECATREP.fields_by_name['cat_list'].message_type = _CATLIST
 _ARTICLELISTREP.fields_by_name['code'].enum_type = savourrpc_dot_common__pb2._RETURNCODE
 _ARTICLELISTREP.fields_by_name['articles'].message_type = _ARTICLELIST
 _ARTICLEDETAILREP.fields_by_name['code'].enum_type = savourrpc_dot_common__pb2._RETURNCODE
@@ -844,7 +984,10 @@ _LIKEREP.fields_by_name['code'].enum_type = savourrpc_dot_common__pb2._RETURNCOD
 DESCRIPTOR.message_types_by_name['ArticleList'] = _ARTICLELIST
 DESCRIPTOR.message_types_by_name['CommentList'] = _COMMENTLIST
 DESCRIPTOR.message_types_by_name['LikeList'] = _LIKELIST
+DESCRIPTOR.message_types_by_name['CatList'] = _CATLIST
 DESCRIPTOR.message_types_by_name['AssetAddress'] = _ASSETADDRESS
+DESCRIPTOR.message_types_by_name['ArticleCatReq'] = _ARTICLECATREQ
+DESCRIPTOR.message_types_by_name['ArticleCatRep'] = _ARTICLECATREP
 DESCRIPTOR.message_types_by_name['ArticleListReq'] = _ARTICLELISTREQ
 DESCRIPTOR.message_types_by_name['ArticleListRep'] = _ARTICLELISTREP
 DESCRIPTOR.message_types_by_name['ArticleDetailReq'] = _ARTICLEDETAILREQ
@@ -878,12 +1021,33 @@ LikeList = _reflection.GeneratedProtocolMessageType('LikeList', (_message.Messag
   })
 _sym_db.RegisterMessage(LikeList)
 
+CatList = _reflection.GeneratedProtocolMessageType('CatList', (_message.Message,), {
+  'DESCRIPTOR' : _CATLIST,
+  '__module__' : 'savourrpc.chaineye_pb2'
+  # @@protoc_insertion_point(class_scope:savourrpc.chaineye.CatList)
+  })
+_sym_db.RegisterMessage(CatList)
+
 AssetAddress = _reflection.GeneratedProtocolMessageType('AssetAddress', (_message.Message,), {
   'DESCRIPTOR' : _ASSETADDRESS,
   '__module__' : 'savourrpc.chaineye_pb2'
   # @@protoc_insertion_point(class_scope:savourrpc.chaineye.AssetAddress)
   })
 _sym_db.RegisterMessage(AssetAddress)
+
+ArticleCatReq = _reflection.GeneratedProtocolMessageType('ArticleCatReq', (_message.Message,), {
+  'DESCRIPTOR' : _ARTICLECATREQ,
+  '__module__' : 'savourrpc.chaineye_pb2'
+  # @@protoc_insertion_point(class_scope:savourrpc.chaineye.ArticleCatReq)
+  })
+_sym_db.RegisterMessage(ArticleCatReq)
+
+ArticleCatRep = _reflection.GeneratedProtocolMessageType('ArticleCatRep', (_message.Message,), {
+  'DESCRIPTOR' : _ARTICLECATREP,
+  '__module__' : 'savourrpc.chaineye_pb2'
+  # @@protoc_insertion_point(class_scope:savourrpc.chaineye.ArticleCatRep)
+  })
+_sym_db.RegisterMessage(ArticleCatRep)
 
 ArticleListReq = _reflection.GeneratedProtocolMessageType('ArticleListReq', (_message.Message,), {
   'DESCRIPTOR' : _ARTICLELISTREQ,
@@ -965,13 +1129,23 @@ _CHAINEYESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1639,
-  serialized_end=2097,
+  serialized_start=1880,
+  serialized_end=2427,
   methods=[
+  _descriptor.MethodDescriptor(
+    name='getArticleCat',
+    full_name='savourrpc.chaineye.ChaineyeService.getArticleCat',
+    index=0,
+    containing_service=None,
+    input_type=_ARTICLECATREQ,
+    output_type=_ARTICLECATREP,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
   _descriptor.MethodDescriptor(
     name='getArticleList',
     full_name='savourrpc.chaineye.ChaineyeService.getArticleList',
-    index=0,
+    index=1,
     containing_service=None,
     input_type=_ARTICLELISTREQ,
     output_type=_ARTICLELISTREP,
@@ -981,7 +1155,7 @@ _CHAINEYESERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='getArticleDetail',
     full_name='savourrpc.chaineye.ChaineyeService.getArticleDetail',
-    index=1,
+    index=2,
     containing_service=None,
     input_type=_ARTICLEDETAILREQ,
     output_type=_ARTICLEDETAILREP,
@@ -991,7 +1165,7 @@ _CHAINEYESERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='getCommentList',
     full_name='savourrpc.chaineye.ChaineyeService.getCommentList',
-    index=2,
+    index=3,
     containing_service=None,
     input_type=_COMMENTLISTREQ,
     output_type=_COMMENTLISTREP,
@@ -1001,7 +1175,7 @@ _CHAINEYESERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='getLikeAddress',
     full_name='savourrpc.chaineye.ChaineyeService.getLikeAddress',
-    index=3,
+    index=4,
     containing_service=None,
     input_type=_ADDRESSREQ,
     output_type=_ADDRESSREP,
@@ -1011,7 +1185,7 @@ _CHAINEYESERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='likeArticle',
     full_name='savourrpc.chaineye.ChaineyeService.likeArticle',
-    index=4,
+    index=5,
     containing_service=None,
     input_type=_LIKEREQ,
     output_type=_LIKEREP,

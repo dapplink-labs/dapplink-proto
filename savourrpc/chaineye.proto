@@ -34,16 +34,33 @@ message LikeList {
     string amount = 4;
 }
 
+message CatList {
+    string id = 1;
+    string name = 2;
+}
+
 message AssetAddress {
     string asset = 1;
     string address = 2;
 }
 
+message ArticleCatReq {
+   string consumer_token = 1;
+   int32 type = 2;
+}
+
+message ArticleCatRep {
+   ReturnCode code=1;
+   string msg=2;
+   repeated CatList cat_list = 3;
+}
+
 message ArticleListReq {
   string consumer_token = 1;
   int32 type = 2;
-  uint32 page = 3;
-  uint32 pagesize = 4;
+  string cat_id = 3;
+  uint32 page = 4;
+  uint32 pagesize = 5;
 }
 
 message ArticleListRep {
@@ -105,6 +122,7 @@ message LikeReq {
   string amount = 5;
   string asset_name = 6;
   string token_address = 7;
+  string author_id = 8;
 }
 
 message LikeRep {
@@ -113,6 +131,7 @@ message LikeRep {
 }
 
 service ChaineyeService {
+  rpc getArticleCat(ArticleCatReq) returns (ArticleCatRep) {}
   rpc getArticleList(ArticleListReq) returns (ArticleListRep) {}
   rpc getArticleDetail(ArticleDetailReq) returns (ArticleDetailRep) {}
   rpc getCommentList(CommentListReq) returns (CommentListRep) {}

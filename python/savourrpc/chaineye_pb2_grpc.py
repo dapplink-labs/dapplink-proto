@@ -14,6 +14,11 @@ class ChaineyeServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.getArticleCat = channel.unary_unary(
+                '/savourrpc.chaineye.ChaineyeService/getArticleCat',
+                request_serializer=savourrpc_dot_chaineye__pb2.ArticleCatReq.SerializeToString,
+                response_deserializer=savourrpc_dot_chaineye__pb2.ArticleCatRep.FromString,
+                )
         self.getArticleList = channel.unary_unary(
                 '/savourrpc.chaineye.ChaineyeService/getArticleList',
                 request_serializer=savourrpc_dot_chaineye__pb2.ArticleListReq.SerializeToString,
@@ -43,6 +48,12 @@ class ChaineyeServiceStub(object):
 
 class ChaineyeServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
+
+    def getArticleCat(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def getArticleList(self, request, context):
         """Missing associated documentation comment in .proto file."""
@@ -77,6 +88,11 @@ class ChaineyeServiceServicer(object):
 
 def add_ChaineyeServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'getArticleCat': grpc.unary_unary_rpc_method_handler(
+                    servicer.getArticleCat,
+                    request_deserializer=savourrpc_dot_chaineye__pb2.ArticleCatReq.FromString,
+                    response_serializer=savourrpc_dot_chaineye__pb2.ArticleCatRep.SerializeToString,
+            ),
             'getArticleList': grpc.unary_unary_rpc_method_handler(
                     servicer.getArticleList,
                     request_deserializer=savourrpc_dot_chaineye__pb2.ArticleListReq.FromString,
@@ -111,6 +127,23 @@ def add_ChaineyeServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class ChaineyeService(object):
     """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def getArticleCat(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/savourrpc.chaineye.ChaineyeService/getArticleCat',
+            savourrpc_dot_chaineye__pb2.ArticleCatReq.SerializeToString,
+            savourrpc_dot_chaineye__pb2.ArticleCatRep.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def getArticleList(request,
