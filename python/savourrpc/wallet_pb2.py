@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\024com.savourrpc.walletZ2git.savour.io/savour/savourrpc/go-savourrpc/wallet',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x16savourrpc/wallet.proto\x12\x10savourrpc.wallet\x1a\x16savourrpc/common.proto\"\x1a\n\x07\x41\x64\x64ress\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"\x16\n\x05Value\x12\r\n\x05value\x18\x01 \x01(\t\"\x91\x02\n\tTxMessage\x12\x0c\n\x04hash\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\'\n\x04\x66rom\x18\x03 \x03(\x0b\x32\x19.savourrpc.wallet.Address\x12%\n\x02to\x18\x04 \x03(\x0b\x32\x19.savourrpc.wallet.Address\x12&\n\x05value\x18\x07 \x03(\x0b\x32\x17.savourrpc.wallet.Value\x12\x0b\n\x03\x66\x65\x65\x18\x05 \x01(\t\x12*\n\x06status\x18\x06 \x01(\x0e\x32\x1a.savourrpc.wallet.TxStatus\x12\x0c\n\x04type\x18\x08 \x01(\x05\x12\x0e\n\x06height\x18\t \x01(\t\x12\x18\n\x10\x63ontract_address\x18\n \x01(\t\"C\n\x03Vin\x12\x0c\n\x04hash\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\x0e\n\x06\x61mount\x18\x03 \x01(\x03\x12\x0f\n\x07\x61\x64\x64ress\x18\x04 \x01(\t\"6\n\x04Vout\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x03\x12\r\n\x05index\x18\x03 \x01(\r\"M\n\x13SupportCoinsRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0f\n\x07network\x18\x03 \x01(\t\"Y\n\x14SupportCoinsResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07support\x18\x03 \x01(\x08\"c\n\x15\x43onvertAddressRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0f\n\x07network\x18\x03 \x01(\t\x12\x12\n\npublic_key\x18\x04 \x01(\x0c\"[\n\x16\x43onvertAddressResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\t\"n\n\x13ValidAddressRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0f\n\x07network\x18\x03 \x01(\t\x12\x0e\n\x06symbol\x18\x04 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x05 \x01(\t\"\x8a\x01\n\x14ValidAddressResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\r\n\x05valid\x18\x03 \x01(\x08\x12\x16\n\x0e\x63\x61n_withdrawal\x18\x04 \x01(\x08\x12\x19\n\x11\x63\x61nonical_address\x18\x05 \x01(\t\"e\n\x0cNonceRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04\x63oin\x18\x03 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x04 \x01(\t\x12\x0f\n\x07network\x18\x05 \x01(\t\"P\n\rNonceResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\r\n\x05nonce\x18\x03 \x01(\t\"W\n\x0fGasPriceRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04\x63oin\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\"Q\n\x10GasPriceResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0b\n\x03gas\x18\x03 \x01(\t\"\x81\x01\n\x0e\x42\x61lanceRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04\x63oin\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x05 \x01(\t\x12\x18\n\x10\x63ontract_address\x18\x06 \x01(\t\"T\n\x0f\x42\x61lanceResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07\x62\x61lance\x18\x03 \x01(\t\"g\n\x0e\x41\x63\x63ountRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04\x63oin\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x05 \x01(\t\"~\n\x0f\x41\x63\x63ountResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x16\n\x0e\x61\x63\x63ount_number\x18\x03 \x01(\t\x12\x10\n\x08sequence\x18\x04 \x01(\t\x12\x0f\n\x07network\x18\x05 \x01(\t\"g\n\x0eMinRentRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04\x63oin\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x05 \x01(\t\"R\n\x0fMinRentResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\t\"e\n\rSendTxRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04\x63oin\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0e\n\x06raw_tx\x18\x05 \x01(\t\"S\n\x0eSendTxResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07tx_hash\x18\x03 \x01(\t\"\xa3\x01\n\x10TxAddressRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04\x63oin\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x05 \x01(\t\x12\x18\n\x10\x63ontract_address\x18\x06 \x01(\t\x12\x0c\n\x04page\x18\x07 \x01(\r\x12\x10\n\x08pagesize\x18\x08 \x01(\r\"n\n\x11TxAddressResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\'\n\x02tx\x18\x03 \x03(\x0b\x32\x1b.savourrpc.wallet.TxMessage\"c\n\rTxHashRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04\x63oin\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0c\n\x04hash\x18\x05 \x01(\t\"k\n\x0eTxHashResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\'\n\x02tx\x18\x03 \x01(\x0b\x32\x1b.savourrpc.wallet.TxMessage\"y\n\x0bUtxoRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0e\n\x06symbol\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\"\n\x03vin\x18\x05 \x01(\x0b\x32\x15.savourrpc.wallet.Vin\"Q\n\x0cUtxoResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07unspent\x18\x03 \x01(\x08\"n\n\x16UtxoInsFromDataRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0e\n\x06symbol\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x05 \x01(\x0c\"h\n\x0fUtxoInsResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12#\n\x04vins\x18\x03 \x03(\x0b\x32\x15.savourrpc.wallet.Vin\"\xa2\x01\n\x11TxFromDataRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0e\n\x06symbol\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x10\n\x08raw_data\x18\x05 \x01(\x0c\x12\x0e\n\x06height\x18\x06 \x01(\x03\x12#\n\x04vins\x18\x07 \x03(\x0b\x32\x15.savourrpc.wallet.Vin\"\xd8\x02\n\x11\x41\x63\x63ountTxResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07tx_hash\x18\x03 \x01(\t\x12*\n\x06status\x18\x04 \x01(\x0e\x32\x1a.savourrpc.wallet.TxStatus\x12\x0c\n\x04\x66rom\x18\x05 \x01(\t\x12\n\n\x02to\x18\x06 \x01(\t\x12\x0e\n\x06\x61mount\x18\x07 \x01(\t\x12\x0c\n\x04memo\x18\x08 \x01(\t\x12\r\n\x05nonce\x18\t \x01(\x04\x12\x11\n\tgas_limit\x18\n \x01(\t\x12\x11\n\tgas_price\x18\x0b \x01(\t\x12\x10\n\x08\x63ost_fee\x18\x0c \x01(\t\x12\x14\n\x0c\x62lock_height\x18\r \x01(\x04\x12\x12\n\nblock_time\x18\x0e \x01(\x04\x12\x11\n\tsign_hash\x18\x0f \x01(\x0c\x12\x18\n\x10\x63ontract_address\x18\x10 \x01(\t\"\x9c\x02\n\x0eUtxoTxResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07tx_hash\x18\x03 \x01(\t\x12*\n\x06status\x18\x04 \x01(\x0e\x32\x1a.savourrpc.wallet.TxStatus\x12#\n\x04vins\x18\x05 \x03(\x0b\x32\x15.savourrpc.wallet.Vin\x12%\n\x05vouts\x18\x06 \x03(\x0b\x32\x16.savourrpc.wallet.Vout\x12\x13\n\x0bsign_hashes\x18\x07 \x03(\x0c\x12\x10\n\x08\x63ost_fee\x18\x08 \x01(\t\x12\x14\n\x0c\x62lock_height\x18\t \x01(\x04\x12\x12\n\nblock_time\x18\n \x01(\x04\"\xae\x01\n\x17TxFromSignedDataRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0e\n\x06symbol\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x16\n\x0esigned_tx_data\x18\x05 \x01(\x0c\x12\x0e\n\x06height\x18\x06 \x01(\x03\x12#\n\x04vins\x18\x07 \x03(\x0b\x32\x15.savourrpc.wallet.Vin\"\x9e\x01\n\x1c\x43reateAccountSignedTxRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0e\n\x06symbol\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0f\n\x07tx_data\x18\x05 \x01(\x0c\x12\x11\n\tsignature\x18\x06 \x01(\x0c\x12\x12\n\npublic_key\x18\x07 \x01(\x0c\"p\n\x16\x43reateSignedTxResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x16\n\x0esigned_tx_data\x18\x03 \x01(\x0c\x12\x0c\n\x04hash\x18\x04 \x01(\x0c\"\xe7\x01\n\x16\x43reateAccountTxRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0e\n\x06symbol\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0c\n\x04\x66rom\x18\x05 \x01(\t\x12\n\n\x02to\x18\x06 \x01(\t\x12\x0e\n\x06\x61mount\x18\x07 \x01(\t\x12\x0c\n\x04memo\x18\x08 \x01(\t\x12\x11\n\tgas_limit\x18\t \x01(\t\x12\x11\n\tgas_price\x18\n \x01(\t\x12\r\n\x05nonce\x18\x0b \x01(\x04\x12\x18\n\x10\x63ontract_address\x18\x0c \x01(\t\"o\n\x17\x43reateAccountTxResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07tx_data\x18\x03 \x01(\x0c\x12\x11\n\tsign_hash\x18\x04 \x01(\x0c\"\x9d\x01\n\x19\x43reateUtxoSignedTxRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0e\n\x06symbol\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0f\n\x07tx_data\x18\x05 \x01(\x0c\x12\x12\n\nsignatures\x18\x06 \x03(\x0c\x12\x13\n\x0bpublic_keys\x18\x07 \x03(\x0c\"\xb6\x01\n\x13\x43reateUtxoTxRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0e\n\x06symbol\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12#\n\x04vins\x18\x05 \x03(\x0b\x32\x15.savourrpc.wallet.Vin\x12%\n\x05vouts\x18\x06 \x03(\x0b\x32\x16.savourrpc.wallet.Vout\x12\x0b\n\x03\x66\x65\x65\x18\x07 \x01(\t\"n\n\x14\x43reateUtxoTxResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07tx_data\x18\x03 \x01(\x0c\x12\x13\n\x0bsign_hashes\x18\x04 \x03(\x0c\"\xd3\x01\n\x15VerifySignedTxRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0e\n\x06symbol\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x15\n\taddresses\x18\x05 \x03(\tB\x02\x18\x01\x12\x16\n\x0esigned_tx_data\x18\x06 \x01(\x0c\x12\x0e\n\x06sender\x18\x07 \x01(\t\x12\x0e\n\x06height\x18\x08 \x01(\x03\x12#\n\x04vins\x18\t \x03(\x0b\x32\x15.savourrpc.wallet.Vin\"\\\n\x16VerifySignedTxResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x10\n\x08verified\x18\x03 \x01(\x08*d\n\x08TxStatus\x12\x0c\n\x08NotFound\x10\x00\x12\x0b\n\x07Pending\x10\x01\x12\n\n\x06\x46\x61iled\x10\x02\x12\x0b\n\x07Success\x10\x03\x12\x19\n\x15\x43ontractExecuteFailed\x10\x04\x12\t\n\x05Other\x10\x05\x32\xa0\x11\n\rWalletService\x12\x62\n\x0fgetSupportCoins\x12%.savourrpc.wallet.SupportCoinsRequest\x1a&.savourrpc.wallet.SupportCoinsResponse\"\x00\x12\x65\n\x0e\x63onvertAddress\x12\'.savourrpc.wallet.ConvertAddressRequest\x1a(.savourrpc.wallet.ConvertAddressResponse\"\x00\x12_\n\x0cvalidAddress\x12%.savourrpc.wallet.ValidAddressRequest\x1a&.savourrpc.wallet.ValidAddressResponse\"\x00\x12M\n\x08getNonce\x12\x1e.savourrpc.wallet.NonceRequest\x1a\x1f.savourrpc.wallet.NonceResponse\"\x00\x12V\n\x0bgetGasPrice\x12!.savourrpc.wallet.GasPriceRequest\x1a\".savourrpc.wallet.GasPriceResponse\"\x00\x12S\n\ngetBalance\x12 .savourrpc.wallet.BalanceRequest\x1a!.savourrpc.wallet.BalanceResponse\"\x00\x12S\n\ngetAccount\x12 .savourrpc.wallet.AccountRequest\x1a!.savourrpc.wallet.AccountResponse\"\x00\x12S\n\ngetMinRent\x12 .savourrpc.wallet.MinRentRequest\x1a!.savourrpc.wallet.MinRentResponse\"\x00\x12M\n\x06SendTx\x12\x1f.savourrpc.wallet.SendTxRequest\x1a .savourrpc.wallet.SendTxResponse\"\x00\x12[\n\x0egetTxByAddress\x12\".savourrpc.wallet.TxAddressRequest\x1a#.savourrpc.wallet.TxAddressResponse\"\x00\x12R\n\x0bgetTxByHash\x12\x1f.savourrpc.wallet.TxHashRequest\x1a .savourrpc.wallet.TxHashResponse\"\x00\x12J\n\x07getUtxo\x12\x1d.savourrpc.wallet.UtxoRequest\x1a\x1e.savourrpc.wallet.UtxoResponse\"\x00\x12\x61\n\x12getUtxoInsFromData\x12(.savourrpc.wallet.UtxoInsFromDataRequest\x1a!.savourrpc.wallet.UtxoInsResponse\x12`\n\x14getAccountTxFromData\x12#.savourrpc.wallet.TxFromDataRequest\x1a#.savourrpc.wallet.AccountTxResponse\x12Z\n\x11getUtxoTxFromData\x12#.savourrpc.wallet.TxFromDataRequest\x1a .savourrpc.wallet.UtxoTxResponse\x12l\n\x1agetAccountTxFromSignedData\x12).savourrpc.wallet.TxFromSignedDataRequest\x1a#.savourrpc.wallet.AccountTxResponse\x12\x66\n\x17GetUtxoTxFromSignedData\x12).savourrpc.wallet.TxFromSignedDataRequest\x1a .savourrpc.wallet.UtxoTxResponse\x12q\n\x15\x63reateAccountSignedTx\x12..savourrpc.wallet.CreateAccountSignedTxRequest\x1a(.savourrpc.wallet.CreateSignedTxResponse\x12\x66\n\x0f\x63reateAccountTx\x12(.savourrpc.wallet.CreateAccountTxRequest\x1a).savourrpc.wallet.CreateAccountTxResponse\x12k\n\x12\x63reateUtxoSignedTx\x12+.savourrpc.wallet.CreateUtxoSignedTxRequest\x1a(.savourrpc.wallet.CreateSignedTxResponse\x12]\n\x0c\x63reateUtxoTx\x12%.savourrpc.wallet.CreateUtxoTxRequest\x1a&.savourrpc.wallet.CreateUtxoTxResponse\x12j\n\x15verifyAccountSignedTx\x12\'.savourrpc.wallet.VerifySignedTxRequest\x1a(.savourrpc.wallet.VerifySignedTxResponse\x12g\n\x12verifyUtxoSignedTx\x12\'.savourrpc.wallet.VerifySignedTxRequest\x1a(.savourrpc.wallet.VerifySignedTxResponseBJ\n\x14\x63om.savourrpc.walletZ2git.savour.io/savour/savourrpc/go-savourrpc/walletb\x06proto3'
+  serialized_pb=b'\n\x16savourrpc/wallet.proto\x12\x10savourrpc.wallet\x1a\x16savourrpc/common.proto\"\x1a\n\x07\x41\x64\x64ress\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"\x16\n\x05Value\x12\r\n\x05value\x18\x01 \x01(\t\"\xa6\x02\n\tTxMessage\x12\x0c\n\x04hash\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12(\n\x05\x66roms\x18\x03 \x03(\x0b\x32\x19.savourrpc.wallet.Address\x12&\n\x03tos\x18\x04 \x03(\x0b\x32\x19.savourrpc.wallet.Address\x12\'\n\x06values\x18\x07 \x03(\x0b\x32\x17.savourrpc.wallet.Value\x12\x0b\n\x03\x66\x65\x65\x18\x05 \x01(\t\x12*\n\x06status\x18\x06 \x01(\x0e\x32\x1a.savourrpc.wallet.TxStatus\x12\x0c\n\x04type\x18\x08 \x01(\x05\x12\x0e\n\x06height\x18\t \x01(\t\x12\x18\n\x10\x63ontract_address\x18\n \x01(\t\x12\x10\n\x08\x64\x61tetime\x18\x0b \x01(\t\"C\n\x03Vin\x12\x0c\n\x04hash\x18\x01 \x01(\t\x12\r\n\x05index\x18\x02 \x01(\r\x12\x0e\n\x06\x61mount\x18\x03 \x01(\x03\x12\x0f\n\x07\x61\x64\x64ress\x18\x04 \x01(\t\"6\n\x04Vout\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x03\x12\r\n\x05index\x18\x03 \x01(\r\"M\n\x13SupportCoinsRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0f\n\x07network\x18\x03 \x01(\t\"Y\n\x14SupportCoinsResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07support\x18\x03 \x01(\x08\"c\n\x15\x43onvertAddressRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0f\n\x07network\x18\x03 \x01(\t\x12\x12\n\npublic_key\x18\x04 \x01(\x0c\"[\n\x16\x43onvertAddressResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\t\"n\n\x13ValidAddressRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0f\n\x07network\x18\x03 \x01(\t\x12\x0e\n\x06symbol\x18\x04 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x05 \x01(\t\"\x8a\x01\n\x14ValidAddressResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\r\n\x05valid\x18\x03 \x01(\x08\x12\x16\n\x0e\x63\x61n_withdrawal\x18\x04 \x01(\x08\x12\x19\n\x11\x63\x61nonical_address\x18\x05 \x01(\t\"e\n\x0cNonceRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04\x63oin\x18\x03 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x04 \x01(\t\x12\x0f\n\x07network\x18\x05 \x01(\t\"P\n\rNonceResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\r\n\x05nonce\x18\x03 \x01(\t\"W\n\x0fGasPriceRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04\x63oin\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\"Q\n\x10GasPriceResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0b\n\x03gas\x18\x03 \x01(\t\"\x81\x01\n\x0e\x42\x61lanceRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04\x63oin\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x05 \x01(\t\x12\x18\n\x10\x63ontract_address\x18\x06 \x01(\t\"T\n\x0f\x42\x61lanceResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07\x62\x61lance\x18\x03 \x01(\t\"g\n\x0e\x41\x63\x63ountRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04\x63oin\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x05 \x01(\t\"~\n\x0f\x41\x63\x63ountResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x16\n\x0e\x61\x63\x63ount_number\x18\x03 \x01(\t\x12\x10\n\x08sequence\x18\x04 \x01(\t\x12\x0f\n\x07network\x18\x05 \x01(\t\"g\n\x0eMinRentRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04\x63oin\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x05 \x01(\t\"R\n\x0fMinRentResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\t\"e\n\rSendTxRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04\x63oin\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0e\n\x06raw_tx\x18\x05 \x01(\t\"S\n\x0eSendTxResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07tx_hash\x18\x03 \x01(\t\"\xa3\x01\n\x10TxAddressRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04\x63oin\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x05 \x01(\t\x12\x18\n\x10\x63ontract_address\x18\x06 \x01(\t\x12\x0c\n\x04page\x18\x07 \x01(\r\x12\x10\n\x08pagesize\x18\x08 \x01(\r\"n\n\x11TxAddressResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\'\n\x02tx\x18\x03 \x03(\x0b\x32\x1b.savourrpc.wallet.TxMessage\"c\n\rTxHashRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04\x63oin\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0c\n\x04hash\x18\x05 \x01(\t\"k\n\x0eTxHashResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\'\n\x02tx\x18\x03 \x01(\x0b\x32\x1b.savourrpc.wallet.TxMessage\"y\n\x0bUtxoRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0e\n\x06symbol\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\"\n\x03vin\x18\x05 \x01(\x0b\x32\x15.savourrpc.wallet.Vin\"Q\n\x0cUtxoResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07unspent\x18\x03 \x01(\x08\"n\n\x16UtxoInsFromDataRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0e\n\x06symbol\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0c\n\x04\x64\x61ta\x18\x05 \x01(\x0c\"h\n\x0fUtxoInsResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12#\n\x04vins\x18\x03 \x03(\x0b\x32\x15.savourrpc.wallet.Vin\"\xa2\x01\n\x11TxFromDataRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0e\n\x06symbol\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x10\n\x08raw_data\x18\x05 \x01(\x0c\x12\x0e\n\x06height\x18\x06 \x01(\x03\x12#\n\x04vins\x18\x07 \x03(\x0b\x32\x15.savourrpc.wallet.Vin\"\xd8\x02\n\x11\x41\x63\x63ountTxResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07tx_hash\x18\x03 \x01(\t\x12*\n\x06status\x18\x04 \x01(\x0e\x32\x1a.savourrpc.wallet.TxStatus\x12\x0c\n\x04\x66rom\x18\x05 \x01(\t\x12\n\n\x02to\x18\x06 \x01(\t\x12\x0e\n\x06\x61mount\x18\x07 \x01(\t\x12\x0c\n\x04memo\x18\x08 \x01(\t\x12\r\n\x05nonce\x18\t \x01(\x04\x12\x11\n\tgas_limit\x18\n \x01(\t\x12\x11\n\tgas_price\x18\x0b \x01(\t\x12\x10\n\x08\x63ost_fee\x18\x0c \x01(\t\x12\x14\n\x0c\x62lock_height\x18\r \x01(\x04\x12\x12\n\nblock_time\x18\x0e \x01(\x04\x12\x11\n\tsign_hash\x18\x0f \x01(\x0c\x12\x18\n\x10\x63ontract_address\x18\x10 \x01(\t\"\x9c\x02\n\x0eUtxoTxResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07tx_hash\x18\x03 \x01(\t\x12*\n\x06status\x18\x04 \x01(\x0e\x32\x1a.savourrpc.wallet.TxStatus\x12#\n\x04vins\x18\x05 \x03(\x0b\x32\x15.savourrpc.wallet.Vin\x12%\n\x05vouts\x18\x06 \x03(\x0b\x32\x16.savourrpc.wallet.Vout\x12\x13\n\x0bsign_hashes\x18\x07 \x03(\x0c\x12\x10\n\x08\x63ost_fee\x18\x08 \x01(\t\x12\x14\n\x0c\x62lock_height\x18\t \x01(\x04\x12\x12\n\nblock_time\x18\n \x01(\x04\"\xae\x01\n\x17TxFromSignedDataRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0e\n\x06symbol\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x16\n\x0esigned_tx_data\x18\x05 \x01(\x0c\x12\x0e\n\x06height\x18\x06 \x01(\x03\x12#\n\x04vins\x18\x07 \x03(\x0b\x32\x15.savourrpc.wallet.Vin\"\x9e\x01\n\x1c\x43reateAccountSignedTxRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0e\n\x06symbol\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0f\n\x07tx_data\x18\x05 \x01(\x0c\x12\x11\n\tsignature\x18\x06 \x01(\x0c\x12\x12\n\npublic_key\x18\x07 \x01(\x0c\"p\n\x16\x43reateSignedTxResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x16\n\x0esigned_tx_data\x18\x03 \x01(\x0c\x12\x0c\n\x04hash\x18\x04 \x01(\x0c\"\xe7\x01\n\x16\x43reateAccountTxRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0e\n\x06symbol\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0c\n\x04\x66rom\x18\x05 \x01(\t\x12\n\n\x02to\x18\x06 \x01(\t\x12\x0e\n\x06\x61mount\x18\x07 \x01(\t\x12\x0c\n\x04memo\x18\x08 \x01(\t\x12\x11\n\tgas_limit\x18\t \x01(\t\x12\x11\n\tgas_price\x18\n \x01(\t\x12\r\n\x05nonce\x18\x0b \x01(\x04\x12\x18\n\x10\x63ontract_address\x18\x0c \x01(\t\"o\n\x17\x43reateAccountTxResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07tx_data\x18\x03 \x01(\x0c\x12\x11\n\tsign_hash\x18\x04 \x01(\x0c\"\x9d\x01\n\x19\x43reateUtxoSignedTxRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0e\n\x06symbol\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x0f\n\x07tx_data\x18\x05 \x01(\x0c\x12\x12\n\nsignatures\x18\x06 \x03(\x0c\x12\x13\n\x0bpublic_keys\x18\x07 \x03(\x0c\"\xb6\x01\n\x13\x43reateUtxoTxRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0e\n\x06symbol\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12#\n\x04vins\x18\x05 \x03(\x0b\x32\x15.savourrpc.wallet.Vin\x12%\n\x05vouts\x18\x06 \x03(\x0b\x32\x16.savourrpc.wallet.Vout\x12\x0b\n\x03\x66\x65\x65\x18\x07 \x01(\t\"n\n\x14\x43reateUtxoTxResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07tx_data\x18\x03 \x01(\x0c\x12\x13\n\x0bsign_hashes\x18\x04 \x03(\x0c\"\xd3\x01\n\x15VerifySignedTxRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0e\n\x06symbol\x18\x03 \x01(\t\x12\x0f\n\x07network\x18\x04 \x01(\t\x12\x15\n\taddresses\x18\x05 \x03(\tB\x02\x18\x01\x12\x16\n\x0esigned_tx_data\x18\x06 \x01(\x0c\x12\x0e\n\x06sender\x18\x07 \x01(\t\x12\x0e\n\x06height\x18\x08 \x01(\x03\x12#\n\x04vins\x18\t \x03(\x0b\x32\x15.savourrpc.wallet.Vin\"\\\n\x16VerifySignedTxResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x10\n\x08verified\x18\x03 \x01(\x08*d\n\x08TxStatus\x12\x0c\n\x08NotFound\x10\x00\x12\x0b\n\x07Pending\x10\x01\x12\n\n\x06\x46\x61iled\x10\x02\x12\x0b\n\x07Success\x10\x03\x12\x19\n\x15\x43ontractExecuteFailed\x10\x04\x12\t\n\x05Other\x10\x05\x32\xa0\x11\n\rWalletService\x12\x62\n\x0fgetSupportCoins\x12%.savourrpc.wallet.SupportCoinsRequest\x1a&.savourrpc.wallet.SupportCoinsResponse\"\x00\x12\x65\n\x0e\x63onvertAddress\x12\'.savourrpc.wallet.ConvertAddressRequest\x1a(.savourrpc.wallet.ConvertAddressResponse\"\x00\x12_\n\x0cvalidAddress\x12%.savourrpc.wallet.ValidAddressRequest\x1a&.savourrpc.wallet.ValidAddressResponse\"\x00\x12M\n\x08getNonce\x12\x1e.savourrpc.wallet.NonceRequest\x1a\x1f.savourrpc.wallet.NonceResponse\"\x00\x12V\n\x0bgetGasPrice\x12!.savourrpc.wallet.GasPriceRequest\x1a\".savourrpc.wallet.GasPriceResponse\"\x00\x12S\n\ngetBalance\x12 .savourrpc.wallet.BalanceRequest\x1a!.savourrpc.wallet.BalanceResponse\"\x00\x12S\n\ngetAccount\x12 .savourrpc.wallet.AccountRequest\x1a!.savourrpc.wallet.AccountResponse\"\x00\x12S\n\ngetMinRent\x12 .savourrpc.wallet.MinRentRequest\x1a!.savourrpc.wallet.MinRentResponse\"\x00\x12M\n\x06SendTx\x12\x1f.savourrpc.wallet.SendTxRequest\x1a .savourrpc.wallet.SendTxResponse\"\x00\x12[\n\x0egetTxByAddress\x12\".savourrpc.wallet.TxAddressRequest\x1a#.savourrpc.wallet.TxAddressResponse\"\x00\x12R\n\x0bgetTxByHash\x12\x1f.savourrpc.wallet.TxHashRequest\x1a .savourrpc.wallet.TxHashResponse\"\x00\x12J\n\x07getUtxo\x12\x1d.savourrpc.wallet.UtxoRequest\x1a\x1e.savourrpc.wallet.UtxoResponse\"\x00\x12\x61\n\x12getUtxoInsFromData\x12(.savourrpc.wallet.UtxoInsFromDataRequest\x1a!.savourrpc.wallet.UtxoInsResponse\x12`\n\x14getAccountTxFromData\x12#.savourrpc.wallet.TxFromDataRequest\x1a#.savourrpc.wallet.AccountTxResponse\x12Z\n\x11getUtxoTxFromData\x12#.savourrpc.wallet.TxFromDataRequest\x1a .savourrpc.wallet.UtxoTxResponse\x12l\n\x1agetAccountTxFromSignedData\x12).savourrpc.wallet.TxFromSignedDataRequest\x1a#.savourrpc.wallet.AccountTxResponse\x12\x66\n\x17GetUtxoTxFromSignedData\x12).savourrpc.wallet.TxFromSignedDataRequest\x1a .savourrpc.wallet.UtxoTxResponse\x12q\n\x15\x63reateAccountSignedTx\x12..savourrpc.wallet.CreateAccountSignedTxRequest\x1a(.savourrpc.wallet.CreateSignedTxResponse\x12\x66\n\x0f\x63reateAccountTx\x12(.savourrpc.wallet.CreateAccountTxRequest\x1a).savourrpc.wallet.CreateAccountTxResponse\x12k\n\x12\x63reateUtxoSignedTx\x12+.savourrpc.wallet.CreateUtxoSignedTxRequest\x1a(.savourrpc.wallet.CreateSignedTxResponse\x12]\n\x0c\x63reateUtxoTx\x12%.savourrpc.wallet.CreateUtxoTxRequest\x1a&.savourrpc.wallet.CreateUtxoTxResponse\x12j\n\x15verifyAccountSignedTx\x12\'.savourrpc.wallet.VerifySignedTxRequest\x1a(.savourrpc.wallet.VerifySignedTxResponse\x12g\n\x12verifyUtxoSignedTx\x12\'.savourrpc.wallet.VerifySignedTxRequest\x1a(.savourrpc.wallet.VerifySignedTxResponseBJ\n\x14\x63om.savourrpc.walletZ2git.savour.io/savour/savourrpc/go-savourrpc/walletb\x06proto3'
   ,
   dependencies=[savourrpc_dot_common__pb2.DESCRIPTOR,])
 
@@ -65,8 +65,8 @@ _TXSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5598,
-  serialized_end=5698,
+  serialized_start=5619,
+  serialized_end=5719,
 )
 _sym_db.RegisterEnumDescriptor(_TXSTATUS)
 
@@ -167,21 +167,21 @@ _TXMESSAGE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='from', full_name='savourrpc.wallet.TxMessage.from', index=2,
+      name='froms', full_name='savourrpc.wallet.TxMessage.froms', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='to', full_name='savourrpc.wallet.TxMessage.to', index=3,
+      name='tos', full_name='savourrpc.wallet.TxMessage.tos', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='savourrpc.wallet.TxMessage.value', index=4,
+      name='values', full_name='savourrpc.wallet.TxMessage.values', index=4,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -222,6 +222,13 @@ _TXMESSAGE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='datetime', full_name='savourrpc.wallet.TxMessage.datetime', index=10,
+      number=11, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -235,7 +242,7 @@ _TXMESSAGE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=121,
-  serialized_end=394,
+  serialized_end=415,
 )
 
 
@@ -287,8 +294,8 @@ _VIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=396,
-  serialized_end=463,
+  serialized_start=417,
+  serialized_end=484,
 )
 
 
@@ -333,8 +340,8 @@ _VOUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=465,
-  serialized_end=519,
+  serialized_start=486,
+  serialized_end=540,
 )
 
 
@@ -379,8 +386,8 @@ _SUPPORTCOINSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=521,
-  serialized_end=598,
+  serialized_start=542,
+  serialized_end=619,
 )
 
 
@@ -425,8 +432,8 @@ _SUPPORTCOINSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=600,
-  serialized_end=689,
+  serialized_start=621,
+  serialized_end=710,
 )
 
 
@@ -478,8 +485,8 @@ _CONVERTADDRESSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=691,
-  serialized_end=790,
+  serialized_start=712,
+  serialized_end=811,
 )
 
 
@@ -524,8 +531,8 @@ _CONVERTADDRESSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=792,
-  serialized_end=883,
+  serialized_start=813,
+  serialized_end=904,
 )
 
 
@@ -584,8 +591,8 @@ _VALIDADDRESSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=885,
-  serialized_end=995,
+  serialized_start=906,
+  serialized_end=1016,
 )
 
 
@@ -644,8 +651,8 @@ _VALIDADDRESSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=998,
-  serialized_end=1136,
+  serialized_start=1019,
+  serialized_end=1157,
 )
 
 
@@ -704,8 +711,8 @@ _NONCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1138,
-  serialized_end=1239,
+  serialized_start=1159,
+  serialized_end=1260,
 )
 
 
@@ -750,8 +757,8 @@ _NONCERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1241,
-  serialized_end=1321,
+  serialized_start=1262,
+  serialized_end=1342,
 )
 
 
@@ -803,8 +810,8 @@ _GASPRICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1323,
-  serialized_end=1410,
+  serialized_start=1344,
+  serialized_end=1431,
 )
 
 
@@ -849,8 +856,8 @@ _GASPRICERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1412,
-  serialized_end=1493,
+  serialized_start=1433,
+  serialized_end=1514,
 )
 
 
@@ -916,8 +923,8 @@ _BALANCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1496,
-  serialized_end=1625,
+  serialized_start=1517,
+  serialized_end=1646,
 )
 
 
@@ -962,8 +969,8 @@ _BALANCERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1627,
-  serialized_end=1711,
+  serialized_start=1648,
+  serialized_end=1732,
 )
 
 
@@ -1022,8 +1029,8 @@ _ACCOUNTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1713,
-  serialized_end=1816,
+  serialized_start=1734,
+  serialized_end=1837,
 )
 
 
@@ -1082,8 +1089,8 @@ _ACCOUNTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1818,
-  serialized_end=1944,
+  serialized_start=1839,
+  serialized_end=1965,
 )
 
 
@@ -1142,8 +1149,8 @@ _MINRENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1946,
-  serialized_end=2049,
+  serialized_start=1967,
+  serialized_end=2070,
 )
 
 
@@ -1188,8 +1195,8 @@ _MINRENTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2051,
-  serialized_end=2133,
+  serialized_start=2072,
+  serialized_end=2154,
 )
 
 
@@ -1248,8 +1255,8 @@ _SENDTXREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2135,
-  serialized_end=2236,
+  serialized_start=2156,
+  serialized_end=2257,
 )
 
 
@@ -1294,8 +1301,8 @@ _SENDTXRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2238,
-  serialized_end=2321,
+  serialized_start=2259,
+  serialized_end=2342,
 )
 
 
@@ -1375,8 +1382,8 @@ _TXADDRESSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2324,
-  serialized_end=2487,
+  serialized_start=2345,
+  serialized_end=2508,
 )
 
 
@@ -1421,8 +1428,8 @@ _TXADDRESSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2489,
-  serialized_end=2599,
+  serialized_start=2510,
+  serialized_end=2620,
 )
 
 
@@ -1481,8 +1488,8 @@ _TXHASHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2601,
-  serialized_end=2700,
+  serialized_start=2622,
+  serialized_end=2721,
 )
 
 
@@ -1527,8 +1534,8 @@ _TXHASHRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2702,
-  serialized_end=2809,
+  serialized_start=2723,
+  serialized_end=2830,
 )
 
 
@@ -1587,8 +1594,8 @@ _UTXOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2811,
-  serialized_end=2932,
+  serialized_start=2832,
+  serialized_end=2953,
 )
 
 
@@ -1633,8 +1640,8 @@ _UTXORESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2934,
-  serialized_end=3015,
+  serialized_start=2955,
+  serialized_end=3036,
 )
 
 
@@ -1693,8 +1700,8 @@ _UTXOINSFROMDATAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3017,
-  serialized_end=3127,
+  serialized_start=3038,
+  serialized_end=3148,
 )
 
 
@@ -1739,8 +1746,8 @@ _UTXOINSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3129,
-  serialized_end=3233,
+  serialized_start=3150,
+  serialized_end=3254,
 )
 
 
@@ -1813,8 +1820,8 @@ _TXFROMDATAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3236,
-  serialized_end=3398,
+  serialized_start=3257,
+  serialized_end=3419,
 )
 
 
@@ -1950,8 +1957,8 @@ _ACCOUNTTXRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3401,
-  serialized_end=3745,
+  serialized_start=3422,
+  serialized_end=3766,
 )
 
 
@@ -2045,8 +2052,8 @@ _UTXOTXRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3748,
-  serialized_end=4032,
+  serialized_start=3769,
+  serialized_end=4053,
 )
 
 
@@ -2119,8 +2126,8 @@ _TXFROMSIGNEDDATAREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4035,
-  serialized_end=4209,
+  serialized_start=4056,
+  serialized_end=4230,
 )
 
 
@@ -2193,8 +2200,8 @@ _CREATEACCOUNTSIGNEDTXREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4212,
-  serialized_end=4370,
+  serialized_start=4233,
+  serialized_end=4391,
 )
 
 
@@ -2246,8 +2253,8 @@ _CREATESIGNEDTXRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4372,
-  serialized_end=4484,
+  serialized_start=4393,
+  serialized_end=4505,
 )
 
 
@@ -2355,8 +2362,8 @@ _CREATEACCOUNTTXREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4487,
-  serialized_end=4718,
+  serialized_start=4508,
+  serialized_end=4739,
 )
 
 
@@ -2408,8 +2415,8 @@ _CREATEACCOUNTTXRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4720,
-  serialized_end=4831,
+  serialized_start=4741,
+  serialized_end=4852,
 )
 
 
@@ -2482,8 +2489,8 @@ _CREATEUTXOSIGNEDTXREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4834,
-  serialized_end=4991,
+  serialized_start=4855,
+  serialized_end=5012,
 )
 
 
@@ -2556,8 +2563,8 @@ _CREATEUTXOTXREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4994,
-  serialized_end=5176,
+  serialized_start=5015,
+  serialized_end=5197,
 )
 
 
@@ -2609,8 +2616,8 @@ _CREATEUTXOTXRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5178,
-  serialized_end=5288,
+  serialized_start=5199,
+  serialized_end=5309,
 )
 
 
@@ -2697,8 +2704,8 @@ _VERIFYSIGNEDTXREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5291,
-  serialized_end=5502,
+  serialized_start=5312,
+  serialized_end=5523,
 )
 
 
@@ -2743,13 +2750,13 @@ _VERIFYSIGNEDTXRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5504,
-  serialized_end=5596,
+  serialized_start=5525,
+  serialized_end=5617,
 )
 
-_TXMESSAGE.fields_by_name['from'].message_type = _ADDRESS
-_TXMESSAGE.fields_by_name['to'].message_type = _ADDRESS
-_TXMESSAGE.fields_by_name['value'].message_type = _VALUE
+_TXMESSAGE.fields_by_name['froms'].message_type = _ADDRESS
+_TXMESSAGE.fields_by_name['tos'].message_type = _ADDRESS
+_TXMESSAGE.fields_by_name['values'].message_type = _VALUE
 _TXMESSAGE.fields_by_name['status'].enum_type = _TXSTATUS
 _SUPPORTCOINSRESPONSE.fields_by_name['code'].enum_type = savourrpc_dot_common__pb2._RETURNCODE
 _CONVERTADDRESSRESPONSE.fields_by_name['code'].enum_type = savourrpc_dot_common__pb2._RETURNCODE
@@ -3149,8 +3156,8 @@ _WALLETSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=5701,
-  serialized_end=7909,
+  serialized_start=5722,
+  serialized_end=7930,
   methods=[
   _descriptor.MethodDescriptor(
     name='getSupportCoins',

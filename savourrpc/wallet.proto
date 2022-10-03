@@ -25,14 +25,15 @@ message Value {
 message TxMessage {
    string hash = 1;
    uint32 index = 2;
-   repeated Address from = 3;
-   repeated Address to = 4;
-   repeated Value value = 7;
+   repeated Address froms = 3;
+   repeated Address tos = 4;
+   repeated Value values = 7;
    string fee = 5;
    TxStatus status = 6;
    int32 type = 8;
    string height = 9;
    string contract_address = 10;
+   string datetime = 11;
 }
 
 message Vin{

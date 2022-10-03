@@ -22,6 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ChaineyeServiceClient interface {
+	GetArticleCat(ctx context.Context, in *ArticleCatReq, opts ...grpc.CallOption) (*ArticleCatRep, error)
 	GetArticleList(ctx context.Context, in *ArticleListReq, opts ...grpc.CallOption) (*ArticleListRep, error)
 	GetArticleDetail(ctx context.Context, in *ArticleDetailReq, opts ...grpc.CallOption) (*ArticleDetailRep, error)
 	GetCommentList(ctx context.Context, in *CommentListReq, opts ...grpc.CallOption) (*CommentListRep, error)
@@ -35,6 +36,15 @@ type chaineyeServiceClient struct {
 
 func NewChaineyeServiceClient(cc grpc.ClientConnInterface) ChaineyeServiceClient {
 	return &chaineyeServiceClient{cc}
+}
+
+func (c *chaineyeServiceClient) GetArticleCat(ctx context.Context, in *ArticleCatReq, opts ...grpc.CallOption) (*ArticleCatRep, error) {
+	out := new(ArticleCatRep)
+	err := c.cc.Invoke(ctx, "/savourrpc.chaineye.ChaineyeService/getArticleCat", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *chaineyeServiceClient) GetArticleList(ctx context.Context, in *ArticleListReq, opts ...grpc.CallOption) (*ArticleListRep, error) {
@@ -86,6 +96,7 @@ func (c *chaineyeServiceClient) LikeArticle(ctx context.Context, in *LikeReq, op
 // All implementations must embed UnimplementedChaineyeServiceServer
 // for forward compatibility
 type ChaineyeServiceServer interface {
+	GetArticleCat(context.Context, *ArticleCatReq) (*ArticleCatRep, error)
 	GetArticleList(context.Context, *ArticleListReq) (*ArticleListRep, error)
 	GetArticleDetail(context.Context, *ArticleDetailReq) (*ArticleDetailRep, error)
 	GetCommentList(context.Context, *CommentListReq) (*CommentListRep, error)
@@ -98,6 +109,9 @@ type ChaineyeServiceServer interface {
 type UnimplementedChaineyeServiceServer struct {
 }
 
+func (UnimplementedChaineyeServiceServer) GetArticleCat(context.Context, *ArticleCatReq) (*ArticleCatRep, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetArticleCat not implemented")
+}
 func (UnimplementedChaineyeServiceServer) GetArticleList(context.Context, *ArticleListReq) (*ArticleListRep, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetArticleList not implemented")
 }
@@ -124,6 +138,24 @@ type UnsafeChaineyeServiceServer interface {
 
 func RegisterChaineyeServiceServer(s grpc.ServiceRegistrar, srv ChaineyeServiceServer) {
 	s.RegisterService(&ChaineyeService_ServiceDesc, srv)
+}
+
+func _ChaineyeService_GetArticleCat_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ArticleCatReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ChaineyeServiceServer).GetArticleCat(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/savourrpc.chaineye.ChaineyeService/getArticleCat",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ChaineyeServiceServer).GetArticleCat(ctx, req.(*ArticleCatReq))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _ChaineyeService_GetArticleList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -223,6 +255,10 @@ var ChaineyeService_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "savourrpc.chaineye.ChaineyeService",
 	HandlerType: (*ChaineyeServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "getArticleCat",
+			Handler:    _ChaineyeService_GetArticleCat_Handler,
+		},
 		{
 			MethodName: "getArticleList",
 			Handler:    _ChaineyeService_GetArticleList_Handler,
