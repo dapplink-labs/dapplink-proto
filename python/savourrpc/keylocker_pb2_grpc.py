@@ -14,6 +14,11 @@ class ChaineyeServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.getSupportChain = channel.unary_unary(
+                '/savourrpc.keylocker.ChaineyeService/getSupportChain',
+                request_serializer=savourrpc_dot_keylocker__pb2.SupportChainRequest.SerializeToString,
+                response_deserializer=savourrpc_dot_keylocker__pb2.SupportChainResponse.FromString,
+                )
         self.setSocialKey = channel.unary_unary(
                 '/savourrpc.keylocker.ChaineyeService/setSocialKey',
                 request_serializer=savourrpc_dot_keylocker__pb2.SetSocialKeyReq.SerializeToString,
@@ -28,6 +33,12 @@ class ChaineyeServiceStub(object):
 
 class ChaineyeServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
+
+    def getSupportChain(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def setSocialKey(self, request, context):
         """Missing associated documentation comment in .proto file."""
@@ -44,6 +55,11 @@ class ChaineyeServiceServicer(object):
 
 def add_ChaineyeServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'getSupportChain': grpc.unary_unary_rpc_method_handler(
+                    servicer.getSupportChain,
+                    request_deserializer=savourrpc_dot_keylocker__pb2.SupportChainRequest.FromString,
+                    response_serializer=savourrpc_dot_keylocker__pb2.SupportChainResponse.SerializeToString,
+            ),
             'setSocialKey': grpc.unary_unary_rpc_method_handler(
                     servicer.setSocialKey,
                     request_deserializer=savourrpc_dot_keylocker__pb2.SetSocialKeyReq.FromString,
@@ -63,6 +79,23 @@ def add_ChaineyeServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class ChaineyeService(object):
     """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def getSupportChain(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/savourrpc.keylocker.ChaineyeService/getSupportChain',
+            savourrpc_dot_keylocker__pb2.SupportChainRequest.SerializeToString,
+            savourrpc_dot_keylocker__pb2.SupportChainResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def setSocialKey(request,

@@ -10,6 +10,18 @@ message SocialKey {
     string key = 3;
 }
 
+message SupportChainRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+}
+
+message SupportChainResponse {
+   ReturnCode code=1;
+   string msg=2;
+   bool support = 3;
+}
+
 message SetSocialKeyReq {
    string consumer_token = 1;
    string uuid = 2;
@@ -35,9 +47,7 @@ message GetSocialKeyRep {
 }
 
 service ChaineyeService {
+  rpc getSupportChain(SupportChainRequest) returns (SupportChainResponse) {}
   rpc setSocialKey(SetSocialKeyReq) returns (SetSocialKeyRep) {}
   rpc getSocialKey(GetSocialKeyReq) returns (GetSocialKeyRep) {}
 }
-
-
-

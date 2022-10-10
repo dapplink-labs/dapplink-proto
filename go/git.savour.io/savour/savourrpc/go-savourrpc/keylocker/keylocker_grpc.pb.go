@@ -22,6 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ChaineyeServiceClient interface {
+	GetSupportChain(ctx context.Context, in *SupportChainRequest, opts ...grpc.CallOption) (*SupportChainResponse, error)
 	SetSocialKey(ctx context.Context, in *SetSocialKeyReq, opts ...grpc.CallOption) (*SetSocialKeyRep, error)
 	GetSocialKey(ctx context.Context, in *GetSocialKeyReq, opts ...grpc.CallOption) (*GetSocialKeyRep, error)
 }
@@ -32,6 +33,15 @@ type chaineyeServiceClient struct {
 
 func NewChaineyeServiceClient(cc grpc.ClientConnInterface) ChaineyeServiceClient {
 	return &chaineyeServiceClient{cc}
+}
+
+func (c *chaineyeServiceClient) GetSupportChain(ctx context.Context, in *SupportChainRequest, opts ...grpc.CallOption) (*SupportChainResponse, error) {
+	out := new(SupportChainResponse)
+	err := c.cc.Invoke(ctx, "/savourrpc.keylocker.ChaineyeService/getSupportChain", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *chaineyeServiceClient) SetSocialKey(ctx context.Context, in *SetSocialKeyReq, opts ...grpc.CallOption) (*SetSocialKeyRep, error) {
@@ -56,6 +66,7 @@ func (c *chaineyeServiceClient) GetSocialKey(ctx context.Context, in *GetSocialK
 // All implementations must embed UnimplementedChaineyeServiceServer
 // for forward compatibility
 type ChaineyeServiceServer interface {
+	GetSupportChain(context.Context, *SupportChainRequest) (*SupportChainResponse, error)
 	SetSocialKey(context.Context, *SetSocialKeyReq) (*SetSocialKeyRep, error)
 	GetSocialKey(context.Context, *GetSocialKeyReq) (*GetSocialKeyRep, error)
 	mustEmbedUnimplementedChaineyeServiceServer()
@@ -65,6 +76,9 @@ type ChaineyeServiceServer interface {
 type UnimplementedChaineyeServiceServer struct {
 }
 
+func (UnimplementedChaineyeServiceServer) GetSupportChain(context.Context, *SupportChainRequest) (*SupportChainResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetSupportChain not implemented")
+}
 func (UnimplementedChaineyeServiceServer) SetSocialKey(context.Context, *SetSocialKeyReq) (*SetSocialKeyRep, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetSocialKey not implemented")
 }
@@ -82,6 +96,24 @@ type UnsafeChaineyeServiceServer interface {
 
 func RegisterChaineyeServiceServer(s grpc.ServiceRegistrar, srv ChaineyeServiceServer) {
 	s.RegisterService(&ChaineyeService_ServiceDesc, srv)
+}
+
+func _ChaineyeService_GetSupportChain_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SupportChainRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ChaineyeServiceServer).GetSupportChain(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/savourrpc.keylocker.ChaineyeService/getSupportChain",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ChaineyeServiceServer).GetSupportChain(ctx, req.(*SupportChainRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _ChaineyeService_SetSocialKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -127,6 +159,10 @@ var ChaineyeService_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "savourrpc.keylocker.ChaineyeService",
 	HandlerType: (*ChaineyeServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "getSupportChain",
+			Handler:    _ChaineyeService_GetSupportChain_Handler,
+		},
 		{
 			MethodName: "setSocialKey",
 			Handler:    _ChaineyeService_SetSocialKey_Handler,
