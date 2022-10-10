@@ -8,13 +8,14 @@ package savourrpc.chaineye;
 message ArticleList {
     string id = 1;
     string title = 2;
-    int32 type = 3;
-    string author = 4;
-    int32 views = 5;
-    string add_time = 6;
-    string upd_time = 7;
-    string cover = 8;
-    int32 like = 9;
+    string abstract = 3;
+    int32 type = 4;
+    string author = 5;
+    int32 views = 6;
+    string add_time = 7;
+    string upd_time = 8;
+    string cover = 9;
+    int32 like = 10;
 }
 
 message CommentList {
@@ -66,7 +67,8 @@ message ArticleListReq {
 message ArticleListRep {
   ReturnCode code=1;
   string msg=2;
-  repeated ArticleList articles = 3;
+  int32 total = 3;
+  repeated ArticleList articles = 4;
 }
 
 message ArticleDetailReq {
