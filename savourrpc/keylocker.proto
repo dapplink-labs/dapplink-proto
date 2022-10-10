@@ -1,0 +1,43 @@
+syntax = "proto3";
+
+import "savourrpc/common.proto";
+option go_package = "git.savour.io/savour/savourrpc/go-savourrpc/keylocker";
+option java_package = "com.savourrpc.keylocker";
+package savourrpc.keylocker;
+
+message SocialKey {
+    string id = 1;
+    string key = 3;
+}
+
+message SetSocialKeyReq {
+   string consumer_token = 1;
+   string uuid = 2;
+   string key = 3;
+}
+
+message SetSocialKeyRep {
+    ReturnCode code=1;
+    string msg=2;
+    string pub = 3;
+    string priv = 4;
+}
+
+message GetSocialKeyReq {
+   string consumer_token = 1;
+   string uuid = 2;
+}
+
+message GetSocialKeyRep {
+    ReturnCode code=1;
+    string msg=2;
+    repeated SocialKey key_list = 3;
+}
+
+service ChaineyeService {
+  rpc setSocialKey(SetSocialKeyReq) returns (SetSocialKeyRep) {}
+  rpc getSocialKey(GetSocialKeyReq) returns (GetSocialKeyRep) {}
+}
+
+
+
