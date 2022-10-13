@@ -28,7 +28,7 @@ This document describes the protocols and data formats for communication between
 
 #### 3. repo link
 
-https://github.com/SavourDao/savour-protocal.git
+https://github.com/SavourDao/savour-proto.git
 
 #### 4. ReturnCode
 
