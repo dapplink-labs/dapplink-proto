@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027com.savourrpc.keylockerZ5git.savour.io/savour/savourrpc/go-savourrpc/keylocker',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x19savourrpc/keylocker.proto\x12\x13savourrpc.keylocker\x1a\x16savourrpc/common.proto\"$\n\tSocialKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\"M\n\x13SupportChainRequest\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0f\n\x07network\x18\x03 \x01(\t\"Y\n\x14SupportChainResponse\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07support\x18\x03 \x01(\x08\"D\n\x0fSetSocialKeyReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x0c\n\x04uuid\x18\x02 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\"^\n\x0fSetSocialKeyRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0b\n\x03pub\x18\x03 \x01(\t\x12\x0c\n\x04priv\x18\x04 \x01(\t\"7\n\x0fGetSocialKeyReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x0c\n\x04uuid\x18\x02 \x01(\t\"u\n\x0fGetSocialKeyRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x30\n\x08key_list\x18\x03 \x03(\x0b\x32\x1e.savourrpc.keylocker.SocialKey2\xb7\x02\n\x0f\x43haineyeService\x12h\n\x0fgetSupportChain\x12(.savourrpc.keylocker.SupportChainRequest\x1a).savourrpc.keylocker.SupportChainResponse\"\x00\x12\\\n\x0csetSocialKey\x12$.savourrpc.keylocker.SetSocialKeyReq\x1a$.savourrpc.keylocker.SetSocialKeyRep\"\x00\x12\\\n\x0cgetSocialKey\x12$.savourrpc.keylocker.GetSocialKeyReq\x1a$.savourrpc.keylocker.GetSocialKeyRep\"\x00\x42P\n\x17\x63om.savourrpc.keylockerZ5git.savour.io/savour/savourrpc/go-savourrpc/keylockerb\x06proto3'
+  serialized_pb=b'\n\x19savourrpc/keylocker.proto\x12\x13savourrpc.keylocker\x1a\x16savourrpc/common.proto\"$\n\tSocialKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\"I\n\x0fSupportChainReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0f\n\x07network\x18\x03 \x01(\t\"T\n\x0fSupportChainRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07support\x18\x03 \x01(\x08\"e\n\x0fSetSocialKeyReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04uuid\x18\x03 \x01(\t\x12\x0b\n\x03key\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\"\x96\x01\n\x0fSetSocialKeyRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0b\n\x03pub\x18\x03 \x01(\t\x12\x0c\n\x04priv\x18\x04 \x01(\t\x12\x12\n\ncrypto_way\x18\x05 \x01(\t\x12\x10\n\x08\x66ile_cid\x18\x06 \x01(\t\x12\x10\n\x08\x63ontract\x18\x07 \x01(\t\"F\n\x0fGetSocialKeyReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04uuid\x18\x03 \x01(\t\"u\n\x0fGetSocialKeyRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x30\n\x08key_list\x18\x03 \x03(\x0b\x32\x1e.savourrpc.keylocker.SocialKey2\xaf\x02\n\x10LeyLockerService\x12_\n\x0fgetSupportChain\x12$.savourrpc.keylocker.SupportChainReq\x1a$.savourrpc.keylocker.SupportChainRep\"\x00\x12\\\n\x0csetSocialKey\x12$.savourrpc.keylocker.SetSocialKeyReq\x1a$.savourrpc.keylocker.SetSocialKeyRep\"\x00\x12\\\n\x0cgetSocialKey\x12$.savourrpc.keylocker.GetSocialKeyReq\x1a$.savourrpc.keylocker.GetSocialKeyRep\"\x00\x42P\n\x17\x63om.savourrpc.keylockerZ5git.savour.io/savour/savourrpc/go-savourrpc/keylockerb\x06proto3'
   ,
   dependencies=[savourrpc_dot_common__pb2.DESCRIPTOR,])
 
@@ -66,30 +66,30 @@ _SOCIALKEY = _descriptor.Descriptor(
 )
 
 
-_SUPPORTCHAINREQUEST = _descriptor.Descriptor(
-  name='SupportChainRequest',
-  full_name='savourrpc.keylocker.SupportChainRequest',
+_SUPPORTCHAINREQ = _descriptor.Descriptor(
+  name='SupportChainReq',
+  full_name='savourrpc.keylocker.SupportChainReq',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='consumer_token', full_name='savourrpc.keylocker.SupportChainRequest.consumer_token', index=0,
+      name='consumer_token', full_name='savourrpc.keylocker.SupportChainReq.consumer_token', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='chain', full_name='savourrpc.keylocker.SupportChainRequest.chain', index=1,
+      name='chain', full_name='savourrpc.keylocker.SupportChainReq.chain', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='network', full_name='savourrpc.keylocker.SupportChainRequest.network', index=2,
+      name='network', full_name='savourrpc.keylocker.SupportChainReq.network', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -108,34 +108,34 @@ _SUPPORTCHAINREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=112,
-  serialized_end=189,
+  serialized_end=185,
 )
 
 
-_SUPPORTCHAINRESPONSE = _descriptor.Descriptor(
-  name='SupportChainResponse',
-  full_name='savourrpc.keylocker.SupportChainResponse',
+_SUPPORTCHAINREP = _descriptor.Descriptor(
+  name='SupportChainRep',
+  full_name='savourrpc.keylocker.SupportChainRep',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='code', full_name='savourrpc.keylocker.SupportChainResponse.code', index=0,
+      name='code', full_name='savourrpc.keylocker.SupportChainRep.code', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='msg', full_name='savourrpc.keylocker.SupportChainResponse.msg', index=1,
+      name='msg', full_name='savourrpc.keylocker.SupportChainRep.msg', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='support', full_name='savourrpc.keylocker.SupportChainResponse.support', index=2,
+      name='support', full_name='savourrpc.keylocker.SupportChainRep.support', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -153,8 +153,8 @@ _SUPPORTCHAINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=191,
-  serialized_end=280,
+  serialized_start=187,
+  serialized_end=271,
 )
 
 
@@ -174,15 +174,29 @@ _SETSOCIALKEYREQ = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='uuid', full_name='savourrpc.keylocker.SetSocialKeyReq.uuid', index=1,
+      name='chain', full_name='savourrpc.keylocker.SetSocialKeyReq.chain', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='key', full_name='savourrpc.keylocker.SetSocialKeyReq.key', index=2,
+      name='uuid', full_name='savourrpc.keylocker.SetSocialKeyReq.uuid', index=2,
       number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='key', full_name='savourrpc.keylocker.SetSocialKeyReq.key', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='password', full_name='savourrpc.keylocker.SetSocialKeyReq.password', index=4,
+      number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -199,8 +213,8 @@ _SETSOCIALKEYREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=282,
-  serialized_end=350,
+  serialized_start=273,
+  serialized_end=374,
 )
 
 
@@ -240,6 +254,27 @@ _SETSOCIALKEYREP = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='crypto_way', full_name='savourrpc.keylocker.SetSocialKeyRep.crypto_way', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='file_cid', full_name='savourrpc.keylocker.SetSocialKeyRep.file_cid', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='contract', full_name='savourrpc.keylocker.SetSocialKeyRep.contract', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -252,8 +287,8 @@ _SETSOCIALKEYREP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=352,
-  serialized_end=446,
+  serialized_start=377,
+  serialized_end=527,
 )
 
 
@@ -273,8 +308,15 @@ _GETSOCIALKEYREQ = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='uuid', full_name='savourrpc.keylocker.GetSocialKeyReq.uuid', index=1,
+      name='chain', full_name='savourrpc.keylocker.GetSocialKeyReq.chain', index=1,
       number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='uuid', full_name='savourrpc.keylocker.GetSocialKeyReq.uuid', index=2,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -291,8 +333,8 @@ _GETSOCIALKEYREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=448,
-  serialized_end=503,
+  serialized_start=529,
+  serialized_end=599,
 )
 
 
@@ -337,17 +379,17 @@ _GETSOCIALKEYREP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=505,
-  serialized_end=622,
+  serialized_start=601,
+  serialized_end=718,
 )
 
-_SUPPORTCHAINRESPONSE.fields_by_name['code'].enum_type = savourrpc_dot_common__pb2._RETURNCODE
+_SUPPORTCHAINREP.fields_by_name['code'].enum_type = savourrpc_dot_common__pb2._RETURNCODE
 _SETSOCIALKEYREP.fields_by_name['code'].enum_type = savourrpc_dot_common__pb2._RETURNCODE
 _GETSOCIALKEYREP.fields_by_name['code'].enum_type = savourrpc_dot_common__pb2._RETURNCODE
 _GETSOCIALKEYREP.fields_by_name['key_list'].message_type = _SOCIALKEY
 DESCRIPTOR.message_types_by_name['SocialKey'] = _SOCIALKEY
-DESCRIPTOR.message_types_by_name['SupportChainRequest'] = _SUPPORTCHAINREQUEST
-DESCRIPTOR.message_types_by_name['SupportChainResponse'] = _SUPPORTCHAINRESPONSE
+DESCRIPTOR.message_types_by_name['SupportChainReq'] = _SUPPORTCHAINREQ
+DESCRIPTOR.message_types_by_name['SupportChainRep'] = _SUPPORTCHAINREP
 DESCRIPTOR.message_types_by_name['SetSocialKeyReq'] = _SETSOCIALKEYREQ
 DESCRIPTOR.message_types_by_name['SetSocialKeyRep'] = _SETSOCIALKEYREP
 DESCRIPTOR.message_types_by_name['GetSocialKeyReq'] = _GETSOCIALKEYREQ
@@ -361,19 +403,19 @@ SocialKey = _reflection.GeneratedProtocolMessageType('SocialKey', (_message.Mess
   })
 _sym_db.RegisterMessage(SocialKey)
 
-SupportChainRequest = _reflection.GeneratedProtocolMessageType('SupportChainRequest', (_message.Message,), {
-  'DESCRIPTOR' : _SUPPORTCHAINREQUEST,
+SupportChainReq = _reflection.GeneratedProtocolMessageType('SupportChainReq', (_message.Message,), {
+  'DESCRIPTOR' : _SUPPORTCHAINREQ,
   '__module__' : 'savourrpc.keylocker_pb2'
-  # @@protoc_insertion_point(class_scope:savourrpc.keylocker.SupportChainRequest)
+  # @@protoc_insertion_point(class_scope:savourrpc.keylocker.SupportChainReq)
   })
-_sym_db.RegisterMessage(SupportChainRequest)
+_sym_db.RegisterMessage(SupportChainReq)
 
-SupportChainResponse = _reflection.GeneratedProtocolMessageType('SupportChainResponse', (_message.Message,), {
-  'DESCRIPTOR' : _SUPPORTCHAINRESPONSE,
+SupportChainRep = _reflection.GeneratedProtocolMessageType('SupportChainRep', (_message.Message,), {
+  'DESCRIPTOR' : _SUPPORTCHAINREP,
   '__module__' : 'savourrpc.keylocker_pb2'
-  # @@protoc_insertion_point(class_scope:savourrpc.keylocker.SupportChainResponse)
+  # @@protoc_insertion_point(class_scope:savourrpc.keylocker.SupportChainRep)
   })
-_sym_db.RegisterMessage(SupportChainResponse)
+_sym_db.RegisterMessage(SupportChainRep)
 
 SetSocialKeyReq = _reflection.GeneratedProtocolMessageType('SetSocialKeyReq', (_message.Message,), {
   'DESCRIPTOR' : _SETSOCIALKEYREQ,
@@ -406,29 +448,29 @@ _sym_db.RegisterMessage(GetSocialKeyRep)
 
 DESCRIPTOR._options = None
 
-_CHAINEYESERVICE = _descriptor.ServiceDescriptor(
-  name='ChaineyeService',
-  full_name='savourrpc.keylocker.ChaineyeService',
+_LEYLOCKERSERVICE = _descriptor.ServiceDescriptor(
+  name='LeyLockerService',
+  full_name='savourrpc.keylocker.LeyLockerService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=625,
-  serialized_end=936,
+  serialized_start=721,
+  serialized_end=1024,
   methods=[
   _descriptor.MethodDescriptor(
     name='getSupportChain',
-    full_name='savourrpc.keylocker.ChaineyeService.getSupportChain',
+    full_name='savourrpc.keylocker.LeyLockerService.getSupportChain',
     index=0,
     containing_service=None,
-    input_type=_SUPPORTCHAINREQUEST,
-    output_type=_SUPPORTCHAINRESPONSE,
+    input_type=_SUPPORTCHAINREQ,
+    output_type=_SUPPORTCHAINREP,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='setSocialKey',
-    full_name='savourrpc.keylocker.ChaineyeService.setSocialKey',
+    full_name='savourrpc.keylocker.LeyLockerService.setSocialKey',
     index=1,
     containing_service=None,
     input_type=_SETSOCIALKEYREQ,
@@ -438,7 +480,7 @@ _CHAINEYESERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='getSocialKey',
-    full_name='savourrpc.keylocker.ChaineyeService.getSocialKey',
+    full_name='savourrpc.keylocker.LeyLockerService.getSocialKey',
     index=2,
     containing_service=None,
     input_type=_GETSOCIALKEYREQ,
@@ -447,8 +489,8 @@ _CHAINEYESERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
 ])
-_sym_db.RegisterServiceDescriptor(_CHAINEYESERVICE)
+_sym_db.RegisterServiceDescriptor(_LEYLOCKERSERVICE)
 
-DESCRIPTOR.services_by_name['ChaineyeService'] = _CHAINEYESERVICE
+DESCRIPTOR.services_by_name['LeyLockerService'] = _LEYLOCKERSERVICE
 
 # @@protoc_insertion_point(module_scope)

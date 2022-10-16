@@ -10,13 +10,13 @@ message SocialKey {
     string key = 3;
 }
 
-message SupportChainRequest{
+message SupportChainReq{
   string consumer_token = 1;
   string chain = 2;
   string network = 3;
 }
 
-message SupportChainResponse {
+message SupportChainRep {
    ReturnCode code=1;
    string msg=2;
    bool support = 3;
@@ -24,8 +24,10 @@ message SupportChainResponse {
 
 message SetSocialKeyReq {
    string consumer_token = 1;
-   string uuid = 2;
-   string key = 3;
+   string chain = 2;
+   string uuid = 3;
+   string key = 4;
+   string password = 5;
 }
 
 message SetSocialKeyRep {
@@ -33,11 +35,15 @@ message SetSocialKeyRep {
     string msg=2;
     string pub = 3;
     string priv = 4;
+    string crypto_way = 5;
+    string file_cid = 6;
+    string contract = 7;
 }
 
 message GetSocialKeyReq {
    string consumer_token = 1;
-   string uuid = 2;
+   string chain = 2;
+   string uuid = 3;
 }
 
 message GetSocialKeyRep {
@@ -46,8 +52,8 @@ message GetSocialKeyRep {
     repeated SocialKey key_list = 3;
 }
 
-service ChaineyeService {
-  rpc getSupportChain(SupportChainRequest) returns (SupportChainResponse) {}
+service LeyLockerService {
+  rpc getSupportChain(SupportChainReq) returns (SupportChainRep) {}
   rpc setSocialKey(SetSocialKeyReq) returns (SetSocialKeyRep) {}
   rpc getSocialKey(GetSocialKeyReq) returns (GetSocialKeyRep) {}
 }

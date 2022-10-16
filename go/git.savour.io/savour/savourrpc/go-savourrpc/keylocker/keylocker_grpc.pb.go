@@ -18,158 +18,158 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// ChaineyeServiceClient is the client API for ChaineyeService service.
+// LeyLockerServiceClient is the client API for LeyLockerService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type ChaineyeServiceClient interface {
-	GetSupportChain(ctx context.Context, in *SupportChainRequest, opts ...grpc.CallOption) (*SupportChainResponse, error)
+type LeyLockerServiceClient interface {
+	GetSupportChain(ctx context.Context, in *SupportChainReq, opts ...grpc.CallOption) (*SupportChainRep, error)
 	SetSocialKey(ctx context.Context, in *SetSocialKeyReq, opts ...grpc.CallOption) (*SetSocialKeyRep, error)
 	GetSocialKey(ctx context.Context, in *GetSocialKeyReq, opts ...grpc.CallOption) (*GetSocialKeyRep, error)
 }
 
-type chaineyeServiceClient struct {
+type leyLockerServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewChaineyeServiceClient(cc grpc.ClientConnInterface) ChaineyeServiceClient {
-	return &chaineyeServiceClient{cc}
+func NewLeyLockerServiceClient(cc grpc.ClientConnInterface) LeyLockerServiceClient {
+	return &leyLockerServiceClient{cc}
 }
 
-func (c *chaineyeServiceClient) GetSupportChain(ctx context.Context, in *SupportChainRequest, opts ...grpc.CallOption) (*SupportChainResponse, error) {
-	out := new(SupportChainResponse)
-	err := c.cc.Invoke(ctx, "/savourrpc.keylocker.ChaineyeService/getSupportChain", in, out, opts...)
+func (c *leyLockerServiceClient) GetSupportChain(ctx context.Context, in *SupportChainReq, opts ...grpc.CallOption) (*SupportChainRep, error) {
+	out := new(SupportChainRep)
+	err := c.cc.Invoke(ctx, "/savourrpc.keylocker.LeyLockerService/getSupportChain", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *chaineyeServiceClient) SetSocialKey(ctx context.Context, in *SetSocialKeyReq, opts ...grpc.CallOption) (*SetSocialKeyRep, error) {
+func (c *leyLockerServiceClient) SetSocialKey(ctx context.Context, in *SetSocialKeyReq, opts ...grpc.CallOption) (*SetSocialKeyRep, error) {
 	out := new(SetSocialKeyRep)
-	err := c.cc.Invoke(ctx, "/savourrpc.keylocker.ChaineyeService/setSocialKey", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/savourrpc.keylocker.LeyLockerService/setSocialKey", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *chaineyeServiceClient) GetSocialKey(ctx context.Context, in *GetSocialKeyReq, opts ...grpc.CallOption) (*GetSocialKeyRep, error) {
+func (c *leyLockerServiceClient) GetSocialKey(ctx context.Context, in *GetSocialKeyReq, opts ...grpc.CallOption) (*GetSocialKeyRep, error) {
 	out := new(GetSocialKeyRep)
-	err := c.cc.Invoke(ctx, "/savourrpc.keylocker.ChaineyeService/getSocialKey", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/savourrpc.keylocker.LeyLockerService/getSocialKey", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// ChaineyeServiceServer is the server API for ChaineyeService service.
-// All implementations must embed UnimplementedChaineyeServiceServer
+// LeyLockerServiceServer is the server API for LeyLockerService service.
+// All implementations must embed UnimplementedLeyLockerServiceServer
 // for forward compatibility
-type ChaineyeServiceServer interface {
-	GetSupportChain(context.Context, *SupportChainRequest) (*SupportChainResponse, error)
+type LeyLockerServiceServer interface {
+	GetSupportChain(context.Context, *SupportChainReq) (*SupportChainRep, error)
 	SetSocialKey(context.Context, *SetSocialKeyReq) (*SetSocialKeyRep, error)
 	GetSocialKey(context.Context, *GetSocialKeyReq) (*GetSocialKeyRep, error)
-	mustEmbedUnimplementedChaineyeServiceServer()
+	mustEmbedUnimplementedLeyLockerServiceServer()
 }
 
-// UnimplementedChaineyeServiceServer must be embedded to have forward compatible implementations.
-type UnimplementedChaineyeServiceServer struct {
+// UnimplementedLeyLockerServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedLeyLockerServiceServer struct {
 }
 
-func (UnimplementedChaineyeServiceServer) GetSupportChain(context.Context, *SupportChainRequest) (*SupportChainResponse, error) {
+func (UnimplementedLeyLockerServiceServer) GetSupportChain(context.Context, *SupportChainReq) (*SupportChainRep, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSupportChain not implemented")
 }
-func (UnimplementedChaineyeServiceServer) SetSocialKey(context.Context, *SetSocialKeyReq) (*SetSocialKeyRep, error) {
+func (UnimplementedLeyLockerServiceServer) SetSocialKey(context.Context, *SetSocialKeyReq) (*SetSocialKeyRep, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetSocialKey not implemented")
 }
-func (UnimplementedChaineyeServiceServer) GetSocialKey(context.Context, *GetSocialKeyReq) (*GetSocialKeyRep, error) {
+func (UnimplementedLeyLockerServiceServer) GetSocialKey(context.Context, *GetSocialKeyReq) (*GetSocialKeyRep, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSocialKey not implemented")
 }
-func (UnimplementedChaineyeServiceServer) mustEmbedUnimplementedChaineyeServiceServer() {}
+func (UnimplementedLeyLockerServiceServer) mustEmbedUnimplementedLeyLockerServiceServer() {}
 
-// UnsafeChaineyeServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to ChaineyeServiceServer will
+// UnsafeLeyLockerServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to LeyLockerServiceServer will
 // result in compilation errors.
-type UnsafeChaineyeServiceServer interface {
-	mustEmbedUnimplementedChaineyeServiceServer()
+type UnsafeLeyLockerServiceServer interface {
+	mustEmbedUnimplementedLeyLockerServiceServer()
 }
 
-func RegisterChaineyeServiceServer(s grpc.ServiceRegistrar, srv ChaineyeServiceServer) {
-	s.RegisterService(&ChaineyeService_ServiceDesc, srv)
+func RegisterLeyLockerServiceServer(s grpc.ServiceRegistrar, srv LeyLockerServiceServer) {
+	s.RegisterService(&LeyLockerService_ServiceDesc, srv)
 }
 
-func _ChaineyeService_GetSupportChain_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SupportChainRequest)
+func _LeyLockerService_GetSupportChain_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(SupportChainReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ChaineyeServiceServer).GetSupportChain(ctx, in)
+		return srv.(LeyLockerServiceServer).GetSupportChain(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/savourrpc.keylocker.ChaineyeService/getSupportChain",
+		FullMethod: "/savourrpc.keylocker.LeyLockerService/getSupportChain",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ChaineyeServiceServer).GetSupportChain(ctx, req.(*SupportChainRequest))
+		return srv.(LeyLockerServiceServer).GetSupportChain(ctx, req.(*SupportChainReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ChaineyeService_SetSocialKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _LeyLockerService_SetSocialKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SetSocialKeyReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ChaineyeServiceServer).SetSocialKey(ctx, in)
+		return srv.(LeyLockerServiceServer).SetSocialKey(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/savourrpc.keylocker.ChaineyeService/setSocialKey",
+		FullMethod: "/savourrpc.keylocker.LeyLockerService/setSocialKey",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ChaineyeServiceServer).SetSocialKey(ctx, req.(*SetSocialKeyReq))
+		return srv.(LeyLockerServiceServer).SetSocialKey(ctx, req.(*SetSocialKeyReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ChaineyeService_GetSocialKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _LeyLockerService_GetSocialKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetSocialKeyReq)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(ChaineyeServiceServer).GetSocialKey(ctx, in)
+		return srv.(LeyLockerServiceServer).GetSocialKey(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/savourrpc.keylocker.ChaineyeService/getSocialKey",
+		FullMethod: "/savourrpc.keylocker.LeyLockerService/getSocialKey",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ChaineyeServiceServer).GetSocialKey(ctx, req.(*GetSocialKeyReq))
+		return srv.(LeyLockerServiceServer).GetSocialKey(ctx, req.(*GetSocialKeyReq))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// ChaineyeService_ServiceDesc is the grpc.ServiceDesc for ChaineyeService service.
+// LeyLockerService_ServiceDesc is the grpc.ServiceDesc for LeyLockerService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var ChaineyeService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "savourrpc.keylocker.ChaineyeService",
-	HandlerType: (*ChaineyeServiceServer)(nil),
+var LeyLockerService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "savourrpc.keylocker.LeyLockerService",
+	HandlerType: (*LeyLockerServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "getSupportChain",
-			Handler:    _ChaineyeService_GetSupportChain_Handler,
+			Handler:    _LeyLockerService_GetSupportChain_Handler,
 		},
 		{
 			MethodName: "setSocialKey",
-			Handler:    _ChaineyeService_SetSocialKey_Handler,
+			Handler:    _LeyLockerService_SetSocialKey_Handler,
 		},
 		{
 			MethodName: "getSocialKey",
-			Handler:    _ChaineyeService_GetSocialKey_Handler,
+			Handler:    _LeyLockerService_GetSocialKey_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

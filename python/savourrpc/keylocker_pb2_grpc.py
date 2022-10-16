@@ -5,7 +5,7 @@ import grpc
 from savourrpc import keylocker_pb2 as savourrpc_dot_keylocker__pb2
 
 
-class ChaineyeServiceStub(object):
+class LeyLockerServiceStub(object):
     """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
@@ -15,23 +15,23 @@ class ChaineyeServiceStub(object):
             channel: A grpc.Channel.
         """
         self.getSupportChain = channel.unary_unary(
-                '/savourrpc.keylocker.ChaineyeService/getSupportChain',
-                request_serializer=savourrpc_dot_keylocker__pb2.SupportChainRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_keylocker__pb2.SupportChainResponse.FromString,
+                '/savourrpc.keylocker.LeyLockerService/getSupportChain',
+                request_serializer=savourrpc_dot_keylocker__pb2.SupportChainReq.SerializeToString,
+                response_deserializer=savourrpc_dot_keylocker__pb2.SupportChainRep.FromString,
                 )
         self.setSocialKey = channel.unary_unary(
-                '/savourrpc.keylocker.ChaineyeService/setSocialKey',
+                '/savourrpc.keylocker.LeyLockerService/setSocialKey',
                 request_serializer=savourrpc_dot_keylocker__pb2.SetSocialKeyReq.SerializeToString,
                 response_deserializer=savourrpc_dot_keylocker__pb2.SetSocialKeyRep.FromString,
                 )
         self.getSocialKey = channel.unary_unary(
-                '/savourrpc.keylocker.ChaineyeService/getSocialKey',
+                '/savourrpc.keylocker.LeyLockerService/getSocialKey',
                 request_serializer=savourrpc_dot_keylocker__pb2.GetSocialKeyReq.SerializeToString,
                 response_deserializer=savourrpc_dot_keylocker__pb2.GetSocialKeyRep.FromString,
                 )
 
 
-class ChaineyeServiceServicer(object):
+class LeyLockerServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def getSupportChain(self, request, context):
@@ -53,12 +53,12 @@ class ChaineyeServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_ChaineyeServiceServicer_to_server(servicer, server):
+def add_LeyLockerServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'getSupportChain': grpc.unary_unary_rpc_method_handler(
                     servicer.getSupportChain,
-                    request_deserializer=savourrpc_dot_keylocker__pb2.SupportChainRequest.FromString,
-                    response_serializer=savourrpc_dot_keylocker__pb2.SupportChainResponse.SerializeToString,
+                    request_deserializer=savourrpc_dot_keylocker__pb2.SupportChainReq.FromString,
+                    response_serializer=savourrpc_dot_keylocker__pb2.SupportChainRep.SerializeToString,
             ),
             'setSocialKey': grpc.unary_unary_rpc_method_handler(
                     servicer.setSocialKey,
@@ -72,12 +72,12 @@ def add_ChaineyeServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'savourrpc.keylocker.ChaineyeService', rpc_method_handlers)
+            'savourrpc.keylocker.LeyLockerService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
  # This class is part of an EXPERIMENTAL API.
-class ChaineyeService(object):
+class LeyLockerService(object):
     """Missing associated documentation comment in .proto file."""
 
     @staticmethod
@@ -91,9 +91,9 @@ class ChaineyeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.keylocker.ChaineyeService/getSupportChain',
-            savourrpc_dot_keylocker__pb2.SupportChainRequest.SerializeToString,
-            savourrpc_dot_keylocker__pb2.SupportChainResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savourrpc.keylocker.LeyLockerService/getSupportChain',
+            savourrpc_dot_keylocker__pb2.SupportChainReq.SerializeToString,
+            savourrpc_dot_keylocker__pb2.SupportChainRep.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -108,7 +108,7 @@ class ChaineyeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.keylocker.ChaineyeService/setSocialKey',
+        return grpc.experimental.unary_unary(request, target, '/savourrpc.keylocker.LeyLockerService/setSocialKey',
             savourrpc_dot_keylocker__pb2.SetSocialKeyReq.SerializeToString,
             savourrpc_dot_keylocker__pb2.SetSocialKeyRep.FromString,
             options, channel_credentials,
@@ -125,7 +125,7 @@ class ChaineyeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.keylocker.ChaineyeService/getSocialKey',
+        return grpc.experimental.unary_unary(request, target, '/savourrpc.keylocker.LeyLockerService/getSocialKey',
             savourrpc_dot_keylocker__pb2.GetSocialKeyReq.SerializeToString,
             savourrpc_dot_keylocker__pb2.GetSocialKeyRep.FromString,
             options, channel_credentials,
