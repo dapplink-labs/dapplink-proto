@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "savourrpc/common.proto";
+import "savour-proto/savourrpc/common.proto";
 option go_package ="./proto/keylocker";
 option java_package = "group.savour.keylocker";
 package savourrpc.keylocker;
