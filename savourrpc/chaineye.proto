@@ -1,8 +1,8 @@
 syntax = "proto3";
 
 import "savourrpc/common.proto";
-option go_package = "git.savour.io/savour/savourrpc/go-savourrpc/chaineye";
-option java_package = "com.savourrpc.chaineye";
+option go_package = "./proto/chaineye";
+option java_package = "group.savour.chaineye";
 package savourrpc.chaineye;
 
 message ArticleList {

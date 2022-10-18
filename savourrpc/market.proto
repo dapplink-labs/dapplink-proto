@@ -1,8 +1,8 @@
 syntax = "proto3";
 
 import "savourrpc/common.proto";
-option go_package = "git.savour.io/savour/savourrpc/go-savourrpc/market";
-option java_package = "com.savourrpc.market";
+option go_package = "./proto/market";
+option java_package = "group.savour.market";
 package savourrpc.market;
 
 message Exchange {

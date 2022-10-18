@@ -1,8 +1,8 @@
 syntax = "proto3";
 
 import "savourrpc/common.proto";
-option go_package = "git.savour.io/savour/savourrpc/go-savourrpc/keylocker";
-option java_package = "com.savourrpc.keylocker";
+option go_package ="./proto/keylocker";
+option java_package = "group.savour.keylocker";
 package savourrpc.keylocker;
 
 message SocialKey {
@@ -44,6 +44,8 @@ message GetSocialKeyReq {
    string consumer_token = 1;
    string chain = 2;
    string uuid = 3;
+   string file_cid = 4;
+   string contract = 5;
 }
 
 message GetSocialKeyRep {

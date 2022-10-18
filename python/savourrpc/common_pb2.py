@@ -18,9 +18,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='savourrpc/common.proto',
   package='savourrpc',
   syntax='proto3',
-  serialized_options=b'Z2git.savour.io/savour/savourrpc/go-savourrpc/common',
+  serialized_options=b'Z\016./proto/common',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x16savourrpc/common.proto\x12\tsavourrpc*$\n\nReturnCode\x12\x0b\n\x07SUCCESS\x10\x00\x12\t\n\x05\x45RROR\x10\x01\x42\x34Z2git.savour.io/savour/savourrpc/go-savourrpc/commonb\x06proto3'
+  serialized_pb=b'\n\x16savourrpc/common.proto\x12\tsavourrpc*$\n\nReturnCode\x12\x0b\n\x07SUCCESS\x10\x00\x12\t\n\x05\x45RROR\x10\x01\x42\x10Z\x0e./proto/commonb\x06proto3'
 )
 
 _RETURNCODE = _descriptor.EnumDescriptor(

@@ -18,9 +18,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='savourrpc/keylocker.proto',
   package='savourrpc.keylocker',
   syntax='proto3',
-  serialized_options=b'\n\027com.savourrpc.keylockerZ5git.savour.io/savour/savourrpc/go-savourrpc/keylocker',
+  serialized_options=b'\n\026group.savour.keylockerZ\021./proto/keylocker',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x19savourrpc/keylocker.proto\x12\x13savourrpc.keylocker\x1a\x16savourrpc/common.proto\"$\n\tSocialKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\"I\n\x0fSupportChainReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0f\n\x07network\x18\x03 \x01(\t\"T\n\x0fSupportChainRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07support\x18\x03 \x01(\x08\"e\n\x0fSetSocialKeyReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04uuid\x18\x03 \x01(\t\x12\x0b\n\x03key\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\"\x96\x01\n\x0fSetSocialKeyRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0b\n\x03pub\x18\x03 \x01(\t\x12\x0c\n\x04priv\x18\x04 \x01(\t\x12\x12\n\ncrypto_way\x18\x05 \x01(\t\x12\x10\n\x08\x66ile_cid\x18\x06 \x01(\t\x12\x10\n\x08\x63ontract\x18\x07 \x01(\t\"F\n\x0fGetSocialKeyReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04uuid\x18\x03 \x01(\t\"u\n\x0fGetSocialKeyRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x30\n\x08key_list\x18\x03 \x03(\x0b\x32\x1e.savourrpc.keylocker.SocialKey2\xaf\x02\n\x10LeyLockerService\x12_\n\x0fgetSupportChain\x12$.savourrpc.keylocker.SupportChainReq\x1a$.savourrpc.keylocker.SupportChainRep\"\x00\x12\\\n\x0csetSocialKey\x12$.savourrpc.keylocker.SetSocialKeyReq\x1a$.savourrpc.keylocker.SetSocialKeyRep\"\x00\x12\\\n\x0cgetSocialKey\x12$.savourrpc.keylocker.GetSocialKeyReq\x1a$.savourrpc.keylocker.GetSocialKeyRep\"\x00\x42P\n\x17\x63om.savourrpc.keylockerZ5git.savour.io/savour/savourrpc/go-savourrpc/keylockerb\x06proto3'
+  serialized_pb=b'\n\x19savourrpc/keylocker.proto\x12\x13savourrpc.keylocker\x1a\x16savourrpc/common.proto\"$\n\tSocialKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\"I\n\x0fSupportChainReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0f\n\x07network\x18\x03 \x01(\t\"T\n\x0fSupportChainRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07support\x18\x03 \x01(\x08\"e\n\x0fSetSocialKeyReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04uuid\x18\x03 \x01(\t\x12\x0b\n\x03key\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\"\x96\x01\n\x0fSetSocialKeyRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0b\n\x03pub\x18\x03 \x01(\t\x12\x0c\n\x04priv\x18\x04 \x01(\t\x12\x12\n\ncrypto_way\x18\x05 \x01(\t\x12\x10\n\x08\x66ile_cid\x18\x06 \x01(\t\x12\x10\n\x08\x63ontract\x18\x07 \x01(\t\"j\n\x0fGetSocialKeyReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04uuid\x18\x03 \x01(\t\x12\x10\n\x08\x66ile_cid\x18\x04 \x01(\t\x12\x10\n\x08\x63ontract\x18\x05 \x01(\t\"u\n\x0fGetSocialKeyRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x30\n\x08key_list\x18\x03 \x03(\x0b\x32\x1e.savourrpc.keylocker.SocialKey2\xaf\x02\n\x10LeyLockerService\x12_\n\x0fgetSupportChain\x12$.savourrpc.keylocker.SupportChainReq\x1a$.savourrpc.keylocker.SupportChainRep\"\x00\x12\\\n\x0csetSocialKey\x12$.savourrpc.keylocker.SetSocialKeyReq\x1a$.savourrpc.keylocker.SetSocialKeyRep\"\x00\x12\\\n\x0cgetSocialKey\x12$.savourrpc.keylocker.GetSocialKeyReq\x1a$.savourrpc.keylocker.GetSocialKeyRep\"\x00\x42+\n\x16group.savour.keylockerZ\x11./proto/keylockerb\x06proto3'
   ,
   dependencies=[savourrpc_dot_common__pb2.DESCRIPTOR,])
 
@@ -321,6 +321,20 @@ _GETSOCIALKEYREQ = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='file_cid', full_name='savourrpc.keylocker.GetSocialKeyReq.file_cid', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='contract', full_name='savourrpc.keylocker.GetSocialKeyReq.contract', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -334,7 +348,7 @@ _GETSOCIALKEYREQ = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=529,
-  serialized_end=599,
+  serialized_end=635,
 )
 
 
@@ -379,8 +393,8 @@ _GETSOCIALKEYREP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=601,
-  serialized_end=718,
+  serialized_start=637,
+  serialized_end=754,
 )
 
 _SUPPORTCHAINREP.fields_by_name['code'].enum_type = savourrpc_dot_common__pb2._RETURNCODE
@@ -455,8 +469,8 @@ _LEYLOCKERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=721,
-  serialized_end=1024,
+  serialized_start=757,
+  serialized_end=1060,
   methods=[
   _descriptor.MethodDescriptor(
     name='getSupportChain',

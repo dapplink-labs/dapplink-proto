@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package savourrpc;
 
-option go_package = "git.savour.io/savour/savourrpc/go-savourrpc/common";
+option go_package = "./proto/common";
 // 通用数据类型
 
 enum ReturnCode{
