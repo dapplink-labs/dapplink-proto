@@ -34,7 +34,7 @@ message SupportChainRep {
 message SetSocialKeyReq {
    string consumer_token = 1;
    string chain = 2;
-   string uuid = 3;
+   string wallet_uuid = 3;
    string key = 4;
    string password = 5;
    string social_code = 6;
@@ -53,7 +53,7 @@ message SetSocialKeyRep {
 message GetSocialKeyReq {
    string consumer_token = 1;
    string chain = 2;
-   string uuid = 3;
+   string wallet_uuid = 3;
    string file_cid = 4;
    string contract = 5;
    string social_code = 6;
@@ -87,7 +87,7 @@ message SetWalletHeadRep {
 message GetWalletHeadReq {
    string consumer_token = 1;
    string chain = 2;
-   string uuid = 3;
+   string wallet_uuid = 3;
    string file_cid = 4;
    string contract = 5;
    string social_code = 6;

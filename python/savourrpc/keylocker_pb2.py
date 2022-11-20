@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\026group.savour.keylockerZ\021./proto/keylocker',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x19savourrpc/keylocker.proto\x12\x13savourrpc.keylocker\"$\n\tSocialKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\"(\n\x0cWalletHeader\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04head\x18\x03 \x01(\t\"I\n\x0fSupportChainReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0f\n\x07network\x18\x03 \x01(\t\"^\n\x0fSupportChainRep\x12-\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1f.savourrpc.keylocker.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07support\x18\x03 \x01(\x08\"z\n\x0fSetSocialKeyReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04uuid\x18\x03 \x01(\t\x12\x0b\n\x03key\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x13\n\x0bsocial_code\x18\x06 \x01(\t\"\xa0\x01\n\x0fSetSocialKeyRep\x12-\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1f.savourrpc.keylocker.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0b\n\x03pub\x18\x03 \x01(\t\x12\x0c\n\x04priv\x18\x04 \x01(\t\x12\x12\n\ncrypto_way\x18\x05 \x01(\t\x12\x10\n\x08\x66ile_cid\x18\x06 \x01(\t\x12\x10\n\x08\x63ontract\x18\x07 \x01(\t\"\x7f\n\x0fGetSocialKeyReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04uuid\x18\x03 \x01(\t\x12\x10\n\x08\x66ile_cid\x18\x04 \x01(\t\x12\x10\n\x08\x63ontract\x18\x05 \x01(\t\x12\x13\n\x0bsocial_code\x18\x06 \x01(\t\"\x7f\n\x0fGetSocialKeyRep\x12-\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1f.savourrpc.keylocker.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x30\n\x08key_list\x18\x03 \x03(\x0b\x32\x1e.savourrpc.keylocker.SocialKey\"\x8a\x01\n\x10SetWalletHeadReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x13\n\x0bwallet_uuid\x18\x03 \x01(\t\x12\x13\n\x0bwallet_head\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x13\n\x0bsocial_code\x18\x06 \x01(\t\"\xa1\x01\n\x10SetWalletHeadRep\x12-\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1f.savourrpc.keylocker.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0b\n\x03pub\x18\x03 \x01(\t\x12\x0c\n\x04priv\x18\x04 \x01(\t\x12\x12\n\ncrypto_way\x18\x05 \x01(\t\x12\x10\n\x08\x66ile_cid\x18\x06 \x01(\t\x12\x10\n\x08\x63ontract\x18\x07 \x01(\t\"\x80\x01\n\x10GetWalletHeadReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0c\n\x04uuid\x18\x03 \x01(\t\x12\x10\n\x08\x66ile_cid\x18\x04 \x01(\t\x12\x10\n\x08\x63ontract\x18\x05 \x01(\t\x12\x13\n\x0bsocial_code\x18\x06 \x01(\t\"\x86\x01\n\x10GetWalletHeadRep\x12-\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1f.savourrpc.keylocker.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x36\n\x0bheader_list\x18\x03 \x03(\x0b\x32!.savourrpc.keylocker.WalletHeader*$\n\nReturnCode\x12\x0b\n\x07SUCCESS\x10\x00\x12\t\n\x05\x45RROR\x10\x01\x32\xf1\x03\n\x10LeyLockerService\x12_\n\x0fgetSupportChain\x12$.savourrpc.keylocker.SupportChainReq\x1a$.savourrpc.keylocker.SupportChainRep\"\x00\x12\\\n\x0csetSocialKey\x12$.savourrpc.keylocker.SetSocialKeyReq\x1a$.savourrpc.keylocker.SetSocialKeyRep\"\x00\x12\\\n\x0cgetSocialKey\x12$.savourrpc.keylocker.GetSocialKeyReq\x1a$.savourrpc.keylocker.GetSocialKeyRep\"\x00\x12_\n\rsetWalletHead\x12%.savourrpc.keylocker.SetWalletHeadReq\x1a%.savourrpc.keylocker.SetWalletHeadRep\"\x00\x12_\n\rgetWalletHead\x12%.savourrpc.keylocker.GetWalletHeadReq\x1a%.savourrpc.keylocker.GetWalletHeadRep\"\x00\x42+\n\x16group.savour.keylockerZ\x11./proto/keylockerb\x06proto3'
+  serialized_pb=b'\n\x19savourrpc/keylocker.proto\x12\x13savourrpc.keylocker\"$\n\tSocialKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\"(\n\x0cWalletHeader\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04head\x18\x03 \x01(\t\"I\n\x0fSupportChainReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x0f\n\x07network\x18\x03 \x01(\t\"^\n\x0fSupportChainRep\x12-\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1f.savourrpc.keylocker.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0f\n\x07support\x18\x03 \x01(\x08\"\x81\x01\n\x0fSetSocialKeyReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x13\n\x0bwallet_uuid\x18\x03 \x01(\t\x12\x0b\n\x03key\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x13\n\x0bsocial_code\x18\x06 \x01(\t\"\xa0\x01\n\x0fSetSocialKeyRep\x12-\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1f.savourrpc.keylocker.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0b\n\x03pub\x18\x03 \x01(\t\x12\x0c\n\x04priv\x18\x04 \x01(\t\x12\x12\n\ncrypto_way\x18\x05 \x01(\t\x12\x10\n\x08\x66ile_cid\x18\x06 \x01(\t\x12\x10\n\x08\x63ontract\x18\x07 \x01(\t\"\x86\x01\n\x0fGetSocialKeyReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x13\n\x0bwallet_uuid\x18\x03 \x01(\t\x12\x10\n\x08\x66ile_cid\x18\x04 \x01(\t\x12\x10\n\x08\x63ontract\x18\x05 \x01(\t\x12\x13\n\x0bsocial_code\x18\x06 \x01(\t\"\x7f\n\x0fGetSocialKeyRep\x12-\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1f.savourrpc.keylocker.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x30\n\x08key_list\x18\x03 \x03(\x0b\x32\x1e.savourrpc.keylocker.SocialKey\"\x8a\x01\n\x10SetWalletHeadReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x13\n\x0bwallet_uuid\x18\x03 \x01(\t\x12\x13\n\x0bwallet_head\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x13\n\x0bsocial_code\x18\x06 \x01(\t\"\xa1\x01\n\x10SetWalletHeadRep\x12-\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1f.savourrpc.keylocker.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x0b\n\x03pub\x18\x03 \x01(\t\x12\x0c\n\x04priv\x18\x04 \x01(\t\x12\x12\n\ncrypto_way\x18\x05 \x01(\t\x12\x10\n\x08\x66ile_cid\x18\x06 \x01(\t\x12\x10\n\x08\x63ontract\x18\x07 \x01(\t\"\x87\x01\n\x10GetWalletHeadReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\r\n\x05\x63hain\x18\x02 \x01(\t\x12\x13\n\x0bwallet_uuid\x18\x03 \x01(\t\x12\x10\n\x08\x66ile_cid\x18\x04 \x01(\t\x12\x10\n\x08\x63ontract\x18\x05 \x01(\t\x12\x13\n\x0bsocial_code\x18\x06 \x01(\t\"\x86\x01\n\x10GetWalletHeadRep\x12-\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x1f.savourrpc.keylocker.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t\x12\x36\n\x0bheader_list\x18\x03 \x03(\x0b\x32!.savourrpc.keylocker.WalletHeader*$\n\nReturnCode\x12\x0b\n\x07SUCCESS\x10\x00\x12\t\n\x05\x45RROR\x10\x01\x32\xf1\x03\n\x10LeyLockerService\x12_\n\x0fgetSupportChain\x12$.savourrpc.keylocker.SupportChainReq\x1a$.savourrpc.keylocker.SupportChainRep\"\x00\x12\\\n\x0csetSocialKey\x12$.savourrpc.keylocker.SetSocialKeyReq\x1a$.savourrpc.keylocker.SetSocialKeyRep\"\x00\x12\\\n\x0cgetSocialKey\x12$.savourrpc.keylocker.GetSocialKeyReq\x1a$.savourrpc.keylocker.GetSocialKeyRep\"\x00\x12_\n\rsetWalletHead\x12%.savourrpc.keylocker.SetWalletHeadReq\x1a%.savourrpc.keylocker.SetWalletHeadRep\"\x00\x12_\n\rgetWalletHead\x12%.savourrpc.keylocker.GetWalletHeadReq\x1a%.savourrpc.keylocker.GetWalletHeadRep\"\x00\x42+\n\x16group.savour.keylockerZ\x11./proto/keylockerb\x06proto3'
 )
 
 _RETURNCODE = _descriptor.EnumDescriptor(
@@ -43,8 +43,8 @@ _RETURNCODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1419,
-  serialized_end=1455,
+  serialized_start=1442,
+  serialized_end=1478,
 )
 _sym_db.RegisterEnumDescriptor(_RETURNCODE)
 
@@ -247,7 +247,7 @@ _SETSOCIALKEYREQ = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='uuid', full_name='savourrpc.keylocker.SetSocialKeyReq.uuid', index=2,
+      name='wallet_uuid', full_name='savourrpc.keylocker.SetSocialKeyReq.wallet_uuid', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -286,8 +286,8 @@ _SETSOCIALKEYREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=301,
-  serialized_end=423,
+  serialized_start=302,
+  serialized_end=431,
 )
 
 
@@ -360,8 +360,8 @@ _SETSOCIALKEYREP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=426,
-  serialized_end=586,
+  serialized_start=434,
+  serialized_end=594,
 )
 
 
@@ -388,7 +388,7 @@ _GETSOCIALKEYREQ = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='uuid', full_name='savourrpc.keylocker.GetSocialKeyReq.uuid', index=2,
+      name='wallet_uuid', full_name='savourrpc.keylocker.GetSocialKeyReq.wallet_uuid', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -427,8 +427,8 @@ _GETSOCIALKEYREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=588,
-  serialized_end=715,
+  serialized_start=597,
+  serialized_end=731,
 )
 
 
@@ -473,8 +473,8 @@ _GETSOCIALKEYREP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=717,
-  serialized_end=844,
+  serialized_start=733,
+  serialized_end=860,
 )
 
 
@@ -540,8 +540,8 @@ _SETWALLETHEADREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=847,
-  serialized_end=985,
+  serialized_start=863,
+  serialized_end=1001,
 )
 
 
@@ -614,8 +614,8 @@ _SETWALLETHEADREP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=988,
-  serialized_end=1149,
+  serialized_start=1004,
+  serialized_end=1165,
 )
 
 
@@ -642,7 +642,7 @@ _GETWALLETHEADREQ = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='uuid', full_name='savourrpc.keylocker.GetWalletHeadReq.uuid', index=2,
+      name='wallet_uuid', full_name='savourrpc.keylocker.GetWalletHeadReq.wallet_uuid', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -681,8 +681,8 @@ _GETWALLETHEADREQ = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1152,
-  serialized_end=1280,
+  serialized_start=1168,
+  serialized_end=1303,
 )
 
 
@@ -727,8 +727,8 @@ _GETWALLETHEADREP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1283,
-  serialized_end=1417,
+  serialized_start=1306,
+  serialized_end=1440,
 )
 
 _SUPPORTCHAINREP.fields_by_name['code'].enum_type = _RETURNCODE
@@ -847,8 +847,8 @@ _LEYLOCKERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1458,
-  serialized_end=1955,
+  serialized_start=1481,
+  serialized_end=1978,
   methods=[
   _descriptor.MethodDescriptor(
     name='getSupportChain',
