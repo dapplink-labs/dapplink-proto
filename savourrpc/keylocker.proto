@@ -1,9 +1,13 @@
 syntax = "proto3";
 
-import "savour-proto/savourrpc/common.proto";
 option go_package ="./proto/keylocker";
 option java_package = "group.savour.keylocker";
 package savourrpc.keylocker;
+
+enum ReturnCode{
+  SUCCESS = 0;
+  ERROR = 1;
+}
 
 message SocialKey {
     string id = 1;
@@ -28,6 +32,7 @@ message SetSocialKeyReq {
    string uuid = 3;
    string key = 4;
    string password = 5;
+   string social_code = 6;
 }
 
 message SetSocialKeyRep {
@@ -44,8 +49,9 @@ message GetSocialKeyReq {
    string consumer_token = 1;
    string chain = 2;
    string uuid = 3;
-   string file_cid = 4;
+   string c = 4;
    string contract = 5;
+   string social_code = 6;
 }
 
 message GetSocialKeyRep {
