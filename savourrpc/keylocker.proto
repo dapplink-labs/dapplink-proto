@@ -10,13 +10,8 @@ enum ReturnCode{
 }
 
 message SocialKey {
-    string id = 1;
-    string key = 3;
-}
-
-message WalletHeader {
-    string id = 1;
-    string head = 3;
+  string id = 1;
+  string key = 3;
 }
 
 message SupportChainReq{
@@ -26,83 +21,45 @@ message SupportChainReq{
 }
 
 message SupportChainRep {
-   ReturnCode code=1;
-   string msg=2;
-   bool support = 3;
+  ReturnCode code=1;
+  string msg=2;
+  bool support = 3;
 }
 
 message SetSocialKeyReq {
-   string consumer_token = 1;
-   string chain = 2;
-   string wallet_uuid = 3;
-   string key = 4;
-   string password = 5;
-   string social_code = 6;
+  string consumer_token = 1;
+  string chain = 2;
+  string wallet_uuid = 3;
+  string key = 4;
+  string password = 5;
+  string social_code = 6;
 }
 
 message SetSocialKeyRep {
-    ReturnCode code=1;
-    string msg=2;
-    string pub = 3;
-    string priv = 4;
-    string crypto_way = 5;
-    string file_cid = 6;
-    string contract = 7;
+  ReturnCode code=1;
+  string msg=2;
+  string pub = 3;
+  string priv = 4;
+  string crypto_way = 5;
+  string file_cid = 6;
+  string contract = 7;
 }
 
 message GetSocialKeyReq {
-   string consumer_token = 1;
-   string chain = 2;
-   string wallet_uuid = 3;
-   string file_cid = 4;
-   string contract = 5;
-   string social_code = 6;
+  string consumer_token = 1;
+  string chain = 2;
+  string wallet_uuid = 3;
+  string file_cid = 4;
 }
 
 message GetSocialKeyRep {
-    ReturnCode code=1;
-    string msg=2;
-    repeated SocialKey key_list = 3;
-}
-
-message SetWalletHeadReq {
-   string consumer_token = 1;
-   string chain = 2;
-   string wallet_uuid = 3;
-   string wallet_head = 4;
-   string password = 5;
-   string social_code = 6;
-}
-
-message SetWalletHeadRep {
-   ReturnCode code=1;
-   string msg=2;
-   string pub = 3;
-   string priv = 4;
-   string crypto_way = 5;
-   string file_cid = 6;
-   string contract = 7;
-}
-
-message GetWalletHeadReq {
-   string consumer_token = 1;
-   string chain = 2;
-   string wallet_uuid = 3;
-   string file_cid = 4;
-   string contract = 5;
-   string social_code = 6;
-}
-
-message GetWalletHeadRep {
-   ReturnCode code=1;
-   string msg=2;
-   repeated WalletHeader header_list = 3;
+  ReturnCode code=1;
+  string msg=2;
+  repeated SocialKey key_list = 3;
 }
 
 service LeyLockerService {
   rpc getSupportChain(SupportChainReq) returns (SupportChainRep) {}
   rpc setSocialKey(SetSocialKeyReq) returns (SetSocialKeyRep) {}
   rpc getSocialKey(GetSocialKeyReq) returns (GetSocialKeyRep) {}
-  rpc setWalletHead(SetWalletHeadReq) returns (SetWalletHeadRep) {}
-  rpc getWalletHead(GetWalletHeadReq) returns (GetWalletHeadRep) {}
 }

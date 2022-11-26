@@ -29,16 +29,6 @@ class LeyLockerServiceStub(object):
                 request_serializer=savourrpc_dot_keylocker__pb2.GetSocialKeyReq.SerializeToString,
                 response_deserializer=savourrpc_dot_keylocker__pb2.GetSocialKeyRep.FromString,
                 )
-        self.setWalletHead = channel.unary_unary(
-                '/savourrpc.keylocker.LeyLockerService/setWalletHead',
-                request_serializer=savourrpc_dot_keylocker__pb2.SetWalletHeadReq.SerializeToString,
-                response_deserializer=savourrpc_dot_keylocker__pb2.SetWalletHeadRep.FromString,
-                )
-        self.getWalletHead = channel.unary_unary(
-                '/savourrpc.keylocker.LeyLockerService/getWalletHead',
-                request_serializer=savourrpc_dot_keylocker__pb2.GetWalletHeadReq.SerializeToString,
-                response_deserializer=savourrpc_dot_keylocker__pb2.GetWalletHeadRep.FromString,
-                )
 
 
 class LeyLockerServiceServicer(object):
@@ -62,18 +52,6 @@ class LeyLockerServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def setWalletHead(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def getWalletHead(self, request, context):
-        """Missing associated documentation comment in .proto file."""
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
 
 def add_LeyLockerServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -91,16 +69,6 @@ def add_LeyLockerServiceServicer_to_server(servicer, server):
                     servicer.getSocialKey,
                     request_deserializer=savourrpc_dot_keylocker__pb2.GetSocialKeyReq.FromString,
                     response_serializer=savourrpc_dot_keylocker__pb2.GetSocialKeyRep.SerializeToString,
-            ),
-            'setWalletHead': grpc.unary_unary_rpc_method_handler(
-                    servicer.setWalletHead,
-                    request_deserializer=savourrpc_dot_keylocker__pb2.SetWalletHeadReq.FromString,
-                    response_serializer=savourrpc_dot_keylocker__pb2.SetWalletHeadRep.SerializeToString,
-            ),
-            'getWalletHead': grpc.unary_unary_rpc_method_handler(
-                    servicer.getWalletHead,
-                    request_deserializer=savourrpc_dot_keylocker__pb2.GetWalletHeadReq.FromString,
-                    response_serializer=savourrpc_dot_keylocker__pb2.GetWalletHeadRep.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -160,39 +128,5 @@ class LeyLockerService(object):
         return grpc.experimental.unary_unary(request, target, '/savourrpc.keylocker.LeyLockerService/getSocialKey',
             savourrpc_dot_keylocker__pb2.GetSocialKeyReq.SerializeToString,
             savourrpc_dot_keylocker__pb2.GetSocialKeyRep.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def setWalletHead(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.keylocker.LeyLockerService/setWalletHead',
-            savourrpc_dot_keylocker__pb2.SetWalletHeadReq.SerializeToString,
-            savourrpc_dot_keylocker__pb2.SetWalletHeadRep.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def getWalletHead(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.keylocker.LeyLockerService/getWalletHead',
-            savourrpc_dot_keylocker__pb2.GetWalletHeadReq.SerializeToString,
-            savourrpc_dot_keylocker__pb2.GetWalletHeadRep.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
