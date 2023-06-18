@@ -371,6 +371,38 @@ message VerifySignedTxResponse{
     bool verified=3;
 }
 
+message ABIBinToJSONRequest {
+  string consumer_token = 1;
+  string chain =2;
+  string symbol=3;
+  string network = 4;
+  string code = 5;
+  string action =6;
+  bytes bin=7;
+}
+
+message ABIBinToJSONResponse{
+  ReturnCode code=1;
+  string msg=2;
+  string jsonString=3;
+}
+
+message ABIJSONToBinRequest {
+  string consumer_token = 1;
+  string chain =2;
+  string symbol=3;
+  string network = 4;
+  string code = 5;
+  string action =6;
+  string jsonString=7;
+}
+
+message ABIJSONToBinResponse{
+  ReturnCode code=1;
+  string msg=2;
+  bytes bin=3;
+}
+
 service WalletService {
   rpc getSupportCoins(SupportCoinsRequest) returns (SupportCoinsResponse) {}
 
@@ -404,5 +436,8 @@ service WalletService {
 
   rpc verifyAccountSignedTx(VerifySignedTxRequest) returns(VerifySignedTxResponse);
   rpc verifyUtxoSignedTx(VerifySignedTxRequest) returns(VerifySignedTxResponse);
+
+  rpc ABIBinToJSON(ABIBinToJSONRequest) returns(ABIBinToJSONResponse);
+  rpc ABIJSONToBin(ABIJSONToBinRequest) returns(ABIJSONToBinResponse);
 }
 
