@@ -372,9 +372,13 @@ message VerifySignedTxResponse{
 }
 
 message ABIBinToJSONRequest {
-    string code = 1;
-    string action =2;
-    bytes bin=3;
+  string consumer_token = 1;
+  string chain =2;
+  string symbol=3;
+  string network = 4;
+  string code = 5;
+  string action =6;
+  bytes bin=7;
 }
 
 message ABIBinToJSONResponse{
@@ -384,9 +388,13 @@ message ABIBinToJSONResponse{
 }
 
 message ABIJSONToBinRequest {
-  string code = 1;
-  string action =2;
-  string jsonString=3;
+  string consumer_token = 1;
+  string chain =2;
+  string symbol=3;
+  string network = 4;
+  string code = 5;
+  string action =6;
+  string jsonString=7;
 }
 
 message ABIJSONToBinResponse{
