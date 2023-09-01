@@ -221,6 +221,30 @@ message UtxoResponse{
     bool unspent=3;
 }
 
+message UnspentOutput {
+   string tx_hash_big_endian = 1;
+   string  tx_hash = 2;
+   uint64 tx_output_n = 3;
+   string  script = 4;
+   uint64 value = 5;
+   uint64 confirmations = 6;
+   uint64 tx_index = 7;
+}
+
+message UnspentOutputsRequest{
+    string consumer_token = 1;
+    string chain = 2;
+    string symbol = 3;
+    string network = 4;
+    string address = 5;
+}
+
+message UnspentOutputsResponse{
+    ReturnCode code=1;
+    string msg=2;
+    repeated UnspentOutput unspent_outputs=3;
+}
+
 message UtxoInsFromDataRequest{
     string consumer_token = 1;
     string chain=2;
@@ -421,6 +445,8 @@ service WalletService {
   rpc getTxByHash(TxHashRequest) returns (TxHashResponse) {}
 
   rpc getUtxo(UtxoRequest) returns (UtxoResponse) {}
+  rpc getUnspentOutputs(UnspentOutputsRequest) returns (UnspentOutputsResponse) {}
+
   rpc getUtxoInsFromData(UtxoInsFromDataRequest) returns(UtxoInsResponse);
 
   rpc getAccountTxFromData(TxFromDataRequest) returns(AccountTxResponse);
