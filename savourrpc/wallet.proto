@@ -427,12 +427,25 @@ message ABIJSONToBinResponse{
   bytes bin=3;
 }
 
+message BlockRequest {
+  string consumer_token = 1;
+  string chain =2;
+}
+
+message BlockResponse{
+  ReturnCode code=1;
+  string msg=2;
+  int64 height = 3;
+  string hash = 4;
+}
+
 service WalletService {
   rpc getSupportCoins(SupportCoinsRequest) returns (SupportCoinsResponse) {}
 
   rpc convertAddress(ConvertAddressRequest) returns(ConvertAddressResponse){}
   rpc validAddress(ValidAddressRequest) returns(ValidAddressResponse){}
 
+  rpc getBlock(BlockRequest) returns (BlockResponse) {}
   rpc getNonce(NonceRequest) returns (NonceResponse) {}
   rpc getGasPrice(GasPriceRequest) returns (GasPriceResponse) {}
   rpc getBalance(BalanceRequest) returns (BalanceResponse) {}
