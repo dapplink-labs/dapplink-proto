@@ -19,14 +19,14 @@ protofiles=$(find . -name '*.proto')
 
 echo Compiling python interfaces...
 
-python -m grpc_tools.protoc -I ./ \
+python3 -m grpc_tools.protoc -I ./ \
        --python_out=python/ \
        --grpc_python_out=python/ \
        $protofiles
 exit_if $?
 
 if [ yes`which protoc-gen-grpclib_python` != yes ]; then
-    python -m grpc_tools.protoc -I ./ \
+    python3 -m grpc_tools.protoc -I ./ \
            --grpclib_python_out=python/ \
            $protofiles
 

@@ -29,6 +29,11 @@ class WalletServiceStub(object):
                 request_serializer=savourrpc_dot_wallet__pb2.ValidAddressRequest.SerializeToString,
                 response_deserializer=savourrpc_dot_wallet__pb2.ValidAddressResponse.FromString,
                 )
+        self.getBlock = channel.unary_unary(
+                '/savourrpc.wallet.WalletService/getBlock',
+                request_serializer=savourrpc_dot_wallet__pb2.BlockRequest.SerializeToString,
+                response_deserializer=savourrpc_dot_wallet__pb2.BlockResponse.FromString,
+                )
         self.getNonce = channel.unary_unary(
                 '/savourrpc.wallet.WalletService/getNonce',
                 request_serializer=savourrpc_dot_wallet__pb2.NonceRequest.SerializeToString,
@@ -73,6 +78,11 @@ class WalletServiceStub(object):
                 '/savourrpc.wallet.WalletService/getUtxo',
                 request_serializer=savourrpc_dot_wallet__pb2.UtxoRequest.SerializeToString,
                 response_deserializer=savourrpc_dot_wallet__pb2.UtxoResponse.FromString,
+                )
+        self.getUnspentOutputs = channel.unary_unary(
+                '/savourrpc.wallet.WalletService/getUnspentOutputs',
+                request_serializer=savourrpc_dot_wallet__pb2.UnspentOutputsRequest.SerializeToString,
+                response_deserializer=savourrpc_dot_wallet__pb2.UnspentOutputsResponse.FromString,
                 )
         self.getUtxoInsFromData = channel.unary_unary(
                 '/savourrpc.wallet.WalletService/getUtxoInsFromData',
@@ -129,6 +139,16 @@ class WalletServiceStub(object):
                 request_serializer=savourrpc_dot_wallet__pb2.VerifySignedTxRequest.SerializeToString,
                 response_deserializer=savourrpc_dot_wallet__pb2.VerifySignedTxResponse.FromString,
                 )
+        self.ABIBinToJSON = channel.unary_unary(
+                '/savourrpc.wallet.WalletService/ABIBinToJSON',
+                request_serializer=savourrpc_dot_wallet__pb2.ABIBinToJSONRequest.SerializeToString,
+                response_deserializer=savourrpc_dot_wallet__pb2.ABIBinToJSONResponse.FromString,
+                )
+        self.ABIJSONToBin = channel.unary_unary(
+                '/savourrpc.wallet.WalletService/ABIJSONToBin',
+                request_serializer=savourrpc_dot_wallet__pb2.ABIJSONToBinRequest.SerializeToString,
+                response_deserializer=savourrpc_dot_wallet__pb2.ABIJSONToBinResponse.FromString,
+                )
 
 
 class WalletServiceServicer(object):
@@ -147,6 +167,12 @@ class WalletServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def validAddress(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def getBlock(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -201,6 +227,12 @@ class WalletServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def getUtxo(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def getUnspentOutputs(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -272,6 +304,18 @@ class WalletServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ABIBinToJSON(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ABIJSONToBin(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_WalletServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -289,6 +333,11 @@ def add_WalletServiceServicer_to_server(servicer, server):
                     servicer.validAddress,
                     request_deserializer=savourrpc_dot_wallet__pb2.ValidAddressRequest.FromString,
                     response_serializer=savourrpc_dot_wallet__pb2.ValidAddressResponse.SerializeToString,
+            ),
+            'getBlock': grpc.unary_unary_rpc_method_handler(
+                    servicer.getBlock,
+                    request_deserializer=savourrpc_dot_wallet__pb2.BlockRequest.FromString,
+                    response_serializer=savourrpc_dot_wallet__pb2.BlockResponse.SerializeToString,
             ),
             'getNonce': grpc.unary_unary_rpc_method_handler(
                     servicer.getNonce,
@@ -334,6 +383,11 @@ def add_WalletServiceServicer_to_server(servicer, server):
                     servicer.getUtxo,
                     request_deserializer=savourrpc_dot_wallet__pb2.UtxoRequest.FromString,
                     response_serializer=savourrpc_dot_wallet__pb2.UtxoResponse.SerializeToString,
+            ),
+            'getUnspentOutputs': grpc.unary_unary_rpc_method_handler(
+                    servicer.getUnspentOutputs,
+                    request_deserializer=savourrpc_dot_wallet__pb2.UnspentOutputsRequest.FromString,
+                    response_serializer=savourrpc_dot_wallet__pb2.UnspentOutputsResponse.SerializeToString,
             ),
             'getUtxoInsFromData': grpc.unary_unary_rpc_method_handler(
                     servicer.getUtxoInsFromData,
@@ -389,6 +443,16 @@ def add_WalletServiceServicer_to_server(servicer, server):
                     servicer.verifyUtxoSignedTx,
                     request_deserializer=savourrpc_dot_wallet__pb2.VerifySignedTxRequest.FromString,
                     response_serializer=savourrpc_dot_wallet__pb2.VerifySignedTxResponse.SerializeToString,
+            ),
+            'ABIBinToJSON': grpc.unary_unary_rpc_method_handler(
+                    servicer.ABIBinToJSON,
+                    request_deserializer=savourrpc_dot_wallet__pb2.ABIBinToJSONRequest.FromString,
+                    response_serializer=savourrpc_dot_wallet__pb2.ABIBinToJSONResponse.SerializeToString,
+            ),
+            'ABIJSONToBin': grpc.unary_unary_rpc_method_handler(
+                    servicer.ABIJSONToBin,
+                    request_deserializer=savourrpc_dot_wallet__pb2.ABIJSONToBinRequest.FromString,
+                    response_serializer=savourrpc_dot_wallet__pb2.ABIJSONToBinResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -448,6 +512,23 @@ class WalletService(object):
         return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/validAddress',
             savourrpc_dot_wallet__pb2.ValidAddressRequest.SerializeToString,
             savourrpc_dot_wallet__pb2.ValidAddressResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def getBlock(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getBlock',
+            savourrpc_dot_wallet__pb2.BlockRequest.SerializeToString,
+            savourrpc_dot_wallet__pb2.BlockResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -601,6 +682,23 @@ class WalletService(object):
         return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getUtxo',
             savourrpc_dot_wallet__pb2.UtxoRequest.SerializeToString,
             savourrpc_dot_wallet__pb2.UtxoResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def getUnspentOutputs(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getUnspentOutputs',
+            savourrpc_dot_wallet__pb2.UnspentOutputsRequest.SerializeToString,
+            savourrpc_dot_wallet__pb2.UnspentOutputsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -788,5 +886,39 @@ class WalletService(object):
         return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/verifyUtxoSignedTx',
             savourrpc_dot_wallet__pb2.VerifySignedTxRequest.SerializeToString,
             savourrpc_dot_wallet__pb2.VerifySignedTxResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ABIBinToJSON(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/ABIBinToJSON',
+            savourrpc_dot_wallet__pb2.ABIBinToJSONRequest.SerializeToString,
+            savourrpc_dot_wallet__pb2.ABIBinToJSONResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ABIJSONToBin(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/ABIJSONToBin',
+            savourrpc_dot_wallet__pb2.ABIJSONToBinRequest.SerializeToString,
+            savourrpc_dot_wallet__pb2.ABIJSONToBinResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
