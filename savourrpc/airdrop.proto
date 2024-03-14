@@ -7,7 +7,7 @@ package savourrpc.airdrop;
 
 message DppLinkPointsReq {
   string consumer_token = 1;
-  int32 type = 2;
+  string type = 2;
   string address = 3;
 }
 

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\024group.savour.airdropZ\017./proto/airdrop',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x17savourrpc/airdrop.proto\x12\x11savourrpc.airdrop\x1a\x16savourrpc/common.proto\"I\n\x10\x44ppLinkPointsReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\x05\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\t\"D\n\x10\x44ppLinkPointsRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t2s\n\x0e\x41irdropService\x12\x61\n\x13submitDppLinkPoints\x12#.savourrpc.airdrop.DppLinkPointsReq\x1a#.savourrpc.airdrop.DppLinkPointsRep\"\x00\x42\'\n\x14group.savour.airdropZ\x0f./proto/airdropb\x06proto3'
+  serialized_pb=b'\n\x17savourrpc/airdrop.proto\x12\x11savourrpc.airdrop\x1a\x16savourrpc/common.proto\"I\n\x10\x44ppLinkPointsReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\t\"D\n\x10\x44ppLinkPointsRep\x12#\n\x04\x63ode\x18\x01 \x01(\x0e\x32\x15.savourrpc.ReturnCode\x12\x0b\n\x03msg\x18\x02 \x01(\t2s\n\x0e\x41irdropService\x12\x61\n\x13submitDppLinkPoints\x12#.savourrpc.airdrop.DppLinkPointsReq\x1a#.savourrpc.airdrop.DppLinkPointsRep\"\x00\x42\'\n\x14group.savour.airdropZ\x0f./proto/airdropb\x06proto3'
   ,
   dependencies=[savourrpc_dot_common__pb2.DESCRIPTOR,])
 
@@ -44,8 +44,8 @@ _DPPLINKPOINTSREQ = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='type', full_name='savourrpc.airdrop.DppLinkPointsReq.type', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),

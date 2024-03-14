@@ -8,6 +8,10 @@ package airdrop
 
 import (
 	common "./proto/common"
+	context "context"
+	grpc "google.golang.org/grpc"
+	codes "google.golang.org/grpc/codes"
+	status "google.golang.org/grpc/status"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -249,4 +253,84 @@ func file_savourrpc_airdrop_proto_init() {
 	file_savourrpc_airdrop_proto_rawDesc = nil
 	file_savourrpc_airdrop_proto_goTypes = nil
 	file_savourrpc_airdrop_proto_depIdxs = nil
+}
+
+// Reference imports to suppress errors if they are not otherwise used.
+var _ context.Context
+var _ grpc.ClientConnInterface
+
+// This is a compile-time assertion to ensure that this generated file
+// is compatible with the grpc package it is being compiled against.
+const _ = grpc.SupportPackageIsVersion6
+
+// AirdropServiceClient is the client API for AirdropService service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+type AirdropServiceClient interface {
+	SubmitDppLinkPoints(ctx context.Context, in *DppLinkPointsReq, opts ...grpc.CallOption) (*DppLinkPointsRep, error)
+}
+
+type airdropServiceClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewAirdropServiceClient(cc grpc.ClientConnInterface) AirdropServiceClient {
+	return &airdropServiceClient{cc}
+}
+
+func (c *airdropServiceClient) SubmitDppLinkPoints(ctx context.Context, in *DppLinkPointsReq, opts ...grpc.CallOption) (*DppLinkPointsRep, error) {
+	out := new(DppLinkPointsRep)
+	err := c.cc.Invoke(ctx, "/savourrpc.airdrop.AirdropService/submitDppLinkPoints", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// AirdropServiceServer is the server API for AirdropService service.
+type AirdropServiceServer interface {
+	SubmitDppLinkPoints(context.Context, *DppLinkPointsReq) (*DppLinkPointsRep, error)
+}
+
+// UnimplementedAirdropServiceServer can be embedded to have forward compatible implementations.
+type UnimplementedAirdropServiceServer struct {
+}
+
+func (*UnimplementedAirdropServiceServer) SubmitDppLinkPoints(context.Context, *DppLinkPointsReq) (*DppLinkPointsRep, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubmitDppLinkPoints not implemented")
+}
+
+func RegisterAirdropServiceServer(s *grpc.Server, srv AirdropServiceServer) {
+	s.RegisterService(&_AirdropService_serviceDesc, srv)
+}
+
+func _AirdropService_SubmitDppLinkPoints_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DppLinkPointsReq)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AirdropServiceServer).SubmitDppLinkPoints(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/savourrpc.airdrop.AirdropService/SubmitDppLinkPoints",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AirdropServiceServer).SubmitDppLinkPoints(ctx, req.(*DppLinkPointsReq))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _AirdropService_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "savourrpc.airdrop.AirdropService",
+	HandlerType: (*AirdropServiceServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "submitDppLinkPoints",
+			Handler:    _AirdropService_SubmitDppLinkPoints_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "savourrpc/airdrop.proto",
 }
