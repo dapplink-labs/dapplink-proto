@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from savourrpc import chaineye_pb2 as savourrpc_dot_chaineye__pb2
+from savour_rpc import chaineye_pb2 as savour__rpc_dot_chaineye__pb2
 
 
 class ChaineyeServiceStub(object):
@@ -15,34 +15,34 @@ class ChaineyeServiceStub(object):
             channel: A grpc.Channel.
         """
         self.getArticleCat = channel.unary_unary(
-                '/savourrpc.chaineye.ChaineyeService/getArticleCat',
-                request_serializer=savourrpc_dot_chaineye__pb2.ArticleCatReq.SerializeToString,
-                response_deserializer=savourrpc_dot_chaineye__pb2.ArticleCatRep.FromString,
+                '/savour_rpc.chaineye.ChaineyeService/getArticleCat',
+                request_serializer=savour__rpc_dot_chaineye__pb2.ArticleCatReq.SerializeToString,
+                response_deserializer=savour__rpc_dot_chaineye__pb2.ArticleCatRep.FromString,
                 )
         self.getArticleList = channel.unary_unary(
-                '/savourrpc.chaineye.ChaineyeService/getArticleList',
-                request_serializer=savourrpc_dot_chaineye__pb2.ArticleListReq.SerializeToString,
-                response_deserializer=savourrpc_dot_chaineye__pb2.ArticleListRep.FromString,
+                '/savour_rpc.chaineye.ChaineyeService/getArticleList',
+                request_serializer=savour__rpc_dot_chaineye__pb2.ArticleListReq.SerializeToString,
+                response_deserializer=savour__rpc_dot_chaineye__pb2.ArticleListRep.FromString,
                 )
         self.getArticleDetail = channel.unary_unary(
-                '/savourrpc.chaineye.ChaineyeService/getArticleDetail',
-                request_serializer=savourrpc_dot_chaineye__pb2.ArticleDetailReq.SerializeToString,
-                response_deserializer=savourrpc_dot_chaineye__pb2.ArticleDetailRep.FromString,
+                '/savour_rpc.chaineye.ChaineyeService/getArticleDetail',
+                request_serializer=savour__rpc_dot_chaineye__pb2.ArticleDetailReq.SerializeToString,
+                response_deserializer=savour__rpc_dot_chaineye__pb2.ArticleDetailRep.FromString,
                 )
         self.getCommentList = channel.unary_unary(
-                '/savourrpc.chaineye.ChaineyeService/getCommentList',
-                request_serializer=savourrpc_dot_chaineye__pb2.CommentListReq.SerializeToString,
-                response_deserializer=savourrpc_dot_chaineye__pb2.CommentListRep.FromString,
+                '/savour_rpc.chaineye.ChaineyeService/getCommentList',
+                request_serializer=savour__rpc_dot_chaineye__pb2.CommentListReq.SerializeToString,
+                response_deserializer=savour__rpc_dot_chaineye__pb2.CommentListRep.FromString,
                 )
         self.getLikeAddress = channel.unary_unary(
-                '/savourrpc.chaineye.ChaineyeService/getLikeAddress',
-                request_serializer=savourrpc_dot_chaineye__pb2.AddressReq.SerializeToString,
-                response_deserializer=savourrpc_dot_chaineye__pb2.AddressRep.FromString,
+                '/savour_rpc.chaineye.ChaineyeService/getLikeAddress',
+                request_serializer=savour__rpc_dot_chaineye__pb2.AddressReq.SerializeToString,
+                response_deserializer=savour__rpc_dot_chaineye__pb2.AddressRep.FromString,
                 )
         self.likeArticle = channel.unary_unary(
-                '/savourrpc.chaineye.ChaineyeService/likeArticle',
-                request_serializer=savourrpc_dot_chaineye__pb2.LikeReq.SerializeToString,
-                response_deserializer=savourrpc_dot_chaineye__pb2.LikeRep.FromString,
+                '/savour_rpc.chaineye.ChaineyeService/likeArticle',
+                request_serializer=savour__rpc_dot_chaineye__pb2.LikeReq.SerializeToString,
+                response_deserializer=savour__rpc_dot_chaineye__pb2.LikeRep.FromString,
                 )
 
 
@@ -90,37 +90,37 @@ def add_ChaineyeServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'getArticleCat': grpc.unary_unary_rpc_method_handler(
                     servicer.getArticleCat,
-                    request_deserializer=savourrpc_dot_chaineye__pb2.ArticleCatReq.FromString,
-                    response_serializer=savourrpc_dot_chaineye__pb2.ArticleCatRep.SerializeToString,
+                    request_deserializer=savour__rpc_dot_chaineye__pb2.ArticleCatReq.FromString,
+                    response_serializer=savour__rpc_dot_chaineye__pb2.ArticleCatRep.SerializeToString,
             ),
             'getArticleList': grpc.unary_unary_rpc_method_handler(
                     servicer.getArticleList,
-                    request_deserializer=savourrpc_dot_chaineye__pb2.ArticleListReq.FromString,
-                    response_serializer=savourrpc_dot_chaineye__pb2.ArticleListRep.SerializeToString,
+                    request_deserializer=savour__rpc_dot_chaineye__pb2.ArticleListReq.FromString,
+                    response_serializer=savour__rpc_dot_chaineye__pb2.ArticleListRep.SerializeToString,
             ),
             'getArticleDetail': grpc.unary_unary_rpc_method_handler(
                     servicer.getArticleDetail,
-                    request_deserializer=savourrpc_dot_chaineye__pb2.ArticleDetailReq.FromString,
-                    response_serializer=savourrpc_dot_chaineye__pb2.ArticleDetailRep.SerializeToString,
+                    request_deserializer=savour__rpc_dot_chaineye__pb2.ArticleDetailReq.FromString,
+                    response_serializer=savour__rpc_dot_chaineye__pb2.ArticleDetailRep.SerializeToString,
             ),
             'getCommentList': grpc.unary_unary_rpc_method_handler(
                     servicer.getCommentList,
-                    request_deserializer=savourrpc_dot_chaineye__pb2.CommentListReq.FromString,
-                    response_serializer=savourrpc_dot_chaineye__pb2.CommentListRep.SerializeToString,
+                    request_deserializer=savour__rpc_dot_chaineye__pb2.CommentListReq.FromString,
+                    response_serializer=savour__rpc_dot_chaineye__pb2.CommentListRep.SerializeToString,
             ),
             'getLikeAddress': grpc.unary_unary_rpc_method_handler(
                     servicer.getLikeAddress,
-                    request_deserializer=savourrpc_dot_chaineye__pb2.AddressReq.FromString,
-                    response_serializer=savourrpc_dot_chaineye__pb2.AddressRep.SerializeToString,
+                    request_deserializer=savour__rpc_dot_chaineye__pb2.AddressReq.FromString,
+                    response_serializer=savour__rpc_dot_chaineye__pb2.AddressRep.SerializeToString,
             ),
             'likeArticle': grpc.unary_unary_rpc_method_handler(
                     servicer.likeArticle,
-                    request_deserializer=savourrpc_dot_chaineye__pb2.LikeReq.FromString,
-                    response_serializer=savourrpc_dot_chaineye__pb2.LikeRep.SerializeToString,
+                    request_deserializer=savour__rpc_dot_chaineye__pb2.LikeReq.FromString,
+                    response_serializer=savour__rpc_dot_chaineye__pb2.LikeRep.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'savourrpc.chaineye.ChaineyeService', rpc_method_handlers)
+            'savour_rpc.chaineye.ChaineyeService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -139,9 +139,9 @@ class ChaineyeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.chaineye.ChaineyeService/getArticleCat',
-            savourrpc_dot_chaineye__pb2.ArticleCatReq.SerializeToString,
-            savourrpc_dot_chaineye__pb2.ArticleCatRep.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.chaineye.ChaineyeService/getArticleCat',
+            savour__rpc_dot_chaineye__pb2.ArticleCatReq.SerializeToString,
+            savour__rpc_dot_chaineye__pb2.ArticleCatRep.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -156,9 +156,9 @@ class ChaineyeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.chaineye.ChaineyeService/getArticleList',
-            savourrpc_dot_chaineye__pb2.ArticleListReq.SerializeToString,
-            savourrpc_dot_chaineye__pb2.ArticleListRep.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.chaineye.ChaineyeService/getArticleList',
+            savour__rpc_dot_chaineye__pb2.ArticleListReq.SerializeToString,
+            savour__rpc_dot_chaineye__pb2.ArticleListRep.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -173,9 +173,9 @@ class ChaineyeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.chaineye.ChaineyeService/getArticleDetail',
-            savourrpc_dot_chaineye__pb2.ArticleDetailReq.SerializeToString,
-            savourrpc_dot_chaineye__pb2.ArticleDetailRep.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.chaineye.ChaineyeService/getArticleDetail',
+            savour__rpc_dot_chaineye__pb2.ArticleDetailReq.SerializeToString,
+            savour__rpc_dot_chaineye__pb2.ArticleDetailRep.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -190,9 +190,9 @@ class ChaineyeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.chaineye.ChaineyeService/getCommentList',
-            savourrpc_dot_chaineye__pb2.CommentListReq.SerializeToString,
-            savourrpc_dot_chaineye__pb2.CommentListRep.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.chaineye.ChaineyeService/getCommentList',
+            savour__rpc_dot_chaineye__pb2.CommentListReq.SerializeToString,
+            savour__rpc_dot_chaineye__pb2.CommentListRep.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -207,9 +207,9 @@ class ChaineyeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.chaineye.ChaineyeService/getLikeAddress',
-            savourrpc_dot_chaineye__pb2.AddressReq.SerializeToString,
-            savourrpc_dot_chaineye__pb2.AddressRep.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.chaineye.ChaineyeService/getLikeAddress',
+            savour__rpc_dot_chaineye__pb2.AddressReq.SerializeToString,
+            savour__rpc_dot_chaineye__pb2.AddressRep.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -224,8 +224,8 @@ class ChaineyeService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.chaineye.ChaineyeService/likeArticle',
-            savourrpc_dot_chaineye__pb2.LikeReq.SerializeToString,
-            savourrpc_dot_chaineye__pb2.LikeRep.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.chaineye.ChaineyeService/likeArticle',
+            savour__rpc_dot_chaineye__pb2.LikeReq.SerializeToString,
+            savour__rpc_dot_chaineye__pb2.LikeRep.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from savourrpc import wallet_pb2 as savourrpc_dot_wallet__pb2
+from savour_rpc import wallet_pb2 as savour__rpc_dot_wallet__pb2
 
 
 class WalletServiceStub(object):
@@ -15,139 +15,139 @@ class WalletServiceStub(object):
             channel: A grpc.Channel.
         """
         self.getSupportCoins = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/getSupportCoins',
-                request_serializer=savourrpc_dot_wallet__pb2.SupportCoinsRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.SupportCoinsResponse.FromString,
+                '/savour_rpc.wallet.WalletService/getSupportCoins',
+                request_serializer=savour__rpc_dot_wallet__pb2.SupportCoinsRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.SupportCoinsResponse.FromString,
                 )
         self.convertAddress = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/convertAddress',
-                request_serializer=savourrpc_dot_wallet__pb2.ConvertAddressRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.ConvertAddressResponse.FromString,
+                '/savour_rpc.wallet.WalletService/convertAddress',
+                request_serializer=savour__rpc_dot_wallet__pb2.ConvertAddressRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.ConvertAddressResponse.FromString,
                 )
         self.validAddress = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/validAddress',
-                request_serializer=savourrpc_dot_wallet__pb2.ValidAddressRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.ValidAddressResponse.FromString,
+                '/savour_rpc.wallet.WalletService/validAddress',
+                request_serializer=savour__rpc_dot_wallet__pb2.ValidAddressRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.ValidAddressResponse.FromString,
                 )
         self.getBlock = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/getBlock',
-                request_serializer=savourrpc_dot_wallet__pb2.BlockRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.BlockResponse.FromString,
+                '/savour_rpc.wallet.WalletService/getBlock',
+                request_serializer=savour__rpc_dot_wallet__pb2.BlockRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.BlockResponse.FromString,
                 )
         self.getNonce = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/getNonce',
-                request_serializer=savourrpc_dot_wallet__pb2.NonceRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.NonceResponse.FromString,
+                '/savour_rpc.wallet.WalletService/getNonce',
+                request_serializer=savour__rpc_dot_wallet__pb2.NonceRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.NonceResponse.FromString,
                 )
         self.getGasPrice = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/getGasPrice',
-                request_serializer=savourrpc_dot_wallet__pb2.GasPriceRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.GasPriceResponse.FromString,
+                '/savour_rpc.wallet.WalletService/getGasPrice',
+                request_serializer=savour__rpc_dot_wallet__pb2.GasPriceRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.GasPriceResponse.FromString,
                 )
         self.getBalance = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/getBalance',
-                request_serializer=savourrpc_dot_wallet__pb2.BalanceRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.BalanceResponse.FromString,
+                '/savour_rpc.wallet.WalletService/getBalance',
+                request_serializer=savour__rpc_dot_wallet__pb2.BalanceRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.BalanceResponse.FromString,
                 )
         self.getAccount = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/getAccount',
-                request_serializer=savourrpc_dot_wallet__pb2.AccountRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.AccountResponse.FromString,
+                '/savour_rpc.wallet.WalletService/getAccount',
+                request_serializer=savour__rpc_dot_wallet__pb2.AccountRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.AccountResponse.FromString,
                 )
         self.getMinRent = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/getMinRent',
-                request_serializer=savourrpc_dot_wallet__pb2.MinRentRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.MinRentResponse.FromString,
+                '/savour_rpc.wallet.WalletService/getMinRent',
+                request_serializer=savour__rpc_dot_wallet__pb2.MinRentRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.MinRentResponse.FromString,
                 )
         self.SendTx = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/SendTx',
-                request_serializer=savourrpc_dot_wallet__pb2.SendTxRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.SendTxResponse.FromString,
+                '/savour_rpc.wallet.WalletService/SendTx',
+                request_serializer=savour__rpc_dot_wallet__pb2.SendTxRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.SendTxResponse.FromString,
                 )
         self.getTxByAddress = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/getTxByAddress',
-                request_serializer=savourrpc_dot_wallet__pb2.TxAddressRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.TxAddressResponse.FromString,
+                '/savour_rpc.wallet.WalletService/getTxByAddress',
+                request_serializer=savour__rpc_dot_wallet__pb2.TxAddressRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.TxAddressResponse.FromString,
                 )
         self.getTxByHash = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/getTxByHash',
-                request_serializer=savourrpc_dot_wallet__pb2.TxHashRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.TxHashResponse.FromString,
+                '/savour_rpc.wallet.WalletService/getTxByHash',
+                request_serializer=savour__rpc_dot_wallet__pb2.TxHashRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.TxHashResponse.FromString,
                 )
         self.getUtxo = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/getUtxo',
-                request_serializer=savourrpc_dot_wallet__pb2.UtxoRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.UtxoResponse.FromString,
+                '/savour_rpc.wallet.WalletService/getUtxo',
+                request_serializer=savour__rpc_dot_wallet__pb2.UtxoRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.UtxoResponse.FromString,
                 )
         self.getUnspentOutputs = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/getUnspentOutputs',
-                request_serializer=savourrpc_dot_wallet__pb2.UnspentOutputsRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.UnspentOutputsResponse.FromString,
+                '/savour_rpc.wallet.WalletService/getUnspentOutputs',
+                request_serializer=savour__rpc_dot_wallet__pb2.UnspentOutputsRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.UnspentOutputsResponse.FromString,
                 )
         self.getUtxoInsFromData = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/getUtxoInsFromData',
-                request_serializer=savourrpc_dot_wallet__pb2.UtxoInsFromDataRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.UtxoInsResponse.FromString,
+                '/savour_rpc.wallet.WalletService/getUtxoInsFromData',
+                request_serializer=savour__rpc_dot_wallet__pb2.UtxoInsFromDataRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.UtxoInsResponse.FromString,
                 )
         self.getAccountTxFromData = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/getAccountTxFromData',
-                request_serializer=savourrpc_dot_wallet__pb2.TxFromDataRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.AccountTxResponse.FromString,
+                '/savour_rpc.wallet.WalletService/getAccountTxFromData',
+                request_serializer=savour__rpc_dot_wallet__pb2.TxFromDataRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.AccountTxResponse.FromString,
                 )
         self.getUtxoTxFromData = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/getUtxoTxFromData',
-                request_serializer=savourrpc_dot_wallet__pb2.TxFromDataRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.UtxoTxResponse.FromString,
+                '/savour_rpc.wallet.WalletService/getUtxoTxFromData',
+                request_serializer=savour__rpc_dot_wallet__pb2.TxFromDataRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.UtxoTxResponse.FromString,
                 )
         self.getAccountTxFromSignedData = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/getAccountTxFromSignedData',
-                request_serializer=savourrpc_dot_wallet__pb2.TxFromSignedDataRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.AccountTxResponse.FromString,
+                '/savour_rpc.wallet.WalletService/getAccountTxFromSignedData',
+                request_serializer=savour__rpc_dot_wallet__pb2.TxFromSignedDataRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.AccountTxResponse.FromString,
                 )
         self.GetUtxoTxFromSignedData = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/GetUtxoTxFromSignedData',
-                request_serializer=savourrpc_dot_wallet__pb2.TxFromSignedDataRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.UtxoTxResponse.FromString,
+                '/savour_rpc.wallet.WalletService/GetUtxoTxFromSignedData',
+                request_serializer=savour__rpc_dot_wallet__pb2.TxFromSignedDataRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.UtxoTxResponse.FromString,
                 )
         self.createAccountSignedTx = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/createAccountSignedTx',
-                request_serializer=savourrpc_dot_wallet__pb2.CreateAccountSignedTxRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.CreateSignedTxResponse.FromString,
+                '/savour_rpc.wallet.WalletService/createAccountSignedTx',
+                request_serializer=savour__rpc_dot_wallet__pb2.CreateAccountSignedTxRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.CreateSignedTxResponse.FromString,
                 )
         self.createAccountTx = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/createAccountTx',
-                request_serializer=savourrpc_dot_wallet__pb2.CreateAccountTxRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.CreateAccountTxResponse.FromString,
+                '/savour_rpc.wallet.WalletService/createAccountTx',
+                request_serializer=savour__rpc_dot_wallet__pb2.CreateAccountTxRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.CreateAccountTxResponse.FromString,
                 )
         self.createUtxoSignedTx = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/createUtxoSignedTx',
-                request_serializer=savourrpc_dot_wallet__pb2.CreateUtxoSignedTxRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.CreateSignedTxResponse.FromString,
+                '/savour_rpc.wallet.WalletService/createUtxoSignedTx',
+                request_serializer=savour__rpc_dot_wallet__pb2.CreateUtxoSignedTxRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.CreateSignedTxResponse.FromString,
                 )
         self.createUtxoTx = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/createUtxoTx',
-                request_serializer=savourrpc_dot_wallet__pb2.CreateUtxoTxRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.CreateUtxoTxResponse.FromString,
+                '/savour_rpc.wallet.WalletService/createUtxoTx',
+                request_serializer=savour__rpc_dot_wallet__pb2.CreateUtxoTxRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.CreateUtxoTxResponse.FromString,
                 )
         self.verifyAccountSignedTx = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/verifyAccountSignedTx',
-                request_serializer=savourrpc_dot_wallet__pb2.VerifySignedTxRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.VerifySignedTxResponse.FromString,
+                '/savour_rpc.wallet.WalletService/verifyAccountSignedTx',
+                request_serializer=savour__rpc_dot_wallet__pb2.VerifySignedTxRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.VerifySignedTxResponse.FromString,
                 )
         self.verifyUtxoSignedTx = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/verifyUtxoSignedTx',
-                request_serializer=savourrpc_dot_wallet__pb2.VerifySignedTxRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.VerifySignedTxResponse.FromString,
+                '/savour_rpc.wallet.WalletService/verifyUtxoSignedTx',
+                request_serializer=savour__rpc_dot_wallet__pb2.VerifySignedTxRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.VerifySignedTxResponse.FromString,
                 )
         self.ABIBinToJSON = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/ABIBinToJSON',
-                request_serializer=savourrpc_dot_wallet__pb2.ABIBinToJSONRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.ABIBinToJSONResponse.FromString,
+                '/savour_rpc.wallet.WalletService/ABIBinToJSON',
+                request_serializer=savour__rpc_dot_wallet__pb2.ABIBinToJSONRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.ABIBinToJSONResponse.FromString,
                 )
         self.ABIJSONToBin = channel.unary_unary(
-                '/savourrpc.wallet.WalletService/ABIJSONToBin',
-                request_serializer=savourrpc_dot_wallet__pb2.ABIJSONToBinRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_wallet__pb2.ABIJSONToBinResponse.FromString,
+                '/savour_rpc.wallet.WalletService/ABIJSONToBin',
+                request_serializer=savour__rpc_dot_wallet__pb2.ABIJSONToBinRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_wallet__pb2.ABIJSONToBinResponse.FromString,
                 )
 
 
@@ -321,142 +321,142 @@ def add_WalletServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'getSupportCoins': grpc.unary_unary_rpc_method_handler(
                     servicer.getSupportCoins,
-                    request_deserializer=savourrpc_dot_wallet__pb2.SupportCoinsRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.SupportCoinsResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.SupportCoinsRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.SupportCoinsResponse.SerializeToString,
             ),
             'convertAddress': grpc.unary_unary_rpc_method_handler(
                     servicer.convertAddress,
-                    request_deserializer=savourrpc_dot_wallet__pb2.ConvertAddressRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.ConvertAddressResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.ConvertAddressRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.ConvertAddressResponse.SerializeToString,
             ),
             'validAddress': grpc.unary_unary_rpc_method_handler(
                     servicer.validAddress,
-                    request_deserializer=savourrpc_dot_wallet__pb2.ValidAddressRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.ValidAddressResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.ValidAddressRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.ValidAddressResponse.SerializeToString,
             ),
             'getBlock': grpc.unary_unary_rpc_method_handler(
                     servicer.getBlock,
-                    request_deserializer=savourrpc_dot_wallet__pb2.BlockRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.BlockResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.BlockRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.BlockResponse.SerializeToString,
             ),
             'getNonce': grpc.unary_unary_rpc_method_handler(
                     servicer.getNonce,
-                    request_deserializer=savourrpc_dot_wallet__pb2.NonceRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.NonceResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.NonceRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.NonceResponse.SerializeToString,
             ),
             'getGasPrice': grpc.unary_unary_rpc_method_handler(
                     servicer.getGasPrice,
-                    request_deserializer=savourrpc_dot_wallet__pb2.GasPriceRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.GasPriceResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.GasPriceRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.GasPriceResponse.SerializeToString,
             ),
             'getBalance': grpc.unary_unary_rpc_method_handler(
                     servicer.getBalance,
-                    request_deserializer=savourrpc_dot_wallet__pb2.BalanceRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.BalanceResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.BalanceRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.BalanceResponse.SerializeToString,
             ),
             'getAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.getAccount,
-                    request_deserializer=savourrpc_dot_wallet__pb2.AccountRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.AccountResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.AccountRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.AccountResponse.SerializeToString,
             ),
             'getMinRent': grpc.unary_unary_rpc_method_handler(
                     servicer.getMinRent,
-                    request_deserializer=savourrpc_dot_wallet__pb2.MinRentRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.MinRentResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.MinRentRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.MinRentResponse.SerializeToString,
             ),
             'SendTx': grpc.unary_unary_rpc_method_handler(
                     servicer.SendTx,
-                    request_deserializer=savourrpc_dot_wallet__pb2.SendTxRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.SendTxResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.SendTxRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.SendTxResponse.SerializeToString,
             ),
             'getTxByAddress': grpc.unary_unary_rpc_method_handler(
                     servicer.getTxByAddress,
-                    request_deserializer=savourrpc_dot_wallet__pb2.TxAddressRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.TxAddressResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.TxAddressRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.TxAddressResponse.SerializeToString,
             ),
             'getTxByHash': grpc.unary_unary_rpc_method_handler(
                     servicer.getTxByHash,
-                    request_deserializer=savourrpc_dot_wallet__pb2.TxHashRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.TxHashResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.TxHashRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.TxHashResponse.SerializeToString,
             ),
             'getUtxo': grpc.unary_unary_rpc_method_handler(
                     servicer.getUtxo,
-                    request_deserializer=savourrpc_dot_wallet__pb2.UtxoRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.UtxoResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.UtxoRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.UtxoResponse.SerializeToString,
             ),
             'getUnspentOutputs': grpc.unary_unary_rpc_method_handler(
                     servicer.getUnspentOutputs,
-                    request_deserializer=savourrpc_dot_wallet__pb2.UnspentOutputsRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.UnspentOutputsResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.UnspentOutputsRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.UnspentOutputsResponse.SerializeToString,
             ),
             'getUtxoInsFromData': grpc.unary_unary_rpc_method_handler(
                     servicer.getUtxoInsFromData,
-                    request_deserializer=savourrpc_dot_wallet__pb2.UtxoInsFromDataRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.UtxoInsResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.UtxoInsFromDataRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.UtxoInsResponse.SerializeToString,
             ),
             'getAccountTxFromData': grpc.unary_unary_rpc_method_handler(
                     servicer.getAccountTxFromData,
-                    request_deserializer=savourrpc_dot_wallet__pb2.TxFromDataRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.AccountTxResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.TxFromDataRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.AccountTxResponse.SerializeToString,
             ),
             'getUtxoTxFromData': grpc.unary_unary_rpc_method_handler(
                     servicer.getUtxoTxFromData,
-                    request_deserializer=savourrpc_dot_wallet__pb2.TxFromDataRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.UtxoTxResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.TxFromDataRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.UtxoTxResponse.SerializeToString,
             ),
             'getAccountTxFromSignedData': grpc.unary_unary_rpc_method_handler(
                     servicer.getAccountTxFromSignedData,
-                    request_deserializer=savourrpc_dot_wallet__pb2.TxFromSignedDataRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.AccountTxResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.TxFromSignedDataRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.AccountTxResponse.SerializeToString,
             ),
             'GetUtxoTxFromSignedData': grpc.unary_unary_rpc_method_handler(
                     servicer.GetUtxoTxFromSignedData,
-                    request_deserializer=savourrpc_dot_wallet__pb2.TxFromSignedDataRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.UtxoTxResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.TxFromSignedDataRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.UtxoTxResponse.SerializeToString,
             ),
             'createAccountSignedTx': grpc.unary_unary_rpc_method_handler(
                     servicer.createAccountSignedTx,
-                    request_deserializer=savourrpc_dot_wallet__pb2.CreateAccountSignedTxRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.CreateSignedTxResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.CreateAccountSignedTxRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.CreateSignedTxResponse.SerializeToString,
             ),
             'createAccountTx': grpc.unary_unary_rpc_method_handler(
                     servicer.createAccountTx,
-                    request_deserializer=savourrpc_dot_wallet__pb2.CreateAccountTxRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.CreateAccountTxResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.CreateAccountTxRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.CreateAccountTxResponse.SerializeToString,
             ),
             'createUtxoSignedTx': grpc.unary_unary_rpc_method_handler(
                     servicer.createUtxoSignedTx,
-                    request_deserializer=savourrpc_dot_wallet__pb2.CreateUtxoSignedTxRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.CreateSignedTxResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.CreateUtxoSignedTxRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.CreateSignedTxResponse.SerializeToString,
             ),
             'createUtxoTx': grpc.unary_unary_rpc_method_handler(
                     servicer.createUtxoTx,
-                    request_deserializer=savourrpc_dot_wallet__pb2.CreateUtxoTxRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.CreateUtxoTxResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.CreateUtxoTxRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.CreateUtxoTxResponse.SerializeToString,
             ),
             'verifyAccountSignedTx': grpc.unary_unary_rpc_method_handler(
                     servicer.verifyAccountSignedTx,
-                    request_deserializer=savourrpc_dot_wallet__pb2.VerifySignedTxRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.VerifySignedTxResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.VerifySignedTxRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.VerifySignedTxResponse.SerializeToString,
             ),
             'verifyUtxoSignedTx': grpc.unary_unary_rpc_method_handler(
                     servicer.verifyUtxoSignedTx,
-                    request_deserializer=savourrpc_dot_wallet__pb2.VerifySignedTxRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.VerifySignedTxResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.VerifySignedTxRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.VerifySignedTxResponse.SerializeToString,
             ),
             'ABIBinToJSON': grpc.unary_unary_rpc_method_handler(
                     servicer.ABIBinToJSON,
-                    request_deserializer=savourrpc_dot_wallet__pb2.ABIBinToJSONRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.ABIBinToJSONResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.ABIBinToJSONRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.ABIBinToJSONResponse.SerializeToString,
             ),
             'ABIJSONToBin': grpc.unary_unary_rpc_method_handler(
                     servicer.ABIJSONToBin,
-                    request_deserializer=savourrpc_dot_wallet__pb2.ABIJSONToBinRequest.FromString,
-                    response_serializer=savourrpc_dot_wallet__pb2.ABIJSONToBinResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_wallet__pb2.ABIJSONToBinRequest.FromString,
+                    response_serializer=savour__rpc_dot_wallet__pb2.ABIJSONToBinResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'savourrpc.wallet.WalletService', rpc_method_handlers)
+            'savour_rpc.wallet.WalletService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -475,9 +475,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getSupportCoins',
-            savourrpc_dot_wallet__pb2.SupportCoinsRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.SupportCoinsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/getSupportCoins',
+            savour__rpc_dot_wallet__pb2.SupportCoinsRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.SupportCoinsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -492,9 +492,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/convertAddress',
-            savourrpc_dot_wallet__pb2.ConvertAddressRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.ConvertAddressResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/convertAddress',
+            savour__rpc_dot_wallet__pb2.ConvertAddressRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.ConvertAddressResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -509,9 +509,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/validAddress',
-            savourrpc_dot_wallet__pb2.ValidAddressRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.ValidAddressResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/validAddress',
+            savour__rpc_dot_wallet__pb2.ValidAddressRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.ValidAddressResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -526,9 +526,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getBlock',
-            savourrpc_dot_wallet__pb2.BlockRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.BlockResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/getBlock',
+            savour__rpc_dot_wallet__pb2.BlockRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.BlockResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -543,9 +543,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getNonce',
-            savourrpc_dot_wallet__pb2.NonceRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.NonceResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/getNonce',
+            savour__rpc_dot_wallet__pb2.NonceRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.NonceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -560,9 +560,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getGasPrice',
-            savourrpc_dot_wallet__pb2.GasPriceRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.GasPriceResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/getGasPrice',
+            savour__rpc_dot_wallet__pb2.GasPriceRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.GasPriceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -577,9 +577,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getBalance',
-            savourrpc_dot_wallet__pb2.BalanceRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.BalanceResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/getBalance',
+            savour__rpc_dot_wallet__pb2.BalanceRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.BalanceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -594,9 +594,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getAccount',
-            savourrpc_dot_wallet__pb2.AccountRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.AccountResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/getAccount',
+            savour__rpc_dot_wallet__pb2.AccountRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.AccountResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -611,9 +611,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getMinRent',
-            savourrpc_dot_wallet__pb2.MinRentRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.MinRentResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/getMinRent',
+            savour__rpc_dot_wallet__pb2.MinRentRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.MinRentResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -628,9 +628,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/SendTx',
-            savourrpc_dot_wallet__pb2.SendTxRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.SendTxResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/SendTx',
+            savour__rpc_dot_wallet__pb2.SendTxRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.SendTxResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -645,9 +645,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getTxByAddress',
-            savourrpc_dot_wallet__pb2.TxAddressRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.TxAddressResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/getTxByAddress',
+            savour__rpc_dot_wallet__pb2.TxAddressRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.TxAddressResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -662,9 +662,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getTxByHash',
-            savourrpc_dot_wallet__pb2.TxHashRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.TxHashResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/getTxByHash',
+            savour__rpc_dot_wallet__pb2.TxHashRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.TxHashResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -679,9 +679,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getUtxo',
-            savourrpc_dot_wallet__pb2.UtxoRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.UtxoResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/getUtxo',
+            savour__rpc_dot_wallet__pb2.UtxoRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.UtxoResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -696,9 +696,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getUnspentOutputs',
-            savourrpc_dot_wallet__pb2.UnspentOutputsRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.UnspentOutputsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/getUnspentOutputs',
+            savour__rpc_dot_wallet__pb2.UnspentOutputsRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.UnspentOutputsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -713,9 +713,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getUtxoInsFromData',
-            savourrpc_dot_wallet__pb2.UtxoInsFromDataRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.UtxoInsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/getUtxoInsFromData',
+            savour__rpc_dot_wallet__pb2.UtxoInsFromDataRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.UtxoInsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -730,9 +730,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getAccountTxFromData',
-            savourrpc_dot_wallet__pb2.TxFromDataRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.AccountTxResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/getAccountTxFromData',
+            savour__rpc_dot_wallet__pb2.TxFromDataRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.AccountTxResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -747,9 +747,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getUtxoTxFromData',
-            savourrpc_dot_wallet__pb2.TxFromDataRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.UtxoTxResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/getUtxoTxFromData',
+            savour__rpc_dot_wallet__pb2.TxFromDataRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.UtxoTxResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -764,9 +764,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/getAccountTxFromSignedData',
-            savourrpc_dot_wallet__pb2.TxFromSignedDataRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.AccountTxResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/getAccountTxFromSignedData',
+            savour__rpc_dot_wallet__pb2.TxFromSignedDataRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.AccountTxResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -781,9 +781,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/GetUtxoTxFromSignedData',
-            savourrpc_dot_wallet__pb2.TxFromSignedDataRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.UtxoTxResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/GetUtxoTxFromSignedData',
+            savour__rpc_dot_wallet__pb2.TxFromSignedDataRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.UtxoTxResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -798,9 +798,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/createAccountSignedTx',
-            savourrpc_dot_wallet__pb2.CreateAccountSignedTxRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.CreateSignedTxResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/createAccountSignedTx',
+            savour__rpc_dot_wallet__pb2.CreateAccountSignedTxRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.CreateSignedTxResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -815,9 +815,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/createAccountTx',
-            savourrpc_dot_wallet__pb2.CreateAccountTxRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.CreateAccountTxResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/createAccountTx',
+            savour__rpc_dot_wallet__pb2.CreateAccountTxRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.CreateAccountTxResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -832,9 +832,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/createUtxoSignedTx',
-            savourrpc_dot_wallet__pb2.CreateUtxoSignedTxRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.CreateSignedTxResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/createUtxoSignedTx',
+            savour__rpc_dot_wallet__pb2.CreateUtxoSignedTxRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.CreateSignedTxResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -849,9 +849,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/createUtxoTx',
-            savourrpc_dot_wallet__pb2.CreateUtxoTxRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.CreateUtxoTxResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/createUtxoTx',
+            savour__rpc_dot_wallet__pb2.CreateUtxoTxRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.CreateUtxoTxResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -866,9 +866,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/verifyAccountSignedTx',
-            savourrpc_dot_wallet__pb2.VerifySignedTxRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.VerifySignedTxResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/verifyAccountSignedTx',
+            savour__rpc_dot_wallet__pb2.VerifySignedTxRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.VerifySignedTxResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -883,9 +883,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/verifyUtxoSignedTx',
-            savourrpc_dot_wallet__pb2.VerifySignedTxRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.VerifySignedTxResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/verifyUtxoSignedTx',
+            savour__rpc_dot_wallet__pb2.VerifySignedTxRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.VerifySignedTxResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -900,9 +900,9 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/ABIBinToJSON',
-            savourrpc_dot_wallet__pb2.ABIBinToJSONRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.ABIBinToJSONResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/ABIBinToJSON',
+            savour__rpc_dot_wallet__pb2.ABIBinToJSONRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.ABIBinToJSONResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -917,8 +917,8 @@ class WalletService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.wallet.WalletService/ABIJSONToBin',
-            savourrpc_dot_wallet__pb2.ABIJSONToBinRequest.SerializeToString,
-            savourrpc_dot_wallet__pb2.ABIJSONToBinResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.wallet.WalletService/ABIJSONToBin',
+            savour__rpc_dot_wallet__pb2.ABIJSONToBinRequest.SerializeToString,
+            savour__rpc_dot_wallet__pb2.ABIJSONToBinResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

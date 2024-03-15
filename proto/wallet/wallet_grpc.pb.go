@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v4.25.3
-// source: savourrpc/wallet.proto
+// source: savour_rpc/wallet.proto
 
 package wallet
 
@@ -19,33 +19,33 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	WalletService_GetSupportCoins_FullMethodName            = "/savourrpc.wallet.WalletService/getSupportCoins"
-	WalletService_ConvertAddress_FullMethodName             = "/savourrpc.wallet.WalletService/convertAddress"
-	WalletService_ValidAddress_FullMethodName               = "/savourrpc.wallet.WalletService/validAddress"
-	WalletService_GetBlock_FullMethodName                   = "/savourrpc.wallet.WalletService/getBlock"
-	WalletService_GetNonce_FullMethodName                   = "/savourrpc.wallet.WalletService/getNonce"
-	WalletService_GetGasPrice_FullMethodName                = "/savourrpc.wallet.WalletService/getGasPrice"
-	WalletService_GetBalance_FullMethodName                 = "/savourrpc.wallet.WalletService/getBalance"
-	WalletService_GetAccount_FullMethodName                 = "/savourrpc.wallet.WalletService/getAccount"
-	WalletService_GetMinRent_FullMethodName                 = "/savourrpc.wallet.WalletService/getMinRent"
-	WalletService_SendTx_FullMethodName                     = "/savourrpc.wallet.WalletService/SendTx"
-	WalletService_GetTxByAddress_FullMethodName             = "/savourrpc.wallet.WalletService/getTxByAddress"
-	WalletService_GetTxByHash_FullMethodName                = "/savourrpc.wallet.WalletService/getTxByHash"
-	WalletService_GetUtxo_FullMethodName                    = "/savourrpc.wallet.WalletService/getUtxo"
-	WalletService_GetUnspentOutputs_FullMethodName          = "/savourrpc.wallet.WalletService/getUnspentOutputs"
-	WalletService_GetUtxoInsFromData_FullMethodName         = "/savourrpc.wallet.WalletService/getUtxoInsFromData"
-	WalletService_GetAccountTxFromData_FullMethodName       = "/savourrpc.wallet.WalletService/getAccountTxFromData"
-	WalletService_GetUtxoTxFromData_FullMethodName          = "/savourrpc.wallet.WalletService/getUtxoTxFromData"
-	WalletService_GetAccountTxFromSignedData_FullMethodName = "/savourrpc.wallet.WalletService/getAccountTxFromSignedData"
-	WalletService_GetUtxoTxFromSignedData_FullMethodName    = "/savourrpc.wallet.WalletService/GetUtxoTxFromSignedData"
-	WalletService_CreateAccountSignedTx_FullMethodName      = "/savourrpc.wallet.WalletService/createAccountSignedTx"
-	WalletService_CreateAccountTx_FullMethodName            = "/savourrpc.wallet.WalletService/createAccountTx"
-	WalletService_CreateUtxoSignedTx_FullMethodName         = "/savourrpc.wallet.WalletService/createUtxoSignedTx"
-	WalletService_CreateUtxoTx_FullMethodName               = "/savourrpc.wallet.WalletService/createUtxoTx"
-	WalletService_VerifyAccountSignedTx_FullMethodName      = "/savourrpc.wallet.WalletService/verifyAccountSignedTx"
-	WalletService_VerifyUtxoSignedTx_FullMethodName         = "/savourrpc.wallet.WalletService/verifyUtxoSignedTx"
-	WalletService_ABIBinToJSON_FullMethodName               = "/savourrpc.wallet.WalletService/ABIBinToJSON"
-	WalletService_ABIJSONToBin_FullMethodName               = "/savourrpc.wallet.WalletService/ABIJSONToBin"
+	WalletService_GetSupportCoins_FullMethodName            = "/savour_rpc.wallet.WalletService/getSupportCoins"
+	WalletService_ConvertAddress_FullMethodName             = "/savour_rpc.wallet.WalletService/convertAddress"
+	WalletService_ValidAddress_FullMethodName               = "/savour_rpc.wallet.WalletService/validAddress"
+	WalletService_GetBlock_FullMethodName                   = "/savour_rpc.wallet.WalletService/getBlock"
+	WalletService_GetNonce_FullMethodName                   = "/savour_rpc.wallet.WalletService/getNonce"
+	WalletService_GetGasPrice_FullMethodName                = "/savour_rpc.wallet.WalletService/getGasPrice"
+	WalletService_GetBalance_FullMethodName                 = "/savour_rpc.wallet.WalletService/getBalance"
+	WalletService_GetAccount_FullMethodName                 = "/savour_rpc.wallet.WalletService/getAccount"
+	WalletService_GetMinRent_FullMethodName                 = "/savour_rpc.wallet.WalletService/getMinRent"
+	WalletService_SendTx_FullMethodName                     = "/savour_rpc.wallet.WalletService/SendTx"
+	WalletService_GetTxByAddress_FullMethodName             = "/savour_rpc.wallet.WalletService/getTxByAddress"
+	WalletService_GetTxByHash_FullMethodName                = "/savour_rpc.wallet.WalletService/getTxByHash"
+	WalletService_GetUtxo_FullMethodName                    = "/savour_rpc.wallet.WalletService/getUtxo"
+	WalletService_GetUnspentOutputs_FullMethodName          = "/savour_rpc.wallet.WalletService/getUnspentOutputs"
+	WalletService_GetUtxoInsFromData_FullMethodName         = "/savour_rpc.wallet.WalletService/getUtxoInsFromData"
+	WalletService_GetAccountTxFromData_FullMethodName       = "/savour_rpc.wallet.WalletService/getAccountTxFromData"
+	WalletService_GetUtxoTxFromData_FullMethodName          = "/savour_rpc.wallet.WalletService/getUtxoTxFromData"
+	WalletService_GetAccountTxFromSignedData_FullMethodName = "/savour_rpc.wallet.WalletService/getAccountTxFromSignedData"
+	WalletService_GetUtxoTxFromSignedData_FullMethodName    = "/savour_rpc.wallet.WalletService/GetUtxoTxFromSignedData"
+	WalletService_CreateAccountSignedTx_FullMethodName      = "/savour_rpc.wallet.WalletService/createAccountSignedTx"
+	WalletService_CreateAccountTx_FullMethodName            = "/savour_rpc.wallet.WalletService/createAccountTx"
+	WalletService_CreateUtxoSignedTx_FullMethodName         = "/savour_rpc.wallet.WalletService/createUtxoSignedTx"
+	WalletService_CreateUtxoTx_FullMethodName               = "/savour_rpc.wallet.WalletService/createUtxoTx"
+	WalletService_VerifyAccountSignedTx_FullMethodName      = "/savour_rpc.wallet.WalletService/verifyAccountSignedTx"
+	WalletService_VerifyUtxoSignedTx_FullMethodName         = "/savour_rpc.wallet.WalletService/verifyUtxoSignedTx"
+	WalletService_ABIBinToJSON_FullMethodName               = "/savour_rpc.wallet.WalletService/ABIBinToJSON"
+	WalletService_ABIJSONToBin_FullMethodName               = "/savour_rpc.wallet.WalletService/ABIJSONToBin"
 )
 
 // WalletServiceClient is the client API for WalletService service.
@@ -954,7 +954,7 @@ func _WalletService_ABIJSONToBin_Handler(srv interface{}, ctx context.Context, d
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var WalletService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "savourrpc.wallet.WalletService",
+	ServiceName: "savour_rpc.wallet.WalletService",
 	HandlerType: (*WalletServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -1067,5 +1067,5 @@ var WalletService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "savourrpc/wallet.proto",
+	Metadata: "savour_rpc/wallet.proto",
 }

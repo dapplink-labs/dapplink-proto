@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from savourrpc import airdrop_pb2 as savourrpc_dot_airdrop__pb2
+from savour_rpc import airdrop_pb2 as savour__rpc_dot_airdrop__pb2
 
 
 class AirdropServiceStub(object):
@@ -15,9 +15,9 @@ class AirdropServiceStub(object):
             channel: A grpc.Channel.
         """
         self.submitDppLinkPoints = channel.unary_unary(
-                '/savourrpc.airdrop.AirdropService/submitDppLinkPoints',
-                request_serializer=savourrpc_dot_airdrop__pb2.DppLinkPointsReq.SerializeToString,
-                response_deserializer=savourrpc_dot_airdrop__pb2.DppLinkPointsRep.FromString,
+                '/services.savour_rpc.airdrop.AirdropService/submitDppLinkPoints',
+                request_serializer=savour__rpc_dot_airdrop__pb2.DppLinkPointsReq.SerializeToString,
+                response_deserializer=savour__rpc_dot_airdrop__pb2.DppLinkPointsRep.FromString,
                 )
 
 
@@ -35,12 +35,12 @@ def add_AirdropServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'submitDppLinkPoints': grpc.unary_unary_rpc_method_handler(
                     servicer.submitDppLinkPoints,
-                    request_deserializer=savourrpc_dot_airdrop__pb2.DppLinkPointsReq.FromString,
-                    response_serializer=savourrpc_dot_airdrop__pb2.DppLinkPointsRep.SerializeToString,
+                    request_deserializer=savour__rpc_dot_airdrop__pb2.DppLinkPointsReq.FromString,
+                    response_serializer=savour__rpc_dot_airdrop__pb2.DppLinkPointsRep.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'savourrpc.airdrop.AirdropService', rpc_method_handlers)
+            'services.savour_rpc.airdrop.AirdropService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -59,8 +59,8 @@ class AirdropService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.airdrop.AirdropService/submitDppLinkPoints',
-            savourrpc_dot_airdrop__pb2.DppLinkPointsReq.SerializeToString,
-            savourrpc_dot_airdrop__pb2.DppLinkPointsRep.FromString,
+        return grpc.experimental.unary_unary(request, target, '/services.savour_rpc.airdrop.AirdropService/submitDppLinkPoints',
+            savour__rpc_dot_airdrop__pb2.DppLinkPointsReq.SerializeToString,
+            savour__rpc_dot_airdrop__pb2.DppLinkPointsRep.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

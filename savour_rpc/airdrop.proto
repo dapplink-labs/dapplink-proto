@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-import "savourrpc/common.proto";
 option go_package = "./proto/airdrop";
 option java_package = "group.savour.airdrop";
-package savourrpc.airdrop;
+package services.savour_rpc.airdrop;
+
 
 message DppLinkPointsReq {
   string consumer_token = 1;
@@ -12,7 +12,7 @@ message DppLinkPointsReq {
 }
 
 message DppLinkPointsRep {
-  ReturnCode code=1;
+  int32 code=1;
   string msg=2;
 }
 

@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-import "savourrpc/common.proto";
+import "savour_rpc/common.proto";
 option go_package = "./proto/market";
 option java_package = "group.savour.market";
-package savourrpc.market;
+package savour_rpc.market;
 
 message Exchange {
     string id = 1;

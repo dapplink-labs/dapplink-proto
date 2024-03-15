@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v4.25.3
-// source: savourrpc/market.proto
+// source: savour_rpc/market.proto
 
 package market
 
@@ -19,12 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	PriceService_GetExchanges_FullMethodName       = "/savourrpc.market.PriceService/getExchanges"
-	PriceService_GetAssets_FullMethodName          = "/savourrpc.market.PriceService/getAssets"
-	PriceService_GetSymbols_FullMethodName         = "/savourrpc.market.PriceService/getSymbols"
-	PriceService_GetSymbolPrices_FullMethodName    = "/savourrpc.market.PriceService/getSymbolPrices"
-	PriceService_GetStableCoins_FullMethodName     = "/savourrpc.market.PriceService/getStableCoins"
-	PriceService_GetStableCoinPrice_FullMethodName = "/savourrpc.market.PriceService/getStableCoinPrice"
+	PriceService_GetExchanges_FullMethodName       = "/savour_rpc.market.PriceService/getExchanges"
+	PriceService_GetAssets_FullMethodName          = "/savour_rpc.market.PriceService/getAssets"
+	PriceService_GetSymbols_FullMethodName         = "/savour_rpc.market.PriceService/getSymbols"
+	PriceService_GetSymbolPrices_FullMethodName    = "/savour_rpc.market.PriceService/getSymbolPrices"
+	PriceService_GetStableCoins_FullMethodName     = "/savour_rpc.market.PriceService/getStableCoins"
+	PriceService_GetStableCoinPrice_FullMethodName = "/savour_rpc.market.PriceService/getStableCoinPrice"
 )
 
 // PriceServiceClient is the client API for PriceService service.
@@ -261,7 +261,7 @@ func _PriceService_GetStableCoinPrice_Handler(srv interface{}, ctx context.Conte
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var PriceService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "savourrpc.market.PriceService",
+	ServiceName: "savour_rpc.market.PriceService",
 	HandlerType: (*PriceServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -290,5 +290,5 @@ var PriceService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "savourrpc/market.proto",
+	Metadata: "savour_rpc/market.proto",
 }

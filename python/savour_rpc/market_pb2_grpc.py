@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from savourrpc import market_pb2 as savourrpc_dot_market__pb2
+from savour_rpc import market_pb2 as savour__rpc_dot_market__pb2
 
 
 class PriceServiceStub(object):
@@ -15,34 +15,34 @@ class PriceServiceStub(object):
             channel: A grpc.Channel.
         """
         self.getExchanges = channel.unary_unary(
-                '/savourrpc.market.PriceService/getExchanges',
-                request_serializer=savourrpc_dot_market__pb2.ExchangeRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_market__pb2.ExchangeResponse.FromString,
+                '/savour_rpc.market.PriceService/getExchanges',
+                request_serializer=savour__rpc_dot_market__pb2.ExchangeRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_market__pb2.ExchangeResponse.FromString,
                 )
         self.getAssets = channel.unary_unary(
-                '/savourrpc.market.PriceService/getAssets',
-                request_serializer=savourrpc_dot_market__pb2.AssetRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_market__pb2.AssetResponse.FromString,
+                '/savour_rpc.market.PriceService/getAssets',
+                request_serializer=savour__rpc_dot_market__pb2.AssetRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_market__pb2.AssetResponse.FromString,
                 )
         self.getSymbols = channel.unary_unary(
-                '/savourrpc.market.PriceService/getSymbols',
-                request_serializer=savourrpc_dot_market__pb2.SymbolRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_market__pb2.SymbolResponse.FromString,
+                '/savour_rpc.market.PriceService/getSymbols',
+                request_serializer=savour__rpc_dot_market__pb2.SymbolRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_market__pb2.SymbolResponse.FromString,
                 )
         self.getSymbolPrices = channel.unary_unary(
-                '/savourrpc.market.PriceService/getSymbolPrices',
-                request_serializer=savourrpc_dot_market__pb2.SymbolPriceRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_market__pb2.SymbolPriceResponse.FromString,
+                '/savour_rpc.market.PriceService/getSymbolPrices',
+                request_serializer=savour__rpc_dot_market__pb2.SymbolPriceRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_market__pb2.SymbolPriceResponse.FromString,
                 )
         self.getStableCoins = channel.unary_unary(
-                '/savourrpc.market.PriceService/getStableCoins',
-                request_serializer=savourrpc_dot_market__pb2.StableCoinRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_market__pb2.StableCoinResponse.FromString,
+                '/savour_rpc.market.PriceService/getStableCoins',
+                request_serializer=savour__rpc_dot_market__pb2.StableCoinRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_market__pb2.StableCoinResponse.FromString,
                 )
         self.getStableCoinPrice = channel.unary_unary(
-                '/savourrpc.market.PriceService/getStableCoinPrice',
-                request_serializer=savourrpc_dot_market__pb2.StableCoinPriceRequest.SerializeToString,
-                response_deserializer=savourrpc_dot_market__pb2.StableCoinPriceResponse.FromString,
+                '/savour_rpc.market.PriceService/getStableCoinPrice',
+                request_serializer=savour__rpc_dot_market__pb2.StableCoinPriceRequest.SerializeToString,
+                response_deserializer=savour__rpc_dot_market__pb2.StableCoinPriceResponse.FromString,
                 )
 
 
@@ -90,37 +90,37 @@ def add_PriceServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'getExchanges': grpc.unary_unary_rpc_method_handler(
                     servicer.getExchanges,
-                    request_deserializer=savourrpc_dot_market__pb2.ExchangeRequest.FromString,
-                    response_serializer=savourrpc_dot_market__pb2.ExchangeResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_market__pb2.ExchangeRequest.FromString,
+                    response_serializer=savour__rpc_dot_market__pb2.ExchangeResponse.SerializeToString,
             ),
             'getAssets': grpc.unary_unary_rpc_method_handler(
                     servicer.getAssets,
-                    request_deserializer=savourrpc_dot_market__pb2.AssetRequest.FromString,
-                    response_serializer=savourrpc_dot_market__pb2.AssetResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_market__pb2.AssetRequest.FromString,
+                    response_serializer=savour__rpc_dot_market__pb2.AssetResponse.SerializeToString,
             ),
             'getSymbols': grpc.unary_unary_rpc_method_handler(
                     servicer.getSymbols,
-                    request_deserializer=savourrpc_dot_market__pb2.SymbolRequest.FromString,
-                    response_serializer=savourrpc_dot_market__pb2.SymbolResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_market__pb2.SymbolRequest.FromString,
+                    response_serializer=savour__rpc_dot_market__pb2.SymbolResponse.SerializeToString,
             ),
             'getSymbolPrices': grpc.unary_unary_rpc_method_handler(
                     servicer.getSymbolPrices,
-                    request_deserializer=savourrpc_dot_market__pb2.SymbolPriceRequest.FromString,
-                    response_serializer=savourrpc_dot_market__pb2.SymbolPriceResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_market__pb2.SymbolPriceRequest.FromString,
+                    response_serializer=savour__rpc_dot_market__pb2.SymbolPriceResponse.SerializeToString,
             ),
             'getStableCoins': grpc.unary_unary_rpc_method_handler(
                     servicer.getStableCoins,
-                    request_deserializer=savourrpc_dot_market__pb2.StableCoinRequest.FromString,
-                    response_serializer=savourrpc_dot_market__pb2.StableCoinResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_market__pb2.StableCoinRequest.FromString,
+                    response_serializer=savour__rpc_dot_market__pb2.StableCoinResponse.SerializeToString,
             ),
             'getStableCoinPrice': grpc.unary_unary_rpc_method_handler(
                     servicer.getStableCoinPrice,
-                    request_deserializer=savourrpc_dot_market__pb2.StableCoinPriceRequest.FromString,
-                    response_serializer=savourrpc_dot_market__pb2.StableCoinPriceResponse.SerializeToString,
+                    request_deserializer=savour__rpc_dot_market__pb2.StableCoinPriceRequest.FromString,
+                    response_serializer=savour__rpc_dot_market__pb2.StableCoinPriceResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'savourrpc.market.PriceService', rpc_method_handlers)
+            'savour_rpc.market.PriceService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -139,9 +139,9 @@ class PriceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.market.PriceService/getExchanges',
-            savourrpc_dot_market__pb2.ExchangeRequest.SerializeToString,
-            savourrpc_dot_market__pb2.ExchangeResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.market.PriceService/getExchanges',
+            savour__rpc_dot_market__pb2.ExchangeRequest.SerializeToString,
+            savour__rpc_dot_market__pb2.ExchangeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -156,9 +156,9 @@ class PriceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.market.PriceService/getAssets',
-            savourrpc_dot_market__pb2.AssetRequest.SerializeToString,
-            savourrpc_dot_market__pb2.AssetResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.market.PriceService/getAssets',
+            savour__rpc_dot_market__pb2.AssetRequest.SerializeToString,
+            savour__rpc_dot_market__pb2.AssetResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -173,9 +173,9 @@ class PriceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.market.PriceService/getSymbols',
-            savourrpc_dot_market__pb2.SymbolRequest.SerializeToString,
-            savourrpc_dot_market__pb2.SymbolResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.market.PriceService/getSymbols',
+            savour__rpc_dot_market__pb2.SymbolRequest.SerializeToString,
+            savour__rpc_dot_market__pb2.SymbolResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -190,9 +190,9 @@ class PriceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.market.PriceService/getSymbolPrices',
-            savourrpc_dot_market__pb2.SymbolPriceRequest.SerializeToString,
-            savourrpc_dot_market__pb2.SymbolPriceResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.market.PriceService/getSymbolPrices',
+            savour__rpc_dot_market__pb2.SymbolPriceRequest.SerializeToString,
+            savour__rpc_dot_market__pb2.SymbolPriceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -207,9 +207,9 @@ class PriceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.market.PriceService/getStableCoins',
-            savourrpc_dot_market__pb2.StableCoinRequest.SerializeToString,
-            savourrpc_dot_market__pb2.StableCoinResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.market.PriceService/getStableCoins',
+            savour__rpc_dot_market__pb2.StableCoinRequest.SerializeToString,
+            savour__rpc_dot_market__pb2.StableCoinResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -224,8 +224,8 @@ class PriceService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/savourrpc.market.PriceService/getStableCoinPrice',
-            savourrpc_dot_market__pb2.StableCoinPriceRequest.SerializeToString,
-            savourrpc_dot_market__pb2.StableCoinPriceResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/savour_rpc.market.PriceService/getStableCoinPrice',
+            savour__rpc_dot_market__pb2.StableCoinPriceRequest.SerializeToString,
+            savour__rpc_dot_market__pb2.StableCoinPriceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-import "savourrpc/common.proto";
+import "savour_rpc/common.proto";
 option go_package = "./proto/chaineye";
 option java_package = "group.savour.chaineye";
-package savourrpc.chaineye;
+package savour_rpc.chaineye;
 
 message ArticleList {
     string id = 1;

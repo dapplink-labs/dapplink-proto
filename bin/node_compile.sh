@@ -15,7 +15,7 @@ function exit_if() {
 echo Compiling node interfaces...
 mkdir -p node
 
-#protoc -I ./ --java_out=./java --grpc-java_out=./java savourrpc/*.proto
+#protoc -I ./ --java_out=./java --grpc-java_out=./java savour_rpc/*.proto
 protoc --js_out=import_style=commonjs,binary:./node savourrpc/*.proto
 
 exit_if $?

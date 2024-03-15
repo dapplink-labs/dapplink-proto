@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v4.25.3
-// source: savourrpc/chaineye.proto
+// source: savour_rpc/chaineye.proto
 
 package chaineye
 
@@ -19,12 +19,12 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	ChaineyeService_GetArticleCat_FullMethodName    = "/savourrpc.chaineye.ChaineyeService/getArticleCat"
-	ChaineyeService_GetArticleList_FullMethodName   = "/savourrpc.chaineye.ChaineyeService/getArticleList"
-	ChaineyeService_GetArticleDetail_FullMethodName = "/savourrpc.chaineye.ChaineyeService/getArticleDetail"
-	ChaineyeService_GetCommentList_FullMethodName   = "/savourrpc.chaineye.ChaineyeService/getCommentList"
-	ChaineyeService_GetLikeAddress_FullMethodName   = "/savourrpc.chaineye.ChaineyeService/getLikeAddress"
-	ChaineyeService_LikeArticle_FullMethodName      = "/savourrpc.chaineye.ChaineyeService/likeArticle"
+	ChaineyeService_GetArticleCat_FullMethodName    = "/savour_rpc.chaineye.ChaineyeService/getArticleCat"
+	ChaineyeService_GetArticleList_FullMethodName   = "/savour_rpc.chaineye.ChaineyeService/getArticleList"
+	ChaineyeService_GetArticleDetail_FullMethodName = "/savour_rpc.chaineye.ChaineyeService/getArticleDetail"
+	ChaineyeService_GetCommentList_FullMethodName   = "/savour_rpc.chaineye.ChaineyeService/getCommentList"
+	ChaineyeService_GetLikeAddress_FullMethodName   = "/savour_rpc.chaineye.ChaineyeService/getLikeAddress"
+	ChaineyeService_LikeArticle_FullMethodName      = "/savour_rpc.chaineye.ChaineyeService/likeArticle"
 )
 
 // ChaineyeServiceClient is the client API for ChaineyeService service.
@@ -261,7 +261,7 @@ func _ChaineyeService_LikeArticle_Handler(srv interface{}, ctx context.Context, 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ChaineyeService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "savourrpc.chaineye.ChaineyeService",
+	ServiceName: "savour_rpc.chaineye.ChaineyeService",
 	HandlerType: (*ChaineyeServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -290,5 +290,5 @@ var ChaineyeService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "savourrpc/chaineye.proto",
+	Metadata: "savour_rpc/chaineye.proto",
 }

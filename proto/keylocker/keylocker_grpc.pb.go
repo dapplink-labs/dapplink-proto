@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.3.0
 // - protoc             v4.25.3
-// source: savourrpc/keylocker.proto
+// source: savour_rpc/keylocker.proto
 
 package keylocker
 
@@ -19,9 +19,9 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	LeyLockerService_GetSupportChain_FullMethodName = "/savourrpc.keylocker.LeyLockerService/getSupportChain"
-	LeyLockerService_SetSocialKey_FullMethodName    = "/savourrpc.keylocker.LeyLockerService/setSocialKey"
-	LeyLockerService_GetSocialKey_FullMethodName    = "/savourrpc.keylocker.LeyLockerService/getSocialKey"
+	LeyLockerService_GetSupportChain_FullMethodName = "/savour_rpc.keylocker.LeyLockerService/getSupportChain"
+	LeyLockerService_SetSocialKey_FullMethodName    = "/savour_rpc.keylocker.LeyLockerService/setSocialKey"
+	LeyLockerService_GetSocialKey_FullMethodName    = "/savour_rpc.keylocker.LeyLockerService/getSocialKey"
 )
 
 // LeyLockerServiceClient is the client API for LeyLockerService service.
@@ -162,7 +162,7 @@ func _LeyLockerService_GetSocialKey_Handler(srv interface{}, ctx context.Context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var LeyLockerService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "savourrpc.keylocker.LeyLockerService",
+	ServiceName: "savour_rpc.keylocker.LeyLockerService",
 	HandlerType: (*LeyLockerServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -179,5 +179,5 @@ var LeyLockerService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "savourrpc/keylocker.proto",
+	Metadata: "savour_rpc/keylocker.proto",
 }

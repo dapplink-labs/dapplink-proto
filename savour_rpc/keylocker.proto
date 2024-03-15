@@ -2,7 +2,7 @@ syntax = "proto3";
 
 option go_package ="./proto/keylocker";
 option java_package = "group.savour.keylocker";
-package savourrpc.keylocker;
+package savour_rpc.keylocker;
 
 enum ReturnCode{
   SUCCESS = 0;

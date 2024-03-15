@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package savourrpc;
+package savour_rpc;
 
 option go_package = "./proto/common";
 // 通用数据类型

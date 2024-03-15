@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-import "savourrpc/common.proto";
+import "savour_rpc/common.proto";
 option go_package = "./proto/wallet";
 option java_package = "group.savour.wallet";
-package savourrpc.wallet;
+package savour_rpc.wallet;
 
 enum TxStatus{
     NotFound = 0;
