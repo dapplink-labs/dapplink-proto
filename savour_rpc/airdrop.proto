@@ -12,7 +12,7 @@ message DppLinkPointsReq {
 }
 
 message DppLinkPointsRep {
-  int32 code=1;
+  string code=1;
   string msg=2;
 }
 

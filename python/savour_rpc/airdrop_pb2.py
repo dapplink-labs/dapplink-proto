@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\024group.savour.airdropZ\017./proto/airdrop',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x18savour_rpc/airdrop.proto\x12\x1bservices.savour_rpc.airdrop\"I\n\x10\x44ppLinkPointsReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\t\"-\n\x10\x44ppLinkPointsRep\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0b\n\x03msg\x18\x02 \x01(\t2\x87\x01\n\x0e\x41irdropService\x12u\n\x13submitDppLinkPoints\x12-.services.savour_rpc.airdrop.DppLinkPointsReq\x1a-.services.savour_rpc.airdrop.DppLinkPointsRep\"\x00\x42\'\n\x14group.savour.airdropZ\x0f./proto/airdropb\x06proto3'
+  serialized_pb=b'\n\x18savour_rpc/airdrop.proto\x12\x1bservices.savour_rpc.airdrop\"I\n\x10\x44ppLinkPointsReq\x12\x16\n\x0e\x63onsumer_token\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x03 \x01(\t\"-\n\x10\x44ppLinkPointsRep\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0b\n\x03msg\x18\x02 \x01(\t2\x87\x01\n\x0e\x41irdropService\x12u\n\x13submitDppLinkPoints\x12-.services.savour_rpc.airdrop.DppLinkPointsReq\x1a-.services.savour_rpc.airdrop.DppLinkPointsRep\"\x00\x42\'\n\x14group.savour.airdropZ\x0f./proto/airdropb\x06proto3'
 )
 
 
@@ -81,8 +81,8 @@ _DPPLINKPOINTSREP = _descriptor.Descriptor(
   fields=[
     _descriptor.FieldDescriptor(
       name='code', full_name='services.savour_rpc.airdrop.DppLinkPointsRep.code', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
