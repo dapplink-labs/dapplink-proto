@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option go_package = "./proto/l3staking";
+option java_package = "group.savour.l3staking";
+package services.savour_rpc.l3staking;
+
+
+message StakingNodeReq {
+  string consumer_token = 1;
+  string chain_id = 2;
+  string strategy = 3;
+  string address = 4;
+  string eth_income = 5;
+  string eth_income_rate = 6;
+  string dp_income = 7;
+  string dp_income_rate = 8;
+  string eth_evil = 9;
+  string eth_evil_rate = 10;
+  string dp_evil = 11;
+  string dp_evil_rate = 12;
+  string tvl = 13;
+}
+
+message StakingNodeRep {
+  string code=1;
+  string msg=2;
+}
+
+service L3StakingService {
+  rpc updateStakingNodeIncome(StakingNodeReq) returns (StakingNodeRep) {}
+}
+
+
+
+
