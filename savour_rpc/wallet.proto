@@ -453,18 +453,18 @@ message BlockInfoRequest {
   string height = 2;
 }
 
-message BlockInfoTransactionList {
-  string from = 1;
-  string to = 2;
-  string hash = 3;
-}
-
 message BlockInfoResponse{
   ReturnCode code = 1;
   string msg = 2;
   string hash = 3;
   string baseFee = 4;
   repeated BlockInfoTransactionList transactions = 5;
+}
+
+message BlockInfoTransactionList {
+  string from = 1;
+  string to = 2;
+  string hash = 3;
 }
 
 message BlockHeaderRequest{
@@ -481,19 +481,128 @@ message BlockHeaderResponse{
   string Root = 6;
   string TxHash = 7;
   string ReceiptHash = 8;
-  string  ParentBeaconRoot = 9;
-  string  Difficulty = 10;
-  string  Number = 11;
-  uint64  GasLimit = 12;
+  string ParentBeaconRoot = 9;
+  string Difficulty = 10;
+  string Number = 11;
+  uint64 GasLimit = 12;
   uint64 GasUsed = 13;
   uint64 Time = 14;
   string Extra = 15;
   string MixDigest = 16;
   string Nonce = 17;
-  string  BaseFee = 18;
-  string  WithdrawalsHash = 19;
-  uint64  BlobGasUsed = 20;
-  uint64  ExcessBlobGas = 21;
+  string BaseFee = 18;
+  string WithdrawalsHash = 19;
+  uint64 BlobGasUsed = 20;
+  uint64 ExcessBlobGas = 21;
+}
+
+message LatestSafeBlockHeaderRequest{
+  string chain = 1;
+  string network = 2;
+}
+
+// 公共请求消息
+message BasicRequest{
+  string chain = 1;
+  string network = 2;
+}
+
+message BlockHeaderByHashRequest{
+  string chain = 1;
+  string network = 2;
+  string hash = 3;
+}
+
+message BlockHeadersByRangeRequest{
+  string chain = 1;
+  string network = 2;
+  string start = 3;
+  string end = 4;
+}
+
+message BlockHeadersByRangeResponse{
+  ReturnCode code = 1;
+  string msg = 2;
+  repeated BlockHeaderResponse blockHeader = 3;
+}
+
+message TxReceiptByHashRequest{
+  string chain = 1;
+  string network = 2;
+  string hash = 3;
+}
+
+message TxReceiptByHashResponse{
+  ReturnCode code = 1;
+  string msg = 2;
+  uint32 Type = 3;
+  string PostState = 4;
+  uint64 Status = 5;
+  uint64 CumulativeGasUsed = 6;
+  uint64 GasUsed = 7;
+  string TxHash = 8;
+  string ContractAddress = 9;
+  string EffectiveGasPrice = 10;
+}
+
+message StorageHashRequest{
+  string chain = 1;
+  string network = 2;
+  string address = 3;
+  string blockNumber = 4;
+}
+
+message StorageHashResponse{
+  ReturnCode code = 1;
+  string msg = 2;
+  string hash = 3;
+}
+
+message FilterLogsRequest{
+  string chain = 1;
+  string network = 2;
+}
+
+message Log {
+  string address = 1;
+  repeated string topics = 2;
+  string data = 3;
+  string blockNumber = 4;
+  string txHash = 5;
+  uint64 txIndex = 6;
+  string blockHash = 7;
+  uint64 index = 8;
+  bool removed = 9;
+}
+
+message FilterLogsResponse{
+  ReturnCode code = 1;
+  string msg = 2;
+  BlockHeaderResponse  toBlockHeader = 3;
+  repeated Log logs = 4;
+}
+
+message TxCountByAddressRequest{
+  string chain = 1;
+  string network = 2;
+  string address = 3;
+}
+
+message TxCountByAddressResponse{
+  ReturnCode code = 1;
+  string msg = 2;
+  uint64 count = 3;
+}
+
+message SuggestGasPriceRequest{
+  string chain = 1;
+  string network = 2;
+}
+
+message SuggestGasPriceResponse{
+  ReturnCode code = 1;
+  string msg = 2;
+  string gasPrice = 3;
 }
 
 service WalletService {
@@ -504,7 +613,6 @@ service WalletService {
 
   rpc getBlock(BlockRequest) returns (BlockResponse) {}
   rpc getBlockHeaderByNumber(BlockHeaderRequest) returns (BlockHeaderResponse) {}
-  rpc getBlockInfoByNumber(BlockInfoRequest) returns (BlockInfoResponse) {}
   rpc getNonce(NonceRequest) returns (NonceResponse) {}
   rpc getGasPrice(GasPriceRequest) returns (GasPriceResponse) {}
   rpc getBalance(BalanceRequest) returns (BalanceResponse) {}
@@ -537,6 +645,16 @@ service WalletService {
 
   rpc ABIBinToJSON(ABIBinToJSONRequest) returns(ABIBinToJSONResponse);
   rpc ABIJSONToBin(ABIJSONToBinRequest) returns(ABIJSONToBinResponse);
-
+  rpc getBlockByNumber(BlockInfoRequest) returns(BlockInfoResponse);
+  rpc getLatestSafeBlockHeader(BasicRequest) returns(BlockHeaderResponse);
+  rpc getLatestFinalizedBlockHeader(BasicRequest) returns(BlockHeaderResponse);
+  rpc getBlockHeaderByHash(BlockHeaderByHashRequest) returns(BlockHeaderResponse);
+  rpc getBlockHeadersByRange(BlockHeadersByRangeRequest) returns(BlockHeadersByRangeResponse);
+  rpc getTxReceiptByHash(TxReceiptByHashRequest) returns(TxReceiptByHashResponse);
+  rpc getStorageHash(StorageHashRequest) returns(StorageHashResponse);
+  rpc getFilterLogs(FilterLogsRequest) returns(FilterLogsResponse);
+  rpc getTxCountByAddress(TxCountByAddressRequest) returns(TxCountByAddressResponse);
+  rpc getSuggestGasPrice(SuggestGasPriceRequest) returns(SuggestGasPriceResponse);
+  rpc getSuggestGasTipCap(SuggestGasPriceRequest) returns(SuggestGasPriceResponse);
 }
 
