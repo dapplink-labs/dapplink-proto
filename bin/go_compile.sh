@@ -24,7 +24,7 @@ else
     export GOBIN=$GOPATH/bin
     export PATH=$PATH:$GOPATH/bin
 
-    protoc -I ./ --go_out=./ --go-grpc_out=./ savour_rpc/*.proto
+    protoc -I ./ --go_out=./ --go-grpc_out=require_unimplemented_servers=false:. savour_rpc/*.proto
 
     exit_if $?
     echo Done
