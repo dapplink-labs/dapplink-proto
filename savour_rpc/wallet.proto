@@ -465,6 +465,8 @@ message BlockInfoTransactionList {
   string from = 1;
   string to = 2;
   string hash = 3;
+  string time = 4;
+  string amount = 5;
 }
 
 message BlockHeaderRequest{
@@ -513,17 +515,23 @@ message BlockHeaderByHashRequest{
   string hash = 3;
 }
 
-message BlockHeadersByRangeRequest{
+message BlockByRangeRequest{
   string chain = 1;
   string network = 2;
   string start = 3;
   string end = 4;
 }
 
-message BlockHeadersByRangeResponse{
+message BlockData {
+  string hash = 1;
+  string baseFee = 2;
+  repeated TxMessage transactions = 3;
+}
+
+message BlockByRangeResponse{
   ReturnCode code = 1;
   string msg = 2;
-  repeated BlockHeaderResponse blockHeader = 3;
+  repeated BlockData Blocks = 3;
 }
 
 message TxReceiptByHashRequest{
@@ -543,6 +551,9 @@ message TxReceiptByHashResponse{
   string TxHash = 8;
   string ContractAddress = 9;
   string EffectiveGasPrice = 10;
+  string BlockHash = 11;
+  string BlockNumber = 12;
+  uint64 TransactionIndex = 13;
 }
 
 message StorageHashRequest{
@@ -649,7 +660,7 @@ service WalletService {
   rpc getLatestSafeBlockHeader(BasicRequest) returns(BlockHeaderResponse);
   rpc getLatestFinalizedBlockHeader(BasicRequest) returns(BlockHeaderResponse);
   rpc getBlockHeaderByHash(BlockHeaderByHashRequest) returns(BlockHeaderResponse);
-  rpc getBlockHeadersByRange(BlockHeadersByRangeRequest) returns(BlockHeadersByRangeResponse);
+  rpc GetBlockByRange(BlockByRangeRequest) returns(BlockByRangeResponse);
   rpc getTxReceiptByHash(TxReceiptByHashRequest) returns(TxReceiptByHashResponse);
   rpc getStorageHash(StorageHashRequest) returns(StorageHashResponse);
   rpc getFilterLogs(FilterLogsRequest) returns(FilterLogsResponse);
