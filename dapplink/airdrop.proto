@@ -1,8 +1,8 @@
 syntax = "proto3";
 
 option go_package = "./proto/airdrop";
-option java_package = "group.savour.airdrop";
-package services.savour_rpc.airdrop;
+option java_package = "xyz.dapplink.airdrop";
+package services.dapplink.airdrop;
 
 
 message DppLinkPointsReq {

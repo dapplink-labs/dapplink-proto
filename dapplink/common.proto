@@ -1,9 +1,8 @@
 syntax = "proto3";
 
-package savour_rpc;
+package dapplink;
 
 option go_package = "./proto/common";
-// 通用数据类型
 
 enum ReturnCode{
     SUCCESS = 0;

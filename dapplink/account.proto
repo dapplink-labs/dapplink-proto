@@ -1,0 +1,352 @@
+syntax = "proto3";
+
+import "dapplink/common.proto";
+option go_package = "./proto/account";
+option java_package = "xyz.dapplink.account";
+package dapplink.account;
+
+enum TxStatus{
+  NotFound = 0;
+  Pending = 1;
+  Failed = 2;
+  Success = 3;
+  ContractExecuteFailed = 4;
+  Other = 5;
+}
+
+message Address {
+  string address = 1;
+}
+
+message Value {
+  string value = 1;
+}
+
+message TxMessage {
+  string hash = 1;
+  uint32 index = 2;
+  repeated Address froms = 3;
+  repeated Address tos = 4;
+  repeated Value values = 7;
+  string fee = 5;
+  TxStatus status = 6;
+  int32 type = 8;
+  string height = 9;
+  string contract_address = 10;
+  string datetime = 11;
+}
+
+message BlockData {
+  string hash = 1;
+  string baseFee = 2;
+  repeated TxMessage transactions = 3;
+}
+
+message Log {
+  string address = 1;
+  repeated string topics = 2;
+  string data = 3;
+  string block_number = 4;
+  string tx_hash = 5;
+  uint64 tx_index = 6;
+  string block_hash = 7;
+  uint64 index = 8;
+  bool removed = 9;
+}
+
+message SupportCoinsRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+}
+
+message SupportCoinsResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  bool support = 3;
+}
+
+message ConvertAddressRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  bytes public_key = 4;
+}
+
+message ConvertAddressResponse{
+  ReturnCode code = 1;
+  string msg = 2;
+  string address = 3;
+}
+
+message ValidAddressRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string symbol = 4;
+  string address = 5;
+}
+
+message ValidAddressResponse{
+  ReturnCode code = 1;
+  string msg = 2;
+  bool valid = 3;
+  bool can_withdrawal = 4;
+  string canonical_address = 5;
+}
+
+message BlockNumberRequest {
+  string consumer_token = 1;
+  string chain = 2;
+  int64 height = 3;
+  bool view_tx = 4;
+}
+
+message BlockHashRequest {
+  string consumer_token = 1;
+  string chain = 2;
+  string hash = 3;
+  bool view_tx = 4;
+}
+
+message BlockInfoTransactionList {
+  string from = 1;
+  string to = 2;
+  string hash = 3;
+  string time = 4;
+  string amount = 5;
+  string fee = 6;
+  string status = 7;
+}
+
+message BlockResponse{
+  ReturnCode code = 1;
+  string msg = 2;
+  int64 height = 3;
+  string hash = 4;
+  string base_fee = 5;
+  repeated BlockInfoTransactionList transactions = 6;
+}
+
+message BlockHeaderHashRequest{
+  string chain = 1;
+  string network = 2;
+  string hash = 3;
+  string status = 4;
+}
+
+message BlockHeaderNumberRequest{
+  string chain = 1;
+  int64 height = 2;
+  string status = 3;
+}
+
+message BlockHeaderResponse{
+  ReturnCode code = 1;
+  string msg = 2;
+  string parent_hash = 3;
+  string uncle_hash = 4;
+  string coin_base = 5;
+  string root = 6;
+  string tx_hash = 7;
+  string receipt_hash = 8;
+  string parent_beacon_root = 9;
+  string difficulty = 10;
+  string number = 11;
+  uint64 gas_limit = 12;
+  uint64 gas_used = 13;
+  uint64 time = 14;
+  string extra = 15;
+  string mix_digest = 16;
+  string nonce = 17;
+  string base_fee = 18;
+  string withdrawals_hash = 19;
+  uint64 blob_gas_used = 20;
+  uint64 excess_blob_gas = 21;
+}
+
+message AccountRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string coin = 3;
+  string network = 4;
+  string address = 5;
+  string contract_address = 6;
+  uint64 proposer_key_index = 7;
+}
+
+message AccountResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  string account_number = 3;
+  string sequence = 4;
+  string network = 5;
+}
+
+message FeeRequest {
+  string consumer_token = 1;
+  string chain = 2;
+  string coin = 3;
+  string network = 4;
+  string rawTx = 5;
+  string address = 6;
+}
+
+message FeeResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  string slow_fee = 3;
+  string normal_fee = 4;
+  string fast_fee = 5;
+}
+
+
+message SendTxRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string coin = 3;
+  string network = 4;
+  string raw_tx = 5;
+}
+
+message SendTxResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  string tx_hash = 3;
+}
+
+message TxAddressRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string coin = 3;
+  string network = 4;
+  string address = 5;
+  string contract_address = 6;
+  uint32 page = 7;
+  uint32 pagesize = 8;
+  string cursor = 9;
+}
+
+
+message TxAddressResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  repeated TxMessage tx = 3;
+}
+
+
+message TxHashRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string coin = 3;
+  string network = 4;
+  string hash = 5;
+}
+
+message TxHashResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  TxMessage tx = 3;
+}
+
+
+message BlockByRangeRequest{
+  string chain = 1;
+  string network = 2;
+  string start = 3;
+  string end = 4;
+}
+
+message BlockByRangeResponse{
+  ReturnCode code = 1;
+  string msg = 2;
+  repeated BlockData Blocks = 3;
+}
+
+message UnSignTransactionRequest {
+  string chain = 1;
+  string network = 2;
+  string base64_tx = 3;
+}
+
+message UnSignTransactionResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  string un_sign_tx = 3;
+}
+
+message SignedTransactionRequest {
+  string chain = 1;
+  string network = 2;
+  string base64_tx = 3;
+  string signature = 4;
+}
+
+message SignedTransactionResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  string signed_tx = 3;
+}
+
+message VerifyTransactionRequest {
+  string chain = 1;
+  string network = 2;
+  string public_key = 3;
+  string signature = 4;
+}
+
+message VerifyTransactionResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  bool verify = 3;
+}
+
+message DecodeTransactionRequest {
+  string chain = 1;
+  string network = 2;
+  string raw_tx = 3;
+}
+
+message DecodeTransactionResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  string base64_tx = 3;
+}
+
+message ExtraDataRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string address = 4;
+  string coin = 5;
+}
+
+message ExtraDataResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  string value = 3;
+}
+
+service WalletAccountService {
+  rpc getSupportCoins(SupportCoinsRequest) returns (SupportCoinsResponse) {}
+  rpc convertAddress(ConvertAddressRequest) returns(ConvertAddressResponse){}
+  rpc validAddress(ValidAddressRequest) returns(ValidAddressResponse){}
+  rpc getBlockByNumber(BlockNumberRequest) returns (BlockResponse) {}
+  rpc getBlockByHash(BlockHashRequest) returns (BlockResponse) {}
+  rpc getBlockHeaderByHash(BlockHeaderHashRequest) returns(BlockHeaderResponse){}
+  rpc getBlockHeaderByNumber(BlockHeaderNumberRequest) returns (BlockHeaderResponse) {}
+  rpc getAccount(AccountRequest) returns (AccountResponse) {}  // account_number, nonce 和 balance
+  rpc getFee(FeeRequest) returns (FeeResponse) {}
+  rpc SendTx(SendTxRequest) returns (SendTxResponse) {}
+  rpc getTxByAddress(TxAddressRequest) returns (TxAddressResponse) {}
+  rpc getTxByHash(TxHashRequest) returns (TxHashResponse) {}
+  rpc getBlockByRange(BlockByRangeRequest) returns(BlockByRangeResponse){}
+
+  rpc createUnSignTransaction(UnSignTransactionRequest) returns(UnSignTransactionResponse){}
+  rpc buildSignedTransaction(SignedTransactionRequest) returns(SignedTransactionResponse){}
+  rpc decodeTransaction(DecodeTransactionRequest) returns(DecodeTransactionResponse){}
+  rpc verifySignedTransaction(VerifyTransactionRequest) returns(VerifyTransactionResponse){}
+
+  rpc getExtraData(ExtraDataRequest) returns (ExtraDataResponse) {}    // for all chain
+}
+

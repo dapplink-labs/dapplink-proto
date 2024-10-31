@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-import "savour_rpc/common.proto";
+import "dapplink/common.proto";
 option go_package = "./proto/wallet";
-option java_package = "group.savour.wallet";
-package savour_rpc.wallet;
+option java_package = "xyz.dapplink.wallet";
+package dapplink.wallet;
 
 enum TxStatus{
   NotFound = 0;
@@ -668,4 +668,3 @@ service WalletService {
   rpc getSuggestGasPrice(SuggestGasPriceRequest) returns(SuggestGasPriceResponse);
   rpc getSuggestGasTipCap(SuggestGasPriceRequest) returns(SuggestGasPriceResponse);
 }
-

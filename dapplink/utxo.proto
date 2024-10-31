@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "dapplink/common.proto";
+option go_package = "./proto/utxo";
+option java_package = "xyz.dapplink.utxo";
+package dapplink.utxo;
+
+service WalletUtxoService {
+
+}
+
+
+
+

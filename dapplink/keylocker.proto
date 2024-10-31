@@ -1,8 +1,8 @@
 syntax = "proto3";
 
 option go_package ="./proto/keylocker";
-option java_package = "group.savour.keylocker";
-package savour_rpc.keylocker;
+option java_package = "xyz.dapplink.keylocker";
+package dapplink.keylocker;
 
 enum ReturnCode{
   SUCCESS = 0;
