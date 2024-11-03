@@ -54,13 +54,13 @@ message Log {
   bool removed = 9;
 }
 
-message SupportCoinsRequest{
+message SupportChainsRequest{
   string consumer_token = 1;
   string chain = 2;
   string network = 3;
 }
 
-message SupportCoinsResponse {
+message SupportChainsResponse {
   ReturnCode code = 1;
   string msg = 2;
   bool support = 3;
@@ -178,9 +178,10 @@ message AccountRequest{
 message AccountResponse {
   ReturnCode code = 1;
   string msg = 2;
-  string account_number = 3;
-  string sequence = 4;
-  string network = 5;
+  string network = 3;
+  string account_number = 4;
+  string sequence = 5;
+  string balance = 6;
 }
 
 message FeeRequest {
@@ -328,7 +329,7 @@ message ExtraDataResponse {
 }
 
 service WalletAccountService {
-  rpc getSupportCoins(SupportCoinsRequest) returns (SupportCoinsResponse) {}
+  rpc getSupportChains(SupportChainsRequest) returns (SupportChainsResponse) {}
   rpc convertAddress(ConvertAddressRequest) returns(ConvertAddressResponse){}
   rpc validAddress(ValidAddressRequest) returns(ValidAddressResponse){}
   rpc getBlockByNumber(BlockNumberRequest) returns (BlockResponse) {}
@@ -341,12 +342,10 @@ service WalletAccountService {
   rpc getTxByAddress(TxAddressRequest) returns (TxAddressResponse) {}
   rpc getTxByHash(TxHashRequest) returns (TxHashResponse) {}
   rpc getBlockByRange(BlockByRangeRequest) returns(BlockByRangeResponse){}
-
   rpc createUnSignTransaction(UnSignTransactionRequest) returns(UnSignTransactionResponse){}
   rpc buildSignedTransaction(SignedTransactionRequest) returns(SignedTransactionResponse){}
   rpc decodeTransaction(DecodeTransactionRequest) returns(DecodeTransactionResponse){}
   rpc verifySignedTransaction(VerifyTransactionRequest) returns(VerifyTransactionResponse){}
-
-  rpc getExtraData(ExtraDataRequest) returns (ExtraDataResponse) {}    // for all chain
+  rpc getExtraData(ExtraDataRequest) returns (ExtraDataResponse) {}
 }
 
