@@ -34,12 +34,36 @@ message TxMessage {
   string height = 9;
   string contract_address = 10;
   string datetime = 11;
+  string data = 12;
 }
 
 message BlockData {
   string hash = 1;
   string baseFee = 2;
   repeated TxMessage transactions = 3;
+}
+
+message BlockHeader {
+  string hash = 1;
+  string parent_hash = 2;
+  string uncle_hash = 3;
+  string coin_base = 4;
+  string root = 5;
+  string tx_hash = 6;
+  string receipt_hash = 7;
+  string parent_beacon_root = 8;
+  string difficulty = 9;
+  string number = 10;
+  uint64 gas_limit = 11;
+  uint64 gas_used = 12;
+  uint64 time = 13;
+  string extra = 14;
+  string mix_digest = 15;
+  string nonce = 16;
+  string base_fee = 17;
+  string withdrawals_hash = 18;
+  uint64 blob_gas_used = 19;
+  uint64 excess_blob_gas = 20;
 }
 
 message Log {
@@ -70,7 +94,7 @@ message ConvertAddressRequest{
   string consumer_token = 1;
   string chain = 2;
   string network = 3;
-  bytes public_key = 4;
+  string public_key = 4;
 }
 
 message ConvertAddressResponse{
@@ -83,16 +107,13 @@ message ValidAddressRequest{
   string consumer_token = 1;
   string chain = 2;
   string network = 3;
-  string symbol = 4;
-  string address = 5;
+  string address = 4;
 }
 
 message ValidAddressResponse{
   ReturnCode code = 1;
   string msg = 2;
   bool valid = 3;
-  bool can_withdrawal = 4;
-  string canonical_address = 5;
 }
 
 message BlockNumberRequest {
@@ -113,10 +134,7 @@ message BlockInfoTransactionList {
   string from = 1;
   string to = 2;
   string hash = 3;
-  string time = 4;
-  string amount = 5;
-  string fee = 6;
-  string status = 7;
+  string amount = 4;
 }
 
 message BlockResponse{
@@ -129,40 +147,37 @@ message BlockResponse{
 }
 
 message BlockHeaderHashRequest{
-  string chain = 1;
-  string network = 2;
-  string hash = 3;
-  string status = 4;
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string hash = 4;
 }
 
 message BlockHeaderNumberRequest{
-  string chain = 1;
-  int64 height = 2;
-  string status = 3;
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  int64 height = 4;
 }
 
 message BlockHeaderResponse{
   ReturnCode code = 1;
   string msg = 2;
-  string parent_hash = 3;
-  string uncle_hash = 4;
-  string coin_base = 5;
-  string root = 6;
-  string tx_hash = 7;
-  string receipt_hash = 8;
-  string parent_beacon_root = 9;
-  string difficulty = 10;
-  string number = 11;
-  uint64 gas_limit = 12;
-  uint64 gas_used = 13;
-  uint64 time = 14;
-  string extra = 15;
-  string mix_digest = 16;
-  string nonce = 17;
-  string base_fee = 18;
-  string withdrawals_hash = 19;
-  uint64 blob_gas_used = 20;
-  uint64 excess_blob_gas = 21;
+  BlockHeader block_header = 3;
+}
+
+message BlockByRangeRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string start = 4;
+  string end = 5;
+}
+
+message BlockByRangeResponse{
+  ReturnCode code = 1;
+  string msg = 2;
+  repeated BlockHeader block_header = 3;
 }
 
 message AccountRequest{
@@ -250,24 +265,11 @@ message TxHashResponse {
   TxMessage tx = 3;
 }
 
-
-message BlockByRangeRequest{
-  string chain = 1;
-  string network = 2;
-  string start = 3;
-  string end = 4;
-}
-
-message BlockByRangeResponse{
-  ReturnCode code = 1;
-  string msg = 2;
-  repeated BlockData Blocks = 3;
-}
-
 message UnSignTransactionRequest {
-  string chain = 1;
-  string network = 2;
-  string base64_tx = 3;
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string base64_tx = 4;
 }
 
 message UnSignTransactionResponse {
@@ -277,10 +279,11 @@ message UnSignTransactionResponse {
 }
 
 message SignedTransactionRequest {
-  string chain = 1;
-  string network = 2;
-  string base64_tx = 3;
-  string signature = 4;
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string base64_tx = 4;
+  string signature = 5;
 }
 
 message SignedTransactionResponse {
@@ -290,10 +293,11 @@ message SignedTransactionResponse {
 }
 
 message VerifyTransactionRequest {
-  string chain = 1;
-  string network = 2;
-  string public_key = 3;
-  string signature = 4;
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string public_key = 4;
+  string signature = 5;
 }
 
 message VerifyTransactionResponse {
@@ -303,9 +307,10 @@ message VerifyTransactionResponse {
 }
 
 message DecodeTransactionRequest {
-  string chain = 1;
-  string network = 2;
-  string raw_tx = 3;
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string raw_tx = 4;
 }
 
 message DecodeTransactionResponse {
@@ -336,12 +341,12 @@ service WalletAccountService {
   rpc getBlockByHash(BlockHashRequest) returns (BlockResponse) {}
   rpc getBlockHeaderByHash(BlockHeaderHashRequest) returns(BlockHeaderResponse){}
   rpc getBlockHeaderByNumber(BlockHeaderNumberRequest) returns (BlockHeaderResponse) {}
+  rpc getBlockHeaderByRange(BlockByRangeRequest) returns(BlockByRangeResponse){}
   rpc getAccount(AccountRequest) returns (AccountResponse) {}  // account_number, nonce 和 balance
   rpc getFee(FeeRequest) returns (FeeResponse) {}
   rpc SendTx(SendTxRequest) returns (SendTxResponse) {}
   rpc getTxByAddress(TxAddressRequest) returns (TxAddressResponse) {}
   rpc getTxByHash(TxHashRequest) returns (TxHashResponse) {}
-  rpc getBlockByRange(BlockByRangeRequest) returns(BlockByRangeResponse){}
   rpc createUnSignTransaction(UnSignTransactionRequest) returns(UnSignTransactionResponse){}
   rpc buildSignedTransaction(SignedTransactionRequest) returns(SignedTransactionResponse){}
   rpc decodeTransaction(DecodeTransactionRequest) returns(DecodeTransactionResponse){}
