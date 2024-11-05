@@ -16,17 +16,15 @@ enum TxStatus{
 
 message Vin{
   string hash = 1;
-  string script = 2;
-  uint32 index = 3;
-  int64  amount = 4;
-  string address = 5;
+  uint32 index = 2;
+  int64  amount = 3;
+  string address = 4;
 }
 
 message Vout{
   string address = 1;
-  string script = 2;
-  int64 amount = 3;
-  uint32 index = 4;
+  int64 amount = 2;
+  uint32 index = 3;
 }
 
 message Address {
@@ -67,7 +65,8 @@ message ConvertAddressRequest{
   string consumer_token = 1;
   string chain = 2;
   string network = 3;
-  bytes public_key = 4;
+  string format = 4;
+  string public_key = 5;
 }
 
 message ConvertAddressResponse{
@@ -80,7 +79,7 @@ message ValidAddressRequest{
   string consumer_token = 1;
   string chain = 2;
   string network = 3;
-  string symbol = 4;
+  string format = 4;
   string address = 5;
 }
 
@@ -88,8 +87,6 @@ message ValidAddressResponse{
   ReturnCode code = 1;
   string msg = 2;
   bool valid = 3;
-  bool can_withdrawal = 4;
-  string canonical_address = 5;
 }
 
 message FeeRequest {
@@ -98,52 +95,52 @@ message FeeRequest {
   string coin = 3;
   string network = 4;
   string rawTx = 5;
-  string address = 6;
 }
 
 message FeeResponse {
   ReturnCode code = 1;
   string msg = 2;
-  string slow_fee = 3;
-  string normal_fee = 4;
-  string fast_fee = 5;
+  string best_fee = 3;
+  string best_fee_sat = 4;
+  string slow_fee = 5;
+  string normal_fee = 6;
+  string fast_fee = 7;
 }
 
 message AccountRequest{
   string consumer_token = 1;
   string chain = 2;
-  string coin = 3;
-  string network = 4;
-  string address = 5;
-  string brc20_address = 6;
+  string network = 3;
+  string address = 4;
+  string brc20_address = 5;
 }
 
 message AccountResponse {
   ReturnCode code = 1;
   string msg = 2;
   string network = 3;
-  string balance = 6;
+  string balance = 4;
 }
 
 message UnspentOutput {
-  string tx_hash_big_endian = 1;
-  string tx_hash = 2;
+  string tx_id = 1;
+  string tx_hash_big_endian = 2;
   uint64 tx_output_n = 3;
   string script = 4;
-  uint64 value = 5;
-  uint64 confirmations = 6;
-  uint64 tx_index = 7;
+  string height = 5;
+  string block_time = 6;
+  string address = 7;
+  string unspent_amount = 8;
+  string value_hex = 9;
+  uint64 confirmations = 10;
+  uint64 index = 11;
 }
 
 message UnspentOutputsRequest{
   string consumer_token = 1;
   string chain = 2;
-  string symbol = 3;
-  string network = 4;
-  string address = 5;
-  string cursor = 6;
-  uint64 limit = 7;
-  string coinType = 8;
+  string network = 3;
+  string address = 4;
 }
 
 message UnspentOutputsResponse{
@@ -164,18 +161,19 @@ message BlockHashRequest {
   string hash = 3;
 }
 
-message BlockInfoTransactionList {
-  string fee = 1;
-  repeated Vin vin = 2;
-  repeated Vout vout = 3;
+message TransactionList {
+  string hash = 1;
+  string fee = 2;
+  repeated Vin vin = 3;
+  repeated Vout vout = 4;
 }
 
 message BlockResponse{
   ReturnCode code = 1;
   string msg = 2;
-  int64 height = 3;
+  uint64 height = 3;
   string hash = 4;
-  repeated BlockInfoTransactionList tx_list = 5;
+  repeated TransactionList tx_list = 5;
 }
 
 message BlockHeaderHashRequest{
@@ -194,7 +192,9 @@ message BlockHeaderResponse{
   ReturnCode code = 1;
   string msg = 2;
   string parent_hash = 3;
-  string number = 4;
+  string block_hash = 4;
+  string merkle_root = 5;
+  string number = 6;
 }
 
 message SendTxRequest{
@@ -246,28 +246,35 @@ message TxHashResponse {
 }
 
 message UnSignTransactionRequest {
-  string chain = 1;
-  string network = 2;
-  string base64_tx = 3;
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string fee = 4;
+  repeated Vin vin = 5;
+  repeated Vout vout = 6;
 }
 
 message UnSignTransactionResponse {
   ReturnCode code = 1;
   string msg = 2;
-  string un_sign_tx = 3;
+  bytes tx_data = 3;
+  repeated bytes sign_hashes = 4;
 }
 
 message SignedTransactionRequest {
-  string chain = 1;
-  string network = 2;
-  string base64_tx = 3;
-  string signature = 4;
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  bytes tx_data = 4;
+  repeated bytes signatures = 5;
+  repeated bytes public_keys = 6;
 }
 
 message SignedTransactionResponse {
   ReturnCode code = 1;
   string msg = 2;
-  string signed_tx = 3;
+  bytes signed_tx_data = 3;
+  bytes hash = 4;
 }
 
 message VerifyTransactionRequest {
@@ -286,13 +293,21 @@ message VerifyTransactionResponse {
 message DecodeTransactionRequest {
   string chain = 1;
   string network = 2;
-  string raw_tx = 3;
+  bytes raw_data = 5;
+  repeated Vin vins = 7;
 }
 
 message DecodeTransactionResponse {
   ReturnCode code = 1;
   string msg = 2;
-  repeated BlockInfoTransactionList tx_list = 3;
+  string tx_hash = 3;
+  TxStatus status = 4;
+  repeated Vin vins = 5;
+  repeated Vout vouts = 6;
+  repeated bytes sign_hashes = 7;
+  string cost_fee = 8;
+  uint64 block_height = 9;
+  uint64 block_time = 10;
 }
 
 service WalletUtxoService {
