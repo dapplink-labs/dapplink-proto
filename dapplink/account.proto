@@ -94,7 +94,8 @@ message ConvertAddressRequest{
   string consumer_token = 1;
   string chain = 2;
   string network = 3;
-  string public_key = 4;
+  string type = 4;
+  string public_key = 5;
 }
 
 message ConvertAddressResponse{
@@ -133,8 +134,11 @@ message BlockHashRequest {
 message BlockInfoTransactionList {
   string from = 1;
   string to = 2;
-  string hash = 3;
-  string amount = 4;
+  string token_address = 3;
+  string contract_wallet = 4;
+  string hash = 5;
+  uint64 height = 6;
+  string amount = 7;
 }
 
 message BlockResponse{
