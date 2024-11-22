@@ -288,6 +288,7 @@ message SignedTransactionRequest {
   string network = 3;
   string base64_tx = 4;
   string signature = 5;
+  string public_key = 6;
 }
 
 message SignedTransactionResponse {
