@@ -14,20 +14,12 @@ enum TxStatus{
   Other = 5;
 }
 
-message Address {
-  string address = 1;
-}
-
-message Value {
-  string value = 1;
-}
-
 message TxMessage {
   string hash = 1;
   uint32 index = 2;
-  repeated Address froms = 3;
-  repeated Address tos = 4;
-  repeated Value values = 7;
+  string from = 3;
+  string to = 4;
+  string value = 7;
   string fee = 5;
   TxStatus status = 6;
   int32 type = 8;
@@ -244,7 +236,6 @@ message TxAddressRequest{
   string contract_address = 6;
   uint32 page = 7;
   uint32 pagesize = 8;
-  string cursor = 9;
 }
 
 
@@ -338,6 +329,95 @@ message ExtraDataResponse {
   string value = 3;
 }
 
+message NftMessage {
+  string token_contract_address	= 1;
+  string token_id	 = 2;
+  string amount = 3;
+  string token_name = 4;
+  string token_url = 5;
+  string description = 6;
+  string meta_data = 7;
+}
+
+message NftAddressRequest{
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string address = 4;
+  string protocol_type = 5;
+  string contract_address = 6;
+  uint32 page = 7;
+  uint32 pagesize = 8;
+}
+
+message NftAddressResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  repeated NftMessage nft_info = 3;
+}
+
+message NftCollectionMessage {
+   string token_id	= 1;
+   string holding_address_amount = 2;
+   string token_url = 3;
+   string protocol_type = 4;
+   string last_transaction_time = 5;
+   string last_price = 6;
+   string last_price_unit = 7;
+   string transaction_count = 8;
+   string mint_time = 9;
+   string title = 10;
+}
+
+message NftCollectionRequest {
+  string consumer_token = 1;
+  string chain = 2;
+  string network = 3;
+  string token_contract_address	= 4;
+  string filter_type = 5;
+  string token_id = 6;
+  uint32 page = 7;
+  uint32 pagesize = 8;
+}
+
+message NftCollectionResponse {
+  ReturnCode code = 1;
+  string msg = 2;
+  repeated NftCollectionMessage nft_collection_message = 3;
+}
+
+message NftDetailRequest {
+
+}
+
+message NftDetailResponse {
+
+}
+
+message NftHolderListRequest {
+
+}
+
+message NftHolderListResponse {
+
+}
+
+message NftTradeHistoryRequest {
+
+}
+
+message NftTradeHistoryResponse {
+
+}
+
+message AddressNftTradeHistoryRequest {
+
+}
+
+message AddressNftTradeHistoryResponse {
+
+}
+
 service WalletAccountService {
   rpc getSupportChains(SupportChainsRequest) returns (SupportChainsResponse) {}
   rpc convertAddress(ConvertAddressRequest) returns(ConvertAddressResponse){}
@@ -352,10 +432,16 @@ service WalletAccountService {
   rpc SendTx(SendTxRequest) returns (SendTxResponse) {}
   rpc getTxByAddress(TxAddressRequest) returns (TxAddressResponse) {}
   rpc getTxByHash(TxHashRequest) returns (TxHashResponse) {}
-  rpc createUnSignTransaction(UnSignTransactionRequest) returns(UnSignTransactionResponse){}
+  rpc buildUnSignTransaction(UnSignTransactionRequest) returns(UnSignTransactionResponse){}
   rpc buildSignedTransaction(SignedTransactionRequest) returns(SignedTransactionResponse){}
   rpc decodeTransaction(DecodeTransactionRequest) returns(DecodeTransactionResponse){}
   rpc verifySignedTransaction(VerifyTransactionRequest) returns(VerifyTransactionResponse){}
   rpc getExtraData(ExtraDataRequest) returns (ExtraDataResponse) {}
+  rpc getNftListByAddress(NftAddressRequest) returns (NftAddressResponse){}
+  rpc getNftCollection(NftCollectionRequest) returns (NftCollectionResponse){}
+  rpc getNftDetail(NftDetailRequest) returns (NftDetailResponse){}
+  rpc getNftHolderList(NftHolderListRequest) returns (NftHolderListResponse){}
+  rpc getNftTradeHistory(NftTradeHistoryRequest) returns (NftTradeHistoryResponse){}
+  rpc getAddressNftTradeHistory(AddressNftTradeHistoryRequest) returns (AddressNftTradeHistoryResponse){}
 }
 
